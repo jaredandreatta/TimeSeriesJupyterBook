@@ -21,58 +21,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import dash
-from dash import dcc, html
-from dash.dependencies import Input, Output
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
+ts_crude = (crude_ret_skew**2)/(np.sqrt(6/len(prices['crude_log_returns'])))
+tk_crude = (crude_ret_kurt-3)**2/(np.sqrt(24/len(prices['crude_log_returns'])))
 
-app = dash.Dash(__name__)
-app.layout = html.Div([
-    html.H1('Brent Crude/Henry Hub NG Prices and Log Returns', style={'textAlign': 'center'}),
-    html.Label('Select Variable'),
-    dcc.Dropdown(
-        id='series-dropdown',
-        options=[
-            {'label': 'Crude Price', 'value': 'crude_price'},
-            {'label': 'NG Price', 'value': 'ng_price'},
-            {'label': 'Crude Log Returns', 'value': 'crude_log_returns'},
-            {'label': 'NG Log Returns', 'value': 'ng_log_returns'}
-        ],
-        value=['crude_price'], 
-        clearable=False,
-        multi=True 
-    ),
-    dcc.Graph(id='price-graph')
-])
-@app.callback(
-    Output('price-graph', 'figure'),
-    Input('series-dropdown', 'value')
-)
-def update_graph(selected_series):
-    fig = make_subplots(rows=len(selected_series), cols=1, shared_xaxes=True, vertical_spacing=0.1)
+ts_ng = (ng_ret_skew**2)/(np.sqrt(6/len(prices['ng_log_returns'])))
+tk_ng = (ng_ret_kurt-3)**2/(np.sqrt(24/len(prices['ng_log_returns'])))
 
-    for i, series in enumerate(selected_series):
-        fig.add_trace(go.Scatter(x=prices['Date'], y=prices[series], mode='lines', name=series), row=i+1, col=1)
-        fig.update_yaxes(title_text=series, row=i+1, col=1)
-
-    fig.update_xaxes(title_text='Date', row=len(selected_series), col=1)
-
-    fig.update_layout(height=300 * len(selected_series), showlegend=False)
-    return fig
-
-
-app.run_server(debug=True,port=8051)
-
+print(f'Crude Log Returns skewness t={ts_crude}, kurtosis t={tk_crude}')
+print(f'NG Log Returns skewness t={ts_ng}, kurtosis t={tk_ng}')
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[4], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mdash[39;00m
-[1;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdash[39;00m [38;5;28;01mimport[39;00m dcc, html
-[1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdash[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdependencies[39;00m [38;5;28;01mimport[39;00m Input, Output
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[8], line 1[0m
+[0;32m----> 1[0m ts_crude [38;5;241m=[39m (crude_ret_skew[38;5;241m*[39m[38;5;241m*[39m[38;5;241m2[39m)[38;5;241m/[39m(np[38;5;241m.[39msqrt([38;5;241m6[39m[38;5;241m/[39m[38;5;28mlen[39m(prices[[38;5;124m'[39m[38;5;124mcrude_log_returns[39m[38;5;124m'[39m])))
+[1;32m      2[0m tk_crude [38;5;241m=[39m (crude_ret_kurt[38;5;241m-[39m[38;5;241m3[39m)[38;5;241m*[39m[38;5;241m*[39m[38;5;241m2[39m[38;5;241m/[39m(np[38;5;241m.[39msqrt([38;5;241m24[39m[38;5;241m/[39m[38;5;28mlen[39m(prices[[38;5;124m'[39m[38;5;124mcrude_log_returns[39m[38;5;124m'[39m])))
+[1;32m      4[0m ts_ng [38;5;241m=[39m (ng_ret_skew[38;5;241m*[39m[38;5;241m*[39m[38;5;241m2[39m)[38;5;241m/[39m(np[38;5;241m.[39msqrt([38;5;241m6[39m[38;5;241m/[39m[38;5;28mlen[39m(prices[[38;5;124m'[39m[38;5;124mng_log_returns[39m[38;5;124m'[39m])))
 
-[0;31mModuleNotFoundError[0m: No module named 'dash'
-ModuleNotFoundError: No module named 'dash'
+[0;31mNameError[0m: name 'crude_ret_skew' is not defined
+NameError: name 'crude_ret_skew' is not defined
 
