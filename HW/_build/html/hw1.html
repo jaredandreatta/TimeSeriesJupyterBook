@@ -452,6 +452,9 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%***********************]  1 of 1 completed
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%***********************]  1 of 1 completed
 </pre></div>
 </div>
@@ -572,22 +575,16 @@ document.write(`
 <span class="n">summary</span><span class="o">=</span><span class="n">prices</span><span class="p">[[</span><span class="s1">&#39;crude_price&#39;</span><span class="p">,</span><span class="s1">&#39;ng_price&#39;</span><span class="p">,</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">,</span><span class="s1">&#39;ng_log_returns&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 
 <span class="c1"># Skewness</span>
-<span class="n">crude_skew</span> <span class="o">=</span> <span class="n">skew</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_price&#39;</span><span class="p">])</span>
-<span class="n">ng_skew</span> <span class="o">=</span> <span class="n">skew</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_price&#39;</span><span class="p">])</span>
-<span class="n">crude_ret_skew</span> <span class="o">=</span> <span class="n">skew</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">])</span>
-<span class="n">ng_ret_skew</span> <span class="o">=</span> <span class="n">skew</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_log_returns&#39;</span><span class="p">])</span>
+<span class="n">skewness</span> <span class="o">=</span> <span class="p">[</span><span class="n">skew</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="n">column</span><span class="p">])</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">prices</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span>
 
 <span class="c1"># Kurtosis</span>
-<span class="n">crude_kurt</span> <span class="o">=</span> <span class="n">kurtosis</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_price&#39;</span><span class="p">])</span>
-<span class="n">ng_kurt</span> <span class="o">=</span> <span class="n">kurtosis</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_price&#39;</span><span class="p">])</span>
-<span class="n">crude_ret_kurt</span> <span class="o">=</span> <span class="n">kurtosis</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">])</span>
-<span class="n">ng_ret_kurt</span> <span class="o">=</span> <span class="n">kurtosis</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_log_returns&#39;</span><span class="p">])</span>
+<span class="n">kurt</span><span class="o">=</span> <span class="p">[</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="n">column</span><span class="p">])</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">prices</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span>
 
 <span class="c1"># Adding to dataframe</span>
-<span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">crude_skew</span><span class="p">,</span><span class="n">ng_skew</span><span class="p">,</span><span class="n">crude_ret_skew</span><span class="p">,</span><span class="n">ng_ret_skew</span><span class="p">]</span> 
+<span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span> <span class="o">=</span> <span class="n">skewness</span> 
 <span class="n">summary</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">{</span><span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;skew&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">crude_kurt</span><span class="p">,</span><span class="n">ng_kurt</span><span class="p">,</span><span class="n">crude_ret_kurt</span><span class="p">,</span><span class="n">ng_ret_kurt</span><span class="p">]</span> 
+<span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span> <span class="o">=</span> <span class="n">kurt</span>
 <span class="n">summary</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">{</span><span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;kurt&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 
@@ -770,8 +767,14 @@ t_S=\frac{\hat{S}^2(r)}{\sqrt{6/T}} \quad t_K=\frac{(\hat{K}(r)-3)^2}{\sqrt{24/T
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crude Log Returns skewness t=3.653382700465989, kurtosis t=6.417549258128314
-NG Log Returns skewness t=0.391786959650061, kurtosis t=46.20685587284676
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ts_crude</span> <span class="o">=</span> <span class="p">(</span><span class="n">crude_ret_skew</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">])))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">tk_crude</span> <span class="o">=</span> <span class="p">(</span><span class="n">crude_ret_kurt</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">24</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">])))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ts_ng</span> <span class="o">=</span> <span class="p">(</span><span class="n">ng_ret_skew</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_log_returns&#39;</span><span class="p">])))</span>
+
+<span class="ne">NameError</span>: name &#39;crude_ret_skew&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -936,7 +939,7 @@ Dep. Variable:         ng_log_returns   R-squared:                       0.009
 Model:                            OLS   Adj. R-squared:                  0.009
 Method:                 Least Squares   F-statistic:                     12.96
 Date:                Mon, 09 Sep 2024   Prob (F-statistic):           0.000330
-Time:                        11:53:34   Log-Likelihood:                 2515.5
+Time:                        12:09:07   Log-Likelihood:                 2515.5
 No. Observations:                1369   AIC:                            -5027.
 Df Residuals:                    1367   BIC:                            -5016.
 Df Model:                           1                                         
