@@ -1,0 +1,156 @@
+Traceback (most recent call last):
+  File "C:\Users\Jared\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\Jared\anaconda3\Lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jared\anaconda3\Lib\site-packages\jupyter_core\utils\__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jared\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Jared\anaconda3\Lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\Jared\anaconda3\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\Jared\anaconda3\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import dash
+from dash import dcc, html
+from dash.dependencies import Input, Output
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+app = dash.Dash(__name__)
+app.layout = html.Div([
+    html.H1('Brent Crude/Henry Hub NG Prices and Log Returns', style={'textAlign': 'center'}),
+    html.Label('Select Variable'),
+    dcc.Dropdown(
+        id='series-dropdown',
+        options=[
+            {'label': 'Crude Price', 'value': 'crude_price'},
+            {'label': 'NG Price', 'value': 'ng_price'},
+            {'label': 'Crude Log Returns', 'value': 'crude_log_returns'},
+            {'label': 'NG Log Returns', 'value': 'ng_log_returns'}
+        ],
+        value=['crude_price'], 
+        clearable=False,
+        multi=True 
+    ),
+    dcc.Graph(id='price-graph')
+])
+@app.callback(
+    Output('price-graph', 'figure'),
+    Input('series-dropdown', 'value')
+)
+def update_graph(selected_series):
+    fig = make_subplots(rows=len(selected_series), cols=1, shared_xaxes=True, vertical_spacing=0.1)
+
+    for i, series in enumerate(selected_series):
+        fig.add_trace(go.Scatter(x=prices['Date'], y=prices[series], mode='lines', name=series), row=i+1, col=1)
+        fig.update_yaxes(title_text=series, row=i+1, col=1)
+
+    fig.update_xaxes(title_text='Date', row=len(selected_series), col=1)
+
+    fig.update_layout(height=300 * len(selected_series), showlegend=False)
+    return fig
+
+
+app.run_server(debug=True,port=8051)
+
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mOSError[0m                                   Traceback (most recent call last)
+Cell [1;32mIn[4], line 42[0m
+[0;32m     38[0m     fig[38;5;241m.[39mupdate_layout(height[38;5;241m=[39m[38;5;241m300[39m [38;5;241m*[39m [38;5;28mlen[39m(selected_series), showlegend[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+[0;32m     39[0m     [38;5;28;01mreturn[39;00m fig
+[1;32m---> 42[0m app[38;5;241m.[39mrun_server(debug[38;5;241m=[39m[38;5;28;01mTrue[39;00m,port[38;5;241m=[39m[38;5;241m8051[39m)
+
+File [1;32m~\anaconda3\Lib\site-packages\dash\dash.py:2259[0m, in [0;36mDash.run_server[1;34m(self, *args, **kwargs)[0m
+[0;32m   2253[0m [38;5;28;01mdef[39;00m [38;5;21mrun_server[39m([38;5;28mself[39m, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[0;32m   2254[0m [38;5;250m    [39m[38;5;124;03m"""`run_server` is a deprecated alias of `run` and may be removed in a[39;00m
+[0;32m   2255[0m [38;5;124;03m    future version. We recommend using `app.run` instead.[39;00m
+[0;32m   2256[0m 
+[0;32m   2257[0m [38;5;124;03m    See `app.run` for usage information.[39;00m
+[0;32m   2258[0m [38;5;124;03m    """[39;00m
+[1;32m-> 2259[0m     [38;5;28mself[39m[38;5;241m.[39mrun([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [1;32m~\anaconda3\Lib\site-packages\dash\dash.py:2150[0m, in [0;36mDash.run[1;34m(self, host, port, proxy, debug, jupyter_mode, jupyter_width, jupyter_height, jupyter_server_url, dev_tools_ui, dev_tools_props_check, dev_tools_serve_dev_bundles, dev_tools_hot_reload, dev_tools_hot_reload_interval, dev_tools_hot_reload_watch_interval, dev_tools_hot_reload_max_retry, dev_tools_silence_routes_logging, dev_tools_prune_errors, **flask_run_options)[0m
+[0;32m   2147[0m             extra_files[38;5;241m.[39mappend(path)
+[0;32m   2149[0m [38;5;28;01mif[39;00m jupyter_dash[38;5;241m.[39mactive:
+[1;32m-> 2150[0m     jupyter_dash[38;5;241m.[39mrun_app(
+[0;32m   2151[0m         [38;5;28mself[39m,
+[0;32m   2152[0m         mode[38;5;241m=[39mjupyter_mode,
+[0;32m   2153[0m         width[38;5;241m=[39mjupyter_width,
+[0;32m   2154[0m         height[38;5;241m=[39mjupyter_height,
+[0;32m   2155[0m         host[38;5;241m=[39mhost,
+[0;32m   2156[0m         port[38;5;241m=[39mport,
+[0;32m   2157[0m         server_url[38;5;241m=[39mjupyter_server_url,
+[0;32m   2158[0m     )
+[0;32m   2159[0m [38;5;28;01melse[39;00m:
+[0;32m   2160[0m     [38;5;28mself[39m[38;5;241m.[39mserver[38;5;241m.[39mrun(host[38;5;241m=[39mhost, port[38;5;241m=[39mport, debug[38;5;241m=[39mdebug, [38;5;241m*[39m[38;5;241m*[39mflask_run_options)
+
+File [1;32m~\anaconda3\Lib\site-packages\dash\_jupyter.py:404[0m, in [0;36mJupyterDash.run_app[1;34m(self, app, mode, width, height, host, port, server_url)[0m
+[0;32m    402[0m     display(HTML(msg))
+[0;32m    403[0m [38;5;28;01melse[39;00m:
+[1;32m--> 404[0m     [38;5;28;01mraise[39;00m final_error
+
+File [1;32m~\anaconda3\Lib\site-packages\dash\_jupyter.py:391[0m, in [0;36mJupyterDash.run_app[1;34m(self, app, mode, width, height, host, port, server_url)[0m
+[0;32m    388[0m         [38;5;28;01mraise[39;00m err
+[0;32m    390[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 391[0m     wait_for_app()
+[0;32m    393[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39min_colab:
+[0;32m    394[0m         JupyterDash[38;5;241m.[39m_display_in_colab(dashboard_url, port, mode, width, height)
+
+File [1;32m~\anaconda3\Lib\site-packages\retrying.py:56[0m, in [0;36mretry.<locals>.wrap.<locals>.wrapped_f[1;34m(*args, **kw)[0m
+[0;32m     54[0m [38;5;129m@six[39m[38;5;241m.[39mwraps(f)
+[0;32m     55[0m [38;5;28;01mdef[39;00m [38;5;21mwrapped_f[39m([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkw):
+[1;32m---> 56[0m     [38;5;28;01mreturn[39;00m Retrying([38;5;241m*[39mdargs, [38;5;241m*[39m[38;5;241m*[39mdkw)[38;5;241m.[39mcall(f, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkw)
+
+File [1;32m~\anaconda3\Lib\site-packages\retrying.py:266[0m, in [0;36mRetrying.call[1;34m(self, fn, *args, **kwargs)[0m
+[0;32m    263[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mstop(attempt_number, delay_since_first_attempt_ms):
+[0;32m    264[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_wrap_exception [38;5;129;01mand[39;00m attempt[38;5;241m.[39mhas_exception:
+[0;32m    265[0m         [38;5;66;03m# get() on an attempt with an exception should cause it to be raised, but raise just in case[39;00m
+[1;32m--> 266[0m         [38;5;28;01mraise[39;00m attempt[38;5;241m.[39mget()
+[0;32m    267[0m     [38;5;28;01melse[39;00m:
+[0;32m    268[0m         [38;5;28;01mraise[39;00m RetryError(attempt)
+
+File [1;32m~\anaconda3\Lib\site-packages\retrying.py:301[0m, in [0;36mAttempt.get[1;34m(self, wrap_exception)[0m
+[0;32m    299[0m         [38;5;28;01mraise[39;00m RetryError([38;5;28mself[39m)
+[0;32m    300[0m     [38;5;28;01melse[39;00m:
+[1;32m--> 301[0m         six[38;5;241m.[39mreraise([38;5;28mself[39m[38;5;241m.[39mvalue[[38;5;241m0[39m], [38;5;28mself[39m[38;5;241m.[39mvalue[[38;5;241m1[39m], [38;5;28mself[39m[38;5;241m.[39mvalue[[38;5;241m2[39m])
+[0;32m    302[0m [38;5;28;01melse[39;00m:
+[0;32m    303[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mvalue
+
+File [1;32m~\anaconda3\Lib\site-packages\six.py:719[0m, in [0;36mreraise[1;34m(tp, value, tb)[0m
+[0;32m    717[0m     [38;5;28;01mif[39;00m value[38;5;241m.[39m__traceback__ [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m tb:
+[0;32m    718[0m         [38;5;28;01mraise[39;00m value[38;5;241m.[39mwith_traceback(tb)
+[1;32m--> 719[0m     [38;5;28;01mraise[39;00m value
+[0;32m    720[0m [38;5;28;01mfinally[39;00m:
+[0;32m    721[0m     value [38;5;241m=[39m [38;5;28;01mNone[39;00m
+
+File [1;32m~\anaconda3\Lib\site-packages\retrying.py:251[0m, in [0;36mRetrying.call[1;34m(self, fn, *args, **kwargs)[0m
+[0;32m    248[0m     [38;5;28mself[39m[38;5;241m.[39m_before_attempts(attempt_number)
+[0;32m    250[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 251[0m     attempt [38;5;241m=[39m Attempt(fn([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs), attempt_number, [38;5;28;01mFalse[39;00m)
+[0;32m    252[0m [38;5;28;01mexcept[39;00m:
+[0;32m    253[0m     tb [38;5;241m=[39m sys[38;5;241m.[39mexc_info()
+
+File [1;32m~\anaconda3\Lib\site-packages\dash\_jupyter.py:382[0m, in [0;36mJupyterDash.run_app.<locals>.wait_for_app[1;34m()[0m
+[0;32m    380[0m     [38;5;28;01mif[39;00m res [38;5;241m!=[39m [38;5;124m"[39m[38;5;124mAlive[39m[38;5;124m"[39m:
+[0;32m    381[0m         url [38;5;241m=[39m [38;5;124mf[39m[38;5;124m"[39m[38;5;124mhttp://[39m[38;5;132;01m{[39;00mhost[38;5;132;01m}[39;00m[38;5;124m:[39m[38;5;132;01m{[39;00mport[38;5;132;01m}[39;00m[38;5;124m"[39m
+[1;32m--> 382[0m         [38;5;28;01mraise[39;00m [38;5;167;01mOSError[39;00m(
+[0;32m    383[0m             [38;5;124mf[39m[38;5;124m"[39m[38;5;124mAddress [39m[38;5;124m'[39m[38;5;132;01m{[39;00murl[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m already in use.[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[0;32m    384[0m             [38;5;124m"[39m[38;5;124m    Try passing a different port to run_server.[39m[38;5;124m"[39m
+[0;32m    385[0m         )
+[0;32m    386[0m [38;5;28;01mexcept[39;00m requests[38;5;241m.[39mConnectionError [38;5;28;01mas[39;00m err:
+[0;32m    387[0m     _get_error()
+
+[1;31mOSError[0m: Address 'http://127.0.0.1:8051' already in use.
+    Try passing a different port to run_server.
+
