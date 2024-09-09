@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'hw1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <link rel="prev" title="Time Series Econometrics Assignments" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,11 +174,6 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">HW1</a></li>
-
-
-
-
-
 </ul>
 
     </div>
@@ -327,22 +322,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">HW1</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-stats">Summary Stats</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normality-testing">Normality Testing</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jarque-bera-test">Jarque-Bera Test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#t-tests">t-tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-stats">Summary Stats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normality-testing">Normality Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jarque-bera-test">Jarque-Bera Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-tests">t-tests</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#autocorrelation-testing">Autocorrelation Testing</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acf-and-pacf">ACF and PACF</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ljung-box-testing">Ljung-Box Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autocorrelation-testing">Autocorrelation Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acf-and-pacf">ACF and PACF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ljung-box-testing">Ljung-Box Testing</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-and-residuals-analysis">Regression and Residuals Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-and-residuals-analysis">Regression and Residuals Analysis</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -353,7 +346,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="hw1">
+  <section class="tex2jax_ignore mathjax_ignore" id="hw1">
 <h1>HW1<a class="headerlink" href="#hw1" title="Link to this heading">#</a></h1>
 <p>For Homework 1, I will opt to do part II of the homework. Firstly, I will be importing several libraries for my analysis and cleaning the data. The data will be pulled from the yfinance API for 5-years of historical trading data ranging from 2019-08-01 to 2024-08-01. The two commodities for these will be the Crude Oil Oct 2024 futures market and the Natural Gas Oct 2024 futures market.</p>
 <div class="cell tag_hide-input docutils container">
@@ -456,9 +449,6 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%***********************]  1 of 1 completed
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%***********************]  1 of 1 completed
 </pre></div>
 </div>
@@ -467,9 +457,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
 <section id="visualization">
-<h1>Visualization<a class="headerlink" href="#visualization" title="Link to this heading">#</a></h1>
+<h2>Visualization<a class="headerlink" href="#visualization" title="Link to this heading">#</a></h2>
 <p>Below is an interactive dashboard using Dash. You can select to view the time series of any graphs with the dropdown menu on top.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -519,23 +508,22 @@ document.write(`
     <span class="k">return</span> <span class="n">fig</span>
 
 
-<span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">port</span><span class="o">=</span><span class="mi">8051</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">port</span><span class="o">=</span><span class="mi">8053</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">dash</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;dash&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html">
+        <iframe
+            width="100%"
+            height="650"
+            src="http://127.0.0.1:8053/"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -559,12 +547,12 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;NG Log Returns&#39;)
 </pre></div>
 </div>
-<img alt="_images/75d81a994c1d520a5ea2d18255a292e122209d02ac717bb750af24e189413309.png" src="_images/75d81a994c1d520a5ea2d18255a292e122209d02ac717bb750af24e189413309.png" />
+<img alt="_images/ce40daa251d1e61c79d2d5db9b1461ad409dd5ee21ba9bfe4a77cddfa896f626.png" src="_images/ce40daa251d1e61c79d2d5db9b1461ad409dd5ee21ba9bfe4a77cddfa896f626.png" />
 </div>
 </div>
 </section>
 <section id="summary-stats">
-<h1>Summary Stats<a class="headerlink" href="#summary-stats" title="Link to this heading">#</a></h1>
+<h2>Summary Stats<a class="headerlink" href="#summary-stats" title="Link to this heading">#</a></h2>
 <p>Next are summary statistics for the data.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -703,9 +691,9 @@ document.write(`
 </div>
 </section>
 <section id="normality-testing">
-<h1>Normality Testing<a class="headerlink" href="#normality-testing" title="Link to this heading">#</a></h1>
+<h2>Normality Testing<a class="headerlink" href="#normality-testing" title="Link to this heading">#</a></h2>
 <section id="jarque-bera-test">
-<h2>Jarque-Bera Test<a class="headerlink" href="#jarque-bera-test" title="Link to this heading">#</a></h2>
+<h3>Jarque-Bera Test<a class="headerlink" href="#jarque-bera-test" title="Link to this heading">#</a></h3>
 <p>Now we will test for the normality of the data by using the Jarque-Bera (JB) test. We recall that</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -748,7 +736,7 @@ NG Log Returns JB Test - Statistic= 21.7324, p-val= 0.0000
 </div>
 </section>
 <section id="t-tests">
-<h2>t-tests<a class="headerlink" href="#t-tests" title="Link to this heading">#</a></h2>
+<h3>t-tests<a class="headerlink" href="#t-tests" title="Link to this heading">#</a></h3>
 <p>We will also compute the skewness and excess-kurtosis t-tests for each of the series using the following formulas:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -776,7 +764,7 @@ t_S=\frac{\hat{S}^2(r)}{\sqrt{6/T}} \quad t_K=\frac{(\hat{K}(r)-3)^2}{\sqrt{24/T
 </details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crude Log Returns skewness t=3.653382700465989, kurtosis t=6.417549258128314
-NG Log Returns skewness t=0.39178695965006083, kurtosis t=46.20685587284676
+NG Log Returns skewness t=0.391786959650061, kurtosis t=46.20685587284676
 </pre></div>
 </div>
 </div>
@@ -784,9 +772,9 @@ NG Log Returns skewness t=0.39178695965006083, kurtosis t=46.20685587284676
 </section>
 </section>
 <section id="autocorrelation-testing">
-<h1>Autocorrelation Testing<a class="headerlink" href="#autocorrelation-testing" title="Link to this heading">#</a></h1>
+<h2>Autocorrelation Testing<a class="headerlink" href="#autocorrelation-testing" title="Link to this heading">#</a></h2>
 <section id="acf-and-pacf">
-<h2>ACF and PACF<a class="headerlink" href="#acf-and-pacf" title="Link to this heading">#</a></h2>
+<h3>ACF and PACF<a class="headerlink" href="#acf-and-pacf" title="Link to this heading">#</a></h3>
 <p>The next cell will plot and examine the ACF and PACF of the NG log returns, the dependent variable in the regression. There seems to be no significant spikes in either plot for the data, suggesting that the NG log returns data likely does not follow a simple AR process and may be independent over time.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -807,12 +795,12 @@ NG Log Returns skewness t=0.39178695965006083, kurtosis t=46.20685587284676
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/55be1e4531c438b0c2103e054374fd1d4355b42312f393314ebeed4c326b5ea7.png" src="_images/55be1e4531c438b0c2103e054374fd1d4355b42312f393314ebeed4c326b5ea7.png" />
+<img alt="_images/e46da4cfcb0fdb800bc79b474fb9771c5757c68c99576cf0f3982f9902f476de.png" src="_images/e46da4cfcb0fdb800bc79b474fb9771c5757c68c99576cf0f3982f9902f476de.png" />
 </div>
 </div>
 </section>
 <section id="ljung-box-testing">
-<h2>Ljung-Box Testing<a class="headerlink" href="#ljung-box-testing" title="Link to this heading">#</a></h2>
+<h3>Ljung-Box Testing<a class="headerlink" href="#ljung-box-testing" title="Link to this heading">#</a></h3>
 <p>Next, we perform a Ljung-Box test to autocorrelation of multiple lags at a time. We use the statsmodel API built-in function the LB test, which returns a dataframe of the LB stats/p-values for the first 10 lags. We consider the following hypotheses:</p>
 <p>\begin{aligned}
 H_0: &amp; \ \text{The lags up to lag } m \text{ are all zero.} \
@@ -913,7 +901,7 @@ H_1: &amp; \ \text{The lags up to lag } m \text{ are not all zero and there is a
 </section>
 </section>
 <section id="regression-and-residuals-analysis">
-<h1>Regression and Residuals Analysis<a class="headerlink" href="#regression-and-residuals-analysis" title="Link to this heading">#</a></h1>
+<h2>Regression and Residuals Analysis<a class="headerlink" href="#regression-and-residuals-analysis" title="Link to this heading">#</a></h2>
 <p>Finally, we will use an OLS model to estimate the affect of the Crude Log Returns on the NG Log Returns. For the constant, we have a coefficient of -.001, std error of .001, t=-.929, p=.353. The p-value suggests that it has a weak statistical significance to the model. For the independent variable, crude_log_returns, we have a coefficient of .1545, a std error of .043, t=3.600, and p=0.000, which indicates that it has a stronger statistical significance on ng_log_returns. In addition, we have an R^2 value of .009, indicating that there is little correlation and explanatory power between the variables.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -940,7 +928,7 @@ Dep. Variable:         ng_log_returns   R-squared:                       0.009
 Model:                            OLS   Adj. R-squared:                  0.009
 Method:                 Least Squares   F-statistic:                     12.96
 Date:                Mon, 09 Sep 2024   Prob (F-statistic):           0.000330
-Time:                        01:02:29   Log-Likelihood:                 2515.5
+Time:                        11:27:00   Log-Likelihood:                 2515.5
 No. Observations:                1369   AIC:                            -5027.
 Df Residuals:                    1367   BIC:                            -5016.
 Df Model:                           1                                         
@@ -988,7 +976,7 @@ Notes:
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/00f24aa786f6a2a8802fe362187ddf13e363ce27cba434c1ec2206c8e57afeb4.png" src="_images/00f24aa786f6a2a8802fe362187ddf13e363ce27cba434c1ec2206c8e57afeb4.png" />
+<img alt="_images/07ad879acf58b8ef5acc8fa7bfd3210cb0b65190ca3f74470cacda5d36d729d8.png" src="_images/07ad879acf58b8ef5acc8fa7bfd3210cb0b65190ca3f74470cacda5d36d729d8.png" />
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1067,6 +1055,7 @@ Notes:
 </div></div></div>
 </div>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1104,7 +1093,7 @@ Notes:
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        <p class="prev-next-title">Time Series Econometrics Assignments</p>
       </div>
     </a>
 </div>
@@ -1123,22 +1112,20 @@ Notes:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">HW1</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-stats">Summary Stats</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normality-testing">Normality Testing</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jarque-bera-test">Jarque-Bera Test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#t-tests">t-tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-stats">Summary Stats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normality-testing">Normality Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jarque-bera-test">Jarque-Bera Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-tests">t-tests</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#autocorrelation-testing">Autocorrelation Testing</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acf-and-pacf">ACF and PACF</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ljung-box-testing">Ljung-Box Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autocorrelation-testing">Autocorrelation Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acf-and-pacf">ACF and PACF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ljung-box-testing">Ljung-Box Testing</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-and-residuals-analysis">Regression and Residuals Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-and-residuals-analysis">Regression and Residuals Analysis</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
