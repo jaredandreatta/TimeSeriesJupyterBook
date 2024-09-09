@@ -21,23 +21,89 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-ts_crude = (crude_ret_skew**2)/(np.sqrt(6/len(prices['crude_log_returns'])))
-tk_crude = (crude_ret_kurt-3)**2/(np.sqrt(24/len(prices['crude_log_returns'])))
+import dash
+from dash import dcc, html
+from dash.dependencies import Input, Output
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
-ts_ng = (ng_ret_skew**2)/(np.sqrt(6/len(prices['ng_log_returns'])))
-tk_ng = (ng_ret_kurt-3)**2/(np.sqrt(24/len(prices['ng_log_returns'])))
+app = dash.Dash(__name__)
+app.layout = html.Div([
+    html.H1('Brent Crude/Henry Hub NG Prices and Log Returns', style={'textAlign': 'center'}),
+    html.Label('Select Variable'),
+    dcc.Dropdown(
+        id='series-dropdown',
+        options=[
+            {'label': 'Crude Price', 'value': 'crude_price'},
+            {'label': 'NG Price', 'value': 'ng_price'},
+            {'label': 'Crude Log Returns', 'value': 'crude_log_returns'},
+            {'label': 'NG Log Returns', 'value': 'ng_log_returns'}
+        ],
+        value=['crude_price'], 
+        clearable=False,
+        multi=True 
+    ),
+    dcc.Graph(id='price-graph')
+])
+@app.callback(
+    Output('price-graph', 'figure'),
+    Input('series-dropdown', 'value')
+)
+def update_graph(selected_series):
+    fig = make_subplots(rows=len(selected_series), cols=1, shared_xaxes=True, vertical_spacing=0.1)
 
-print(f'Crude Log Returns skewness t={ts_crude}, kurtosis t={tk_crude}')
-print(f'NG Log Returns skewness t={ts_ng}, kurtosis t={tk_ng}')
+    for i, series in enumerate(selected_series):
+        fig.add_trace(go.Scatter(x=prices['Date'], y=prices[series], mode='lines', name=series), row=i+1, col=1)
+        fig.update_yaxes(title_text=series, row=i+1, col=1)
+
+    fig.update_xaxes(title_text='Date', row=len(selected_series), col=1)
+
+    fig.update_layout(height=300 * len(selected_series), showlegend=False)
+    return fig
+
+
+app.run(host='0.0.0.0', proxy='http://0.0.0.0:8050::https://jaredandreatta.github.io/TimeSeriesJupyterBook/hw1.html', port=8051)
+
+
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[8], line 1[0m
-[0;32m----> 1[0m ts_crude [38;5;241m=[39m (crude_ret_skew[38;5;241m*[39m[38;5;241m*[39m[38;5;241m2[39m)[38;5;241m/[39m(np[38;5;241m.[39msqrt([38;5;241m6[39m[38;5;241m/[39m[38;5;28mlen[39m(prices[[38;5;124m'[39m[38;5;124mcrude_log_returns[39m[38;5;124m'[39m])))
-[1;32m      2[0m tk_crude [38;5;241m=[39m (crude_ret_kurt[38;5;241m-[39m[38;5;241m3[39m)[38;5;241m*[39m[38;5;241m*[39m[38;5;241m2[39m[38;5;241m/[39m(np[38;5;241m.[39msqrt([38;5;241m24[39m[38;5;241m/[39m[38;5;28mlen[39m(prices[[38;5;124m'[39m[38;5;124mcrude_log_returns[39m[38;5;124m'[39m])))
-[1;32m      4[0m ts_ng [38;5;241m=[39m (ng_ret_skew[38;5;241m*[39m[38;5;241m*[39m[38;5;241m2[39m)[38;5;241m/[39m(np[38;5;241m.[39msqrt([38;5;241m6[39m[38;5;241m/[39m[38;5;28mlen[39m(prices[[38;5;124m'[39m[38;5;124mng_log_returns[39m[38;5;124m'[39m])))
+[0;31mProxyError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[4], line 42[0m
+[1;32m     38[0m     fig[38;5;241m.[39mupdate_layout(height[38;5;241m=[39m[38;5;241m300[39m [38;5;241m*[39m [38;5;28mlen[39m(selected_series), showlegend[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+[1;32m     39[0m     [38;5;28;01mreturn[39;00m fig
+[0;32m---> 42[0m app[38;5;241m.[39mrun(host[38;5;241m=[39m[38;5;124m'[39m[38;5;124m0.0.0.0[39m[38;5;124m'[39m, proxy[38;5;241m=[39m[38;5;124m'[39m[38;5;124mhttp://0.0.0.0:8050::https://jaredandreatta.github.io/TimeSeriesJupyterBook/hw1.html[39m[38;5;124m'[39m, port[38;5;241m=[39m[38;5;241m8051[39m)
 
-[0;31mNameError[0m: name 'crude_ret_skew' is not defined
-NameError: name 'crude_ret_skew' is not defined
+File [0;32m~/anaconda3/lib/python3.11/site-packages/dash/dash.py:2125[0m, in [0;36mDash.run[0;34m(self, host, port, proxy, debug, jupyter_mode, jupyter_width, jupyter_height, jupyter_server_url, dev_tools_ui, dev_tools_props_check, dev_tools_serve_dev_bundles, dev_tools_hot_reload, dev_tools_hot_reload_interval, dev_tools_hot_reload_watch_interval, dev_tools_hot_reload_max_retry, dev_tools_silence_routes_logging, dev_tools_prune_errors, **flask_run_options)[0m
+[1;32m   2123[0m     verify_url_part(served_url[38;5;241m.[39mscheme, protocol, [38;5;124m"[39m[38;5;124mprotocol[39m[38;5;124m"[39m)
+[1;32m   2124[0m     verify_url_part(served_url[38;5;241m.[39mhostname, host, [38;5;124m"[39m[38;5;124mhost[39m[38;5;124m"[39m)
+[0;32m-> 2125[0m     verify_url_part(served_url[38;5;241m.[39mport, port, [38;5;124m"[39m[38;5;124mport[39m[38;5;124m"[39m)
+[1;32m   2127[0m     display_url [38;5;241m=[39m (
+[1;32m   2128[0m         proxied_url[38;5;241m.[39mscheme,
+[1;32m   2129[0m         proxied_url[38;5;241m.[39mhostname,
+[1;32m   2130[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124m:[39m[38;5;132;01m{[39;00mproxied_url[38;5;241m.[39mport[38;5;132;01m}[39;00m[38;5;124m"[39m [38;5;28;01mif[39;00m proxied_url[38;5;241m.[39mport [38;5;28;01melse[39;00m [38;5;124m"[39m[38;5;124m"[39m,
+[1;32m   2131[0m         path,
+[1;32m   2132[0m     )
+[1;32m   2133[0m [38;5;28;01melse[39;00m:
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/dash/dash.py:2114[0m, in [0;36mDash.run.<locals>.verify_url_part[0;34m(served_part, url_part, part_name)[0m
+[1;32m   2112[0m [38;5;28;01mdef[39;00m [38;5;21mverify_url_part[39m(served_part, url_part, part_name):
+[1;32m   2113[0m     [38;5;28;01mif[39;00m served_part [38;5;241m!=[39m url_part:
+[0;32m-> 2114[0m         [38;5;28;01mraise[39;00m ProxyError(
+[1;32m   2115[0m             [38;5;124mf[39m[38;5;124m"""[39m
+[1;32m   2116[0m [38;5;124m            [39m[38;5;132;01m{[39;00mpart_name[38;5;132;01m}[39;00m[38;5;124m: [39m[38;5;132;01m{[39;00murl_part[38;5;132;01m}[39;00m[38;5;124m is incompatible with the proxy:[39m
+[1;32m   2117[0m [38;5;124m                [39m[38;5;132;01m{[39;00mproxy[38;5;132;01m}[39;00m
+[1;32m   2118[0m [38;5;124m            To see your app at [39m[38;5;132;01m{[39;00mproxied_url[38;5;241m.[39mgeturl()[38;5;132;01m}[39;00m[38;5;124m,[39m
+[1;32m   2119[0m [38;5;124m            you must use [39m[38;5;132;01m{[39;00mpart_name[38;5;132;01m}[39;00m[38;5;124m: [39m[38;5;132;01m{[39;00mserved_part[38;5;132;01m}[39;00m
+[1;32m   2120[0m [38;5;124m            [39m[38;5;124m"""[39m
+[1;32m   2121[0m         )
+
+[0;31mProxyError[0m: port: 8051 is incompatible with the proxy:
+    http://0.0.0.0:8050::https://jaredandreatta.github.io/TimeSeriesJupyterBook/hw1.html
+To see your app at https://jaredandreatta.github.io/TimeSeriesJupyterBook/hw1.html,
+you must use port: 8050
+ProxyError: port: 8051 is incompatible with the proxy:
+    http://0.0.0.0:8050::https://jaredandreatta.github.io/TimeSeriesJupyterBook/hw1.html
+To see your app at https://jaredandreatta.github.io/TimeSeriesJupyterBook/hw1.html,
+you must use port: 8050
 
