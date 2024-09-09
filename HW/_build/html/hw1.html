@@ -514,7 +514,7 @@ document.write(`
     <span class="k">return</span> <span class="n">fig</span>
 
 
-<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="s1">&#39;http://0.0.0.0:8050::https://jaredandreatta.github.io/TimeSeriesJupyterBook/hw1.html&#39;</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8051</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -524,7 +524,7 @@ document.write(`
         <iframe
             width="100%"
             height="650"
-            src="http://0.0.0.0:8050/"
+            src="http://0.0.0.0:8051/"
             frameborder="0"
             allowfullscreen
             
@@ -741,9 +741,9 @@ NG Log Returns JB Test - Statistic= 21.7324, p-val= 0.0000
 <p>We will also compute the skewness and excess-kurtosis t-tests for each of the series using the following formulas:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-t_S=\frac{\hat{S}^2(r)}{\sqrt{6/T}} \quad t_K=\frac{(\hat{K}(r)-3)^2}{\sqrt{24/T}}
+t_S=\frac{\hat{S}(r)}{\sqrt{6/T}} \quad t_K=\frac{(\hat{K}(r)-3)}{\sqrt{24/T}}
 \end{align*}\]</div>
-<p>For crude, the t-tests indicate that there is a large degree of positive skewness and leptokurtic geometry. This seems intuitive, as oil markets are extremely volatile. For natural gas, we have a more modest t-stat for skewness of .39, suggesting that the distribution of returns is more symmetric than that of oil returns. On the other hand, the NG log returns series has a kurtosis t-statistic of 46.21, indicating that the distribution is extremely leptokurtic and perhaps that natural gas markets are very prone to price shocks in either direction.</p>
+<p>For crude, the t-tests indicate that there is a large degree of negative skewness and platykurtic geometry. This indicates that the returns are far to the left of the mean (which is most likely negative in this case) and is with very thin “tails”, indicating that extreme returns values are very unlikely, which can partly be attributed to the fact that we filtered out extreme outliers. For natural gas, we have another t-stat for skewness of -2.43, suggesting that the distribution of returns is more symmetric than that of oil returns, but still with a high degree of negative skewness. On the other hand, the NG log returns series has a kurtosis t-statistic of -18.68, indicating that the distribution is extremely platykurtic and perhaps that natural gas markets are very unlikely to experience extreme returns. Based off of simple observation, it is easy to reject the null hypothesis on the 95% confidence interval for all t-statistics, implying that the data is not normally distributed.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -751,11 +751,11 @@ t_S=\frac{\hat{S}^2(r)}{\sqrt{6/T}} \quad t_K=\frac{(\hat{K}(r)-3)^2}{\sqrt{24/T
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts_crude</span> <span class="o">=</span> <span class="p">(</span><span class="n">skew</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">])))</span>
-<span class="n">tk_crude</span> <span class="o">=</span> <span class="p">((</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">])</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">24</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">])))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts_crude</span> <span class="o">=</span> <span class="p">(</span><span class="n">skew</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">]))</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">])))</span>
+<span class="n">tk_crude</span> <span class="o">=</span> <span class="p">((</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">])</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">24</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;crude_log_returns&#39;</span><span class="p">])))</span>
 
-<span class="n">ts_ng</span> <span class="o">=</span> <span class="p">(</span><span class="n">skew</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_log_returns&#39;</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_log_returns&#39;</span><span class="p">])))</span>
-<span class="n">tk_ng</span> <span class="o">=</span> <span class="p">(</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_log_returns&#39;</span><span class="p">])</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">24</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_log_returns&#39;</span><span class="p">])))</span>
+<span class="n">ts_ng</span> <span class="o">=</span> <span class="p">(</span><span class="n">skew</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_log_returns&#39;</span><span class="p">]))</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_log_returns&#39;</span><span class="p">])))</span>
+<span class="n">tk_ng</span> <span class="o">=</span> <span class="p">(</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_log_returns&#39;</span><span class="p">])</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">24</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s1">&#39;ng_log_returns&#39;</span><span class="p">])))</span>
 
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Crude Log Returns skewness t=</span><span class="si">{</span><span class="n">ts_crude</span><span class="si">}</span><span class="s1">, kurtosis t=</span><span class="si">{</span><span class="n">tk_crude</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -765,8 +765,8 @@ t_S=\frac{\hat{S}^2(r)}{\sqrt{6/T}} \quad t_K=\frac{(\hat{K}(r)-3)^2}{\sqrt{24/T
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crude Log Returns skewness t=3.653382700465989, kurtosis t=6.417549258128314
-NG Log Returns skewness t=0.391786959650061, kurtosis t=46.20685587284676
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crude Log Returns skewness t=-7.428662594935456, kurtosis t=-6.96197816727204
+NG Log Returns skewness t=-2.43269710211061, kurtosis t=-18.68104904654169
 </pre></div>
 </div>
 </div>
@@ -931,7 +931,7 @@ Dep. Variable:         ng_log_returns   R-squared:                       0.009
 Model:                            OLS   Adj. R-squared:                  0.009
 Method:                 Least Squares   F-statistic:                     12.96
 Date:                Mon, 09 Sep 2024   Prob (F-statistic):           0.000330
-Time:                        14:37:37   Log-Likelihood:                 2515.5
+Time:                        15:11:33   Log-Likelihood:                 2515.5
 No. Observations:                1369   AIC:                            -5027.
 Df Residuals:                    1367   BIC:                            -5016.
 Df Model:                           1                                         
