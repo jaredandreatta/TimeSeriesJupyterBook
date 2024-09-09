@@ -1,0 +1,78 @@
+Traceback (most recent call last):
+  File "/Users/jayco/anaconda3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/jayco/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jayco/anaconda3/lib/python3.11/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jayco/anaconda3/lib/python3.11/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jayco/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/jayco/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/jayco/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/jayco/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import dash
+from dash import dcc, html
+from dash.dependencies import Input, Output
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+app = dash.Dash(__name__)
+app.layout = html.Div([
+    html.H1('Brent Crude/Henry Hub NG Prices and Log Returns', style={'textAlign': 'center'}),
+    html.Label('Select Variable'),
+    dcc.Dropdown(
+        id='series-dropdown',
+        options=[
+            {'label': 'Crude Price', 'value': 'crude_price'},
+            {'label': 'NG Price', 'value': 'ng_price'},
+            {'label': 'Crude Log Returns', 'value': 'crude_log_returns'},
+            {'label': 'NG Log Returns', 'value': 'ng_log_returns'}
+        ],
+        value=['crude_price'], 
+        clearable=False,
+        multi=True 
+    ),
+    dcc.Graph(id='price-graph')
+])
+@app.callback(
+    Output('price-graph', 'figure'),
+    Input('series-dropdown', 'value')
+)
+def update_graph(selected_series):
+    fig = make_subplots(rows=len(selected_series), cols=1, shared_xaxes=True, vertical_spacing=0.1)
+
+    for i, series in enumerate(selected_series):
+        fig.add_trace(go.Scatter(x=prices['Date'], y=prices[series], mode='lines', name=series), row=i+1, col=1)
+        fig.update_yaxes(title_text=series, row=i+1, col=1)
+
+    fig.update_xaxes(title_text='Date', row=len(selected_series), col=1)
+
+    fig.update_layout(height=300 * len(selected_series), showlegend=False)
+    return fig
+
+
+app.run_server(debug=True,port=8051)
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[4], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mdash[39;00m
+[1;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdash[39;00m [38;5;28;01mimport[39;00m dcc, html
+[1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdash[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdependencies[39;00m [38;5;28;01mimport[39;00m Input, Output
+
+[0;31mModuleNotFoundError[0m: No module named 'dash'
+ModuleNotFoundError: No module named 'dash'
+
