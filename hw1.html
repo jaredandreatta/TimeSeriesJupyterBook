@@ -514,7 +514,7 @@ document.write(`
     <span class="k">return</span> <span class="n">fig</span>
 
 
-<span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="s1">&#39;http://0.0.0.0:8050::https://jaredandreatta.github.io/TimeSeriesJupyterBook/hw1.html&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -524,7 +524,7 @@ document.write(`
         <iframe
             width="100%"
             height="650"
-            src="http://127.0.0.1:8050/"
+            src="http://0.0.0.0:8050/"
             frameborder="0"
             allowfullscreen
             
@@ -931,7 +931,7 @@ Dep. Variable:         ng_log_returns   R-squared:                       0.009
 Model:                            OLS   Adj. R-squared:                  0.009
 Method:                 Least Squares   F-statistic:                     12.96
 Date:                Mon, 09 Sep 2024   Prob (F-statistic):           0.000330
-Time:                        12:33:17   Log-Likelihood:                 2515.5
+Time:                        14:17:02   Log-Likelihood:                 2515.5
 No. Observations:                1369   AIC:                            -5027.
 Df Residuals:                    1367   BIC:                            -5016.
 Df Model:                           1                                         
