@@ -344,6 +344,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arima-forecast">3. ARIMA Forecast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-residuals">4. Handling Residuals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ols-estimation">OLS Estimation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -392,7 +396,7 @@ comparison.</p></li>
 <section id="id4">
 <h2>4.<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> First, estimate a model for the relationship between the stationary outcome variable and the stationary versions of the main explanatory variables using OLS</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> First, estimate a model for the relationship between the stationary outcome variable and the stationary versions of the main explanatory variables using OLS</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Second, estimate the regression model while fitting an ARMA model to the residuals</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Third, either (1) add lags of Y and/or X’s using dynlm() until the residual autocorrelation is reduced, or (2) use HAC/Newey-West standard errors.</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Compare estimates of the coefficients and standard errors on the two or three main explanatory variables from these three approaches</p></li>
@@ -726,7 +730,7 @@ to be important, but could their importance go away once you control for the big
 Dep. Variable:        MISO/PJMC RTLMP   No. Observations:                 1462
 Model:                 ARIMA(1, 1, 1)   Log Likelihood               -6099.831
 Date:                Mon, 07 Oct 2024   AIC                          12205.662
-Time:                        16:39:00   BIC                          12221.522
+Time:                        17:19:51   BIC                          12221.522
 Sample:                    05-30-2019   HQIC                         12211.578
                          - 05-30-2023                                         
 Covariance Type:                  opg                                         
@@ -811,6 +815,12 @@ Warnings:
 <img alt="_images/122c007c65c218799681b3c08c30d9830eda5a6227f258b02f9e679d48ce5362.png" src="_images/122c007c65c218799681b3c08c30d9830eda5a6227f258b02f9e679d48ce5362.png" />
 </div>
 </div>
+</section>
+<section id="handling-residuals">
+<h2>4. Handling Residuals<a class="headerlink" href="#handling-residuals" title="Link to this heading">#</a></h2>
+<section id="ols-estimation">
+<h3>OLS Estimation<a class="headerlink" href="#ols-estimation" title="Link to this heading">#</a></h3>
+<p>We will use an OLS model where we regress MISO/PJMC RT Congestion Price Spread, MISO\PJMC RT Load Difference, and MISO\PJMC Net Load Difference on our target, MISO/PJMC RT LMP Spread.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regressors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MISO/PJMC RT CONG&#39;</span><span class="p">,</span> <span class="s1">&#39;MISO/PJMC RT LOAD&#39;</span><span class="p">,</span> <span class="s1">&#39;MISO/PJM Net Load&#39;</span><span class="p">]</span>
@@ -819,45 +829,44 @@ Warnings:
 <span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
 <span class="n">ols_model</span> <span class="o">=</span> <span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">X</span><span class="p">)</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">ols_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<span class="n">ols_results</span> <span class="o">=</span> <span class="n">ols_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">residuals</span> <span class="o">=</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">resid</span>
+<span class="n">arma_resid</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">residuals</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arma_resid</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                               SARIMAX Results                                
 ==============================================================================
-Dep. Variable:        MISO/PJMC RTLMP   R-squared:                       0.338
-Model:                            OLS   Adj. R-squared:                  0.337
-Method:                 Least Squares   F-statistic:                     311.0
-Date:                Mon, 07 Oct 2024   Prob (F-statistic):          4.58e-163
-Time:                        16:39:00   Log-Likelihood:                -7097.8
-No. Observations:                1828   AIC:                         1.420e+04
-Df Residuals:                    1824   BIC:                         1.423e+04
-Df Model:                           3                                         
-Covariance Type:            nonrobust                                         
-=====================================================================================
-                        coef    std err          t      P&gt;|t|      [0.025      0.975]
--------------------------------------------------------------------------------------
-const                 0.8049      1.599      0.503      0.615      -2.332       3.942
-MISO/PJMC RT CONG    -0.8772      0.029    -30.162      0.000      -0.934      -0.820
-MISO/PJMC RT LOAD     0.0003   5.35e-05      4.791      0.000       0.000       0.000
-MISO/PJM Net Load -6.238e-06   7.46e-05     -0.084      0.933      -0.000       0.000
+Dep. Variable:                      y   No. Observations:                 1828
+Model:                 ARIMA(1, 0, 1)   Log Likelihood               -7061.866
+Date:                Mon, 07 Oct 2024   AIC                          14131.733
+Time:                        17:19:52   BIC                          14153.777
+Sample:                    05-30-2019   HQIC                         14139.864
+                         - 05-30-2024                                         
+Covariance Type:                  opg                                         
 ==============================================================================
-Omnibus:                     2480.118   Durbin-Watson:                   1.608
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):          2176018.832
-Skew:                           6.961   Prob(JB):                         0.00
-Kurtosis:                     171.450   Cond. No.                     1.23e+05
-==============================================================================
+                 coef    std err          z      P&gt;|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        8.44e-05      0.404      0.000      1.000      -0.792       0.792
+ar.L1          0.2515      0.105      2.403      0.016       0.046       0.457
+ma.L1         -0.0577      0.110     -0.523      0.601      -0.274       0.159
+sigma2       132.7451      0.658    201.600      0.000     131.455     134.036
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):           1676124.20
+Prob(Q):                              1.00   Prob(JB):                         0.00
+Heteroskedasticity (H):               5.98   Skew:                             6.08
+Prob(H) (two-sided):                  0.00   Kurtosis:                       150.84
+===================================================================================
 
-Notes:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-[2] The condition number is large, 1.23e+05. This might indicate that there are
-strong multicollinearity or other numerical problems.
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -936,6 +945,10 @@ strong multicollinearity or other numerical problems.
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arima-forecast">3. ARIMA Forecast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-residuals">4. Handling Residuals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ols-estimation">OLS Estimation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
