@@ -486,7 +486,7 @@ to be important, but could their importance go away once you control for the big
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reading in data and preparing relevant data for analysis.</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/Users/jayco/OneDrive/Mines/FALL2024/EBGN594/MISO_PJM_data/atc_data.csv&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Jared\OneDrive\Mines\FALL2024\EBGN594\MISO_PJM_data\atc_data.csv&quot;</span><span class="p">)</span>
 
 <span class="c1"># Strip whitespace from column names</span>
 <span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
@@ -511,74 +511,6 @@ to be important, but could their importance go away once you control for the big
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Reading in data and preparing relevant data for analysis.</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/Users/jayco/OneDrive/Mines/FALL2024/EBGN594/MISO_PJM_data/atc_data.csv&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Strip whitespace from column names</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-<span class="nn">File ~\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:948,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
-<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">delimiter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">944</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">945</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">946</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">948</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File ~\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:611,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">610</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">611</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">613</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="k">return</span> <span class="n">parser</span>
-
-<span class="nn">File ~\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1448,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1445</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1447</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1448</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-
-<span class="nn">File ~\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1705,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1703</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1704</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1705</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1706</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1707</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1708</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1709</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1710</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1711</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1712</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1713</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1714</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1715</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1716</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File ~\anaconda3\Lib\site-packages\pandas\io\common.py:863,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">859</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
-<span class="g g-Whitespace">    </span><span class="mi">860</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">861</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">862</span>         <span class="c1"># Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">863</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">864</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">865</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">866</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">867</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">871</span>         <span class="c1"># Binary mode</span>
-<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/Users/jayco/OneDrive/Mines/FALL2024/EBGN594/MISO_PJM_data/atc_data.csv&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <section id="unit-root-testing">
 <h2>1. Unit Root Testing<a class="headerlink" href="#unit-root-testing" title="Link to this heading">#</a></h2>
@@ -736,7 +668,7 @@ to be important, but could their importance go away once you control for the big
 <h2>2. ARIMA Model<a class="headerlink" href="#arima-model" title="Link to this heading">#</a></h2>
 <section id="acf-and-pacf">
 <h3>ACF and PACF<a class="headerlink" href="#acf-and-pacf" title="Link to this heading">#</a></h3>
-<p>First, we plot the autocorrelation function and partial autocorrelation function to help us determine model parameters. As can be seen in the chart below, there is a significant spike on both charts and p=q=1 that lies outside of the 95% confidence interval. We will use these as parameters when we create our model. Upon further examination, the BIC is indeed minimized with ARMA(1,1,1), so this model will be used for the rest of the analysis.</p>
+<p>First, we plot the autocorrelation function and partial autocorrelation function to help us determine model parameters. As can be seen in the chart below, there is a significant spike on both charts and p=q=1 that lies outside of the 95% confidence interval. We will use these as parameters when we create our model. Upon further examination, the <strong>BIC is indeed minimized with ARMA(1,1,1)</strong>, so this model will be used for the rest of the analysis.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -755,13 +687,13 @@ to be important, but could their importance go away once you control for the big
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/9815227bb07c493f0543f73764a876eb042c830399e1cc38e4e966cc04898dd0.png" src="_images/9815227bb07c493f0543f73764a876eb042c830399e1cc38e4e966cc04898dd0.png" />
+<img alt="_images/7bcb317966ea3ea28043e8ff205e43ad49c361f97413899834fd74e4049f066d.png" src="_images/7bcb317966ea3ea28043e8ff205e43ad49c361f97413899834fd74e4049f066d.png" />
 </div>
 </div>
 </section>
 <section id="model-selection">
 <h3>Model Selection<a class="headerlink" href="#model-selection" title="Link to this heading">#</a></h3>
-<p>The criterion used to determine the best model parameters is the <strong>Bayesian Information Criteria</strong>. When we use the ARIMA(1,1,1) model, we obtain a <strong>value of 12221.522</strong>. This number is quite high, which indicates that the model may still have a <strong>poor fit with the data</strong>. The estimated parameters for the model, namely the AR(1) and MA(1) coefficients, are .1488 and -.9996 respectively. Each of these coefficients have a negligible p-value as well, indicating that they are most likely statistically significant. The “Sigma2” coefficient denotes the variance of the residuals. The variance is quite high and appears to also be statistically significant. Some other interesting facts about the model to note are some of the diagnostic tests. The LB Q-stat has a p-value of .78, which entails that there is a high probability of serial autocorrelation in the model. The JB Test Statistic is extremely low with a low p-value, which means the residuals are not normally distributed. Finally, the p-value for Heteroskedasticity is 0, which means that the residuals are most likely heteroskedastic (i.e. the residuals have non-constant variance.)</p>
+<p>The criterion used to determine the best model parameters is the Bayesian Information Criteria. When we use the ARIMA(1,1,1) model, we obtain a value of 12221.522. This number is quite high, which indicates that the model may still have a poor fit with the data. The estimated parameters for the model, namely the <strong>AR(1) and MA(1) coefficients, are .1488 and -.9996 respectively</strong>. Each of these coefficients have a negligible p-value as well, indicating that they are <strong>most likely statistically significant</strong>. The “Sigma2” coefficient denotes the variance of the residuals. The <strong>variance of residuals is quite high and appears to also be statistically significant</strong>. Some other interesting facts about the model to note are some of the diagnostic tests. The <strong>LB Q-stat has a p-value of .78, which entails that there is a high probability of serial autocorrelation in the model</strong>. The <strong>JB Test Statistic is extremely low with a low p-value</strong>, which means the <strong>residuals are not normally distributed</strong>. Finally, the <strong>p-value for Heteroskedasticity is 0</strong>, which means that the <strong>residuals are most likely heteroskedastic (i.e. the residuals have non-constant variance.)</strong></p>
 <p>Note that the results do not include a constant. So the equation for the linear model is as such:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -794,7 +726,7 @@ to be important, but could their importance go away once you control for the big
 Dep. Variable:        MISO/PJMC RTLMP   No. Observations:                 1462
 Model:                 ARIMA(1, 1, 1)   Log Likelihood               -6099.831
 Date:                Mon, 07 Oct 2024   AIC                          12205.662
-Time:                        12:09:36   BIC                          12221.522
+Time:                        16:39:00   BIC                          12221.522
 Sample:                    05-30-2019   HQIC                         12211.578
                          - 05-30-2023                                         
 Covariance Type:                  opg                                         
@@ -802,10 +734,10 @@ Covariance Type:                  opg
                  coef    std err          z      P&gt;|z|      [0.025      0.975]
 ------------------------------------------------------------------------------
 ar.L1          0.1483      0.009     17.063      0.000       0.131       0.165
-ma.L1         -0.9996      0.023    -43.597      0.000      -1.045      -0.955
-sigma2       246.7027      4.736     52.090      0.000     237.420     255.985
+ma.L1         -0.9996      0.023    -43.596      0.000      -1.045      -0.955
+sigma2       246.7027      4.736     52.088      0.000     237.420     255.986
 ===================================================================================
-Ljung-Box (L1) (Q):                   0.08   Jarque-Bera (JB):          31116913.98
+Ljung-Box (L1) (Q):                   0.08   Jarque-Bera (JB):          31116909.91
 Prob(Q):                              0.78   Prob(JB):                         0.00
 Heteroskedasticity (H):              28.01   Skew:                            22.93
 Prob(H) (two-sided):                  0.00   Kurtosis:                       716.48
@@ -873,10 +805,10 @@ Warnings:
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Series Mean:  -0.7501028470487234
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Series Mean:  -0.7501043053086276
 </pre></div>
 </div>
-<img alt="_images/ac008e3a7d00bff01692a096a593a6d549cd3701d87fb9f99286e2bbcc3d4d38.png" src="_images/ac008e3a7d00bff01692a096a593a6d549cd3701d87fb9f99286e2bbcc3d4d38.png" />
+<img alt="_images/122c007c65c218799681b3c08c30d9830eda5a6227f258b02f9e679d48ce5362.png" src="_images/122c007c65c218799681b3c08c30d9830eda5a6227f258b02f9e679d48ce5362.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -899,7 +831,7 @@ Dep. Variable:        MISO/PJMC RTLMP   R-squared:                       0.338
 Model:                            OLS   Adj. R-squared:                  0.337
 Method:                 Least Squares   F-statistic:                     311.0
 Date:                Mon, 07 Oct 2024   Prob (F-statistic):          4.58e-163
-Time:                        12:18:14   Log-Likelihood:                -7097.8
+Time:                        16:39:00   Log-Likelihood:                -7097.8
 No. Observations:                1828   AIC:                         1.420e+04
 Df Residuals:                    1824   BIC:                         1.423e+04
 Df Model:                           3                                         
