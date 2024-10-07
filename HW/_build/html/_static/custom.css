@@ -1,6 +1,6 @@
 /* Modify the sidebar width */
 .bd-sidebar {
-    width: 200px; /* Adjust this value to make it smaller */
+    width: 100px; /* Adjust this value to make it smaller */
 }
 
 /* Modify the content width accordingly */
