@@ -1,0 +1,9 @@
+/* Modify the sidebar width */
+.bd-sidebar {
+    width: 200px; /* Adjust this value to make it smaller */
+}
+
+/* Modify the content width accordingly */
+.bd-main {
+    margin-left: 220px; /* Adjust this value in sync with the sidebar width */
+}
