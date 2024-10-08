@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Task List &#8212; EBGN594 HW</title>
+    <title>HW2 &#8212; EBGN594 HW</title>
   
   
   
@@ -62,6 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'hw2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="HW1" href="hw1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -173,8 +172,9 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="hw1.html">HW1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">HW2</a></li>
 </ul>
 
     </div>
@@ -313,7 +313,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Task List</h1>
+    <h1>HW2</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -323,18 +323,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Task List</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hw2">HW2</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-root-testing">1. Unit Root Testing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adf-for-all-series">ADF For All Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adf-cadf-for-outcome-variable">ADF/CADF For Outcome Variable</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arima-model">2. ARIMA Model</a><ul class="nav section-nav flex-column">
@@ -343,11 +334,21 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arima-forecast">3. ARIMA Forecast</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-residuals">4. Handling Residuals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-residuals">4. Handling Residuals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ols-with-default-standard-errors">OLS with Default Standard Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hac-standard-errors">HAC Standard Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arma-1-1-residual-moddel">ARMA(1,1) Residual Moddel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-autocorrelation">Testing For Autocorrelation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-our-equation">Writing our equation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-interpretation">5. Causal Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-minor-variables">6. Using the Minor Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-with-minor-variables">Regression With Minor Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-with-all-variables">Regression With All Variables</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -358,71 +359,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="task-list">
-<h1>Task List<a class="headerlink" href="#task-list" title="Link to this heading">#</a></h1>
-<section id="id1">
-<h2>1.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Univariate ADF for all variables and decide whether differencing/log-differencing is required. State which one used and why and put results into sentences.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> For outcome variable, report more detailed ADF and CADF as follows:</p>
-<ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Decide whether to use Case 4 or 2. Write equations for hypothesis tests, null and alternative hypotheses, and provide evidence whether to accept or reject.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Was there a unit root? Was there a drift or trend or neither?</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> For the CADF test, include your main explanatory variables (or their stationary transformations if required) in the test regression.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox">  Do the ADF and CADF test agree or give conflicting results? Based on the results of the test(s), should you difference the data before moving on or not?</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="id2">
-<h2>2.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Used transformed data to build univariate ARIMA model for stationary outcome variable.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> State and report the selection criteria you used (AIC/BIC, Q-test on residuals, etc.) and any model checking/refining that you performed (e.g., dropping insignificant coefficients, etc.)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Write out the final estimated model as a linear equation AND in lag polynomial form</p></li>
-</ul>
-</section>
-<section id="id3">
-<h2>3.<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Forecast your model on a hold-out sample and plot the forecast along with the realized series for
-comparison.</p></li>
-</ul>
-</section>
-<section id="id4">
-<h2>4.<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> First, estimate a model for the relationship between the stationary outcome variable and the stationary versions of the main explanatory variables using OLS</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Second, estimate the regression model while fitting an ARMA model to the residuals</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Third, either (1) add lags of Y and/or X’s using dynlm() until the residual autocorrelation is reduced, or (2) use HAC/Newey-West standard errors.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Compare estimates of the coefficients and standard errors on the two or three main explanatory variables from these three approaches</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> For your preferred model among the above, provide evidence for whether or not there is autocorrelation remaining in the residuals</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Write out the equation(s) for the model including any model equation for the residuals if applicable.</p></li>
-</ul>
-</section>
-<section id="id5">
-<h2>5.<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Should your model be interpreted as the causal effect of your X variable(s) on Y, or a predictive/correlational relationship? In other words, do we have reason to believe the X variable(s) are
-exogenous to Y or are they jointly determined with Y as the equilibrium of some market process orphysical process?</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Are there important omitted variables that might be correlated with both X and
-Y, i.e., is X picking up the effect of some other related variable that’s not in the model? Feel free to speculate, but be thoughtful.</p></li>
-</ul>
-</section>
-<section id="id6">
-<h2>6.<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> . Suppose you thought the answer to (5) should be “Yes, these are causal effects”. Now run a regression of
-the stationary version of your outcome variable on the stationary version of your additional one or two minor explanatory variables.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Then run a second regression including all of the explanatory variables (both the two or three major ones and the one or two additional ones).</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox">  Discuss the differences in results between these regressions in terms of changes in magnitude and statistical significance of the
-less important regressors when you add/subtract the more important regressors.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox">  When you omit the most important regressors, could the relatively minor ones capture some of this variation and “appear’ ’
-to be important, but could their importance go away once you control for the big ones? Give a brief discussion of what you think is going on.</p></li>
-</ul>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="hw2">
+  <section class="tex2jax_ignore mathjax_ignore" id="hw2">
 <h1>HW2<a class="headerlink" href="#hw2" title="Link to this heading">#</a></h1>
 <p>For this assignment I will be using a dataset of historical prices for electricity futures in MISO and PJM markets at their central hubs, respectively. More specifically, we will be using a target variable of MISO/PJM Real-time Locational Marginal Pricing (RTLMP) spread denoted in ($/MWh), that is the diffrence in price for electricity futures between MISO and PJMC. We will be examining the relationship of price spread with several independent variables, which are listed below. Note that each variable is a daily average price/physical quantity.</p>
 <ul class="simple">
@@ -450,7 +387,8 @@ to be important, but could their importance go away once you control for the big
 <span class="kn">from</span> <span class="nn">statsmodels.graphics.tsaplots</span> <span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
 <span class="kn">from</span> <span class="nn">statsmodels.tsa.arima.model</span> <span class="kn">import</span> <span class="n">ARIMA</span>
 <span class="kn">from</span> <span class="nn">statsmodels.tsa.stattools</span> <span class="kn">import</span> <span class="n">adfuller</span> <span class="k">as</span> <span class="n">adf</span>
-<span class="kn">from</span> <span class="nn">statsmodels.regression.linear_model</span> <span class="kn">import</span> <span class="n">OLS</span><span class="p">,</span> <span class="n">OLSResults</span>
+<span class="kn">from</span> <span class="nn">statsmodels.regression.linear_model</span> <span class="kn">import</span> <span class="n">OLS</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.diagnostic</span> <span class="kn">import</span> <span class="n">acorr_ljungbox</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
 <span class="c1"># Plotting Libraries</span>
@@ -534,7 +472,7 @@ to be important, but could their importance go away once you control for the big
 
 <span class="c1"># Loop through each column in the dataset and compute the ADF test</span>
 <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">adf</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">])</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">adf</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">],</span><span class="n">autolag</span><span class="o">=</span><span class="s1">&#39;BIC&#39;</span><span class="p">)</span>
     <span class="n">adf_results_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
         <span class="s1">&#39;Series&#39;</span><span class="p">:</span> <span class="n">column</span><span class="p">,</span>
         <span class="s1">&#39;Test Statistic&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
@@ -589,79 +527,90 @@ to be important, but could their importance go away once you control for the big
     <tr>
       <th>0</th>
       <td>MISO/PJMC RTLMP</td>
-      <td>-23.659790</td>
+      <td>-36.954586</td>
       <td>0.000000e+00</td>
-      <td>2</td>
-      <td>1825</td>
-      <td>-3.433938</td>
-      <td>-2.863125</td>
-      <td>-2.567614</td>
-      <td>14726.005259</td>
+      <td>0</td>
+      <td>1827</td>
+      <td>-3.433934</td>
+      <td>-2.863123</td>
+      <td>-2.567613</td>
+      <td>14739.323776</td>
     </tr>
     <tr>
       <th>1</th>
       <td>MISO/PJMC RT CONG</td>
-      <td>-8.933435</td>
-      <td>9.676098e-15</td>
-      <td>10</td>
-      <td>1817</td>
-      <td>-3.433954</td>
-      <td>-2.863132</td>
-      <td>-2.567618</td>
-      <td>13078.776148</td>
+      <td>-28.105315</td>
+      <td>0.000000e+00</td>
+      <td>0</td>
+      <td>1827</td>
+      <td>-3.433934</td>
+      <td>-2.863123</td>
+      <td>-2.567613</td>
+      <td>13110.842893</td>
     </tr>
     <tr>
       <th>2</th>
       <td>MISO/PJMC RT LOAD</td>
-      <td>-6.067498</td>
-      <td>1.172210e-07</td>
-      <td>12</td>
-      <td>1815</td>
-      <td>-3.433958</td>
-      <td>-2.863134</td>
-      <td>-2.567618</td>
-      <td>34245.632290</td>
+      <td>-8.609260</td>
+      <td>6.543138e-14</td>
+      <td>6</td>
+      <td>1821</td>
+      <td>-3.433946</td>
+      <td>-2.863128</td>
+      <td>-2.567616</td>
+      <td>34305.184911</td>
     </tr>
     <tr>
       <th>3</th>
       <td>MISO/PJM Net Load</td>
-      <td>-11.358989</td>
-      <td>9.576794e-21</td>
-      <td>5</td>
-      <td>1822</td>
-      <td>-3.433944</td>
-      <td>-2.863128</td>
-      <td>-2.567615</td>
-      <td>34239.612843</td>
+      <td>-21.810158</td>
+      <td>0.000000e+00</td>
+      <td>0</td>
+      <td>1827</td>
+      <td>-3.433934</td>
+      <td>-2.863123</td>
+      <td>-2.567613</td>
+      <td>34273.769510</td>
     </tr>
     <tr>
       <th>4</th>
       <td>PJM LOAD DIFF</td>
-      <td>-4.874092</td>
-      <td>3.915836e-05</td>
-      <td>15</td>
-      <td>1812</td>
-      <td>-3.433964</td>
-      <td>-2.863136</td>
-      <td>-2.567620</td>
-      <td>22284.817213</td>
+      <td>-7.701288</td>
+      <td>1.337203e-11</td>
+      <td>7</td>
+      <td>1820</td>
+      <td>-3.433948</td>
+      <td>-2.863129</td>
+      <td>-2.567616</td>
+      <td>22363.218256</td>
     </tr>
     <tr>
       <th>5</th>
       <td>MISO LOAD DIFF</td>
-      <td>-5.038647</td>
-      <td>1.859916e-05</td>
-      <td>21</td>
-      <td>1806</td>
-      <td>-3.433976</td>
-      <td>-2.863142</td>
-      <td>-2.567623</td>
-      <td>30273.105610</td>
+      <td>-11.315521</td>
+      <td>1.209351e-20</td>
+      <td>6</td>
+      <td>1821</td>
+      <td>-3.433946</td>
+      <td>-2.863128</td>
+      <td>-2.567616</td>
+      <td>30337.243985</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
+</section>
+<section id="adf-cadf-for-outcome-variable">
+<h3>ADF/CADF For Outcome Variable<a class="headerlink" href="#adf-cadf-for-outcome-variable" title="Link to this heading">#</a></h3>
+<p>For the outcome variable, we used a Case 2 ADF test in which there is no trend and only a constant based off of the stationary status of the data. Given there is no lag order ρ or drift term, we have the equation</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\Delta Y_t = \gamma Y_{t-1} + e_t
+\end{align*}\]</div>
+<p>Based on the Case 2 calculation, we can reject the null hypothesis of a presence of a unit root in the data, meaning it is stationary. We can also say that there is no evidence of a trend in the data.</p>
+<p>The CADF test was outsourced to R, since there is no CADF module in Python (for who knows what reason). From running the CADF test on the data, we get a statistic of -50.170593 and a p-value≈0. Therefore we can say that the data is almost certainly stationary even when we controll for covariates.</p>
+<p>Based off the tests we ran, we can confidently say the data is stationary and that there is no differencing required.</p>
 </section>
 </section>
 <section id="arima-model">
@@ -726,7 +675,7 @@ to be important, but could their importance go away once you control for the big
 Dep. Variable:        MISO/PJMC RTLMP   No. Observations:                 1462
 Model:                 ARIMA(1, 1, 1)   Log Likelihood               -6099.831
 Date:                Mon, 07 Oct 2024   AIC                          12205.662
-Time:                        18:32:47   BIC                          12221.522
+Time:                        22:58:41   BIC                          12221.522
 Sample:                    05-30-2019   HQIC                         12211.578
                          - 05-30-2023                                         
 Covariance Type:                  opg                                         
@@ -753,7 +702,7 @@ Warnings:
 </section>
 <section id="arima-forecast">
 <h2>3. ARIMA Forecast<a class="headerlink" href="#arima-forecast" title="Link to this heading">#</a></h2>
-<p>The forecast will use the test subset of the data to formulate a forecast with 95% confidence interval. Note that the forecast quickly converges to a constant, which in this case is the mean of the training data. The mean is <span class="math notranslate nohighlight">\(\approx\)</span> -.7501 $/MWh, indicating that on average, electricity prices in the PJMC market are slightly higher than prices in the MISO market, which would be an interesting fact for traders to consider. Also, with respect to the hypothesized stationarity of the data, and the fast convergence to the mean, this seems to indicate that the time-series data exhibits mean-reverting behavior.</p>
+<p>The forecast will use the test subset of the data to formulate a forecast with 95% confidence interval. Note that the forecast quickly converges to a constant, which in this case is the mean of the training data. The mean is <span class="math notranslate nohighlight">\(\approx\)</span> -.7501 $/MWh, indicating that on average, electricity prices in the PJMC market are slightly higher than prices in the MISO market, which would be an interesting fact for traders to consider. Also, with respect to the hypothesized stationarity of the data, and the fast convergence to the mean, this seems to indicate that the <strong>time-series data exhibits mean-reverting behavior.</strong></p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -814,15 +763,13 @@ Warnings:
 </section>
 <section id="handling-residuals">
 <h2>4. Handling Residuals<a class="headerlink" href="#handling-residuals" title="Link to this heading">#</a></h2>
-<p>Here we will use three different methods for handling residual errors: standard OLS error estimations, OLS with HAC standard errors, and ARMA residuals.</p>
+<p>Here we will use three different methods for handling residual errors: standard OLS error estimations, OLS with HAC standard errors, and ARMA residuals. The table below encapsulates information for each comparison of model errors.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable</p></th>
 <th class="head"><p>OLS Coefficients</p></th>
 <th class="head"><p>OLS Std. Errors</p></th>
 <th class="head"><p>HAC Std. Errors</p></th>
-<th class="head"><p>ARMA Residual Coefficients</p></th>
-<th class="head"><p>ARMA Residual Std. Errors</p></th>
 </tr>
 </thead>
 <tbody>
@@ -830,40 +777,64 @@ Warnings:
 <td><p>0.804944</p></td>
 <td><p>1.599350</p></td>
 <td><p>1.865723</p></td>
-<td><p>0.804944</p></td>
-<td><p>0.403920</p></td>
 </tr>
 <tr class="row-odd"><td><p>MISO/PJMC RT CONG</p></td>
 <td><p>-0.877222</p></td>
 <td><p>0.020984</p></td>
 <td><p>0.461632</p></td>
-<td><p></p></td>
-<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>MISO/PJMC RT LOAD</p></td>
 <td><p>0.000256</p></td>
 <td><p>0.000053</p></td>
 <td><p>0.000157</p></td>
-<td><p></p></td>
-<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>MISO/PJM Net Load</p></td>
+<tr class="row-odd"><td><p>MISO/PJMC Net Load</p></td>
 <td><p>-0.000006</p></td>
 <td><p>0.000075</p></td>
 <td><p>0.000066</p></td>
-<td><p></p></td>
-<td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>| AR(1) Coefficient  |                  |                 |                | -0.877222                  | 0.104662                  |
-| MA(1) Coefficient  |                  |                 |                | 0.000256                   | 0.110352                  |
-| Sigma^2            |                  |                 |                | -0.000006                  | 0.658457                  |</p>
-<p>The table above encapsulates information for each comparison of model errors.</p>
-<ul class="simple">
-<li><p><strong>OLS with Default Error:</strong> With</p></li>
-</ul>
+<br />
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>ARMA Residual Coefficients</p></th>
+<th class="head"><p>ARMA Residual Std. Errors</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>const</p></td>
+<td><p>-.0000845</p></td>
+<td><p>0.403920</p></td>
+</tr>
+<tr class="row-odd"><td><p>ar.L1</p></td>
+<td><p>.2515</p></td>
+<td><p>0.104662</p></td>
+</tr>
+<tr class="row-even"><td><p>ma.L1</p></td>
+<td><p>-.0577</p></td>
+<td><p>0.110352</p></td>
+</tr>
+<tr class="row-odd"><td><p>sigma2</p></td>
+<td><p>132.7451</p></td>
+<td><p>0.658457</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="ols-with-default-standard-errors">
+<h3>OLS with Default Standard Errors<a class="headerlink" href="#ols-with-default-standard-errors" title="Link to this heading">#</a></h3>
+<p>With default OLS errors, we obtain the coefficients of .804944 for the constant, -.877222 for MISO/PJMC RT CONG, .000256 for MISO/PJMC RT LOAD, and -.000006 for MISO/PJMC Net Load. The negligible value and high p-value (which is not noted here) for MISO/PJMC Net Load indicates that the variable most likely have little significance with respect to the dependent variable, so further discussion of the variable is omitted. The corresponding respective standard error terms for the significant regressors are 1.599350, .020984, and .000053. These error terms are relatively small for the RT Congestion and RT Load variables, indicating that the estimates for these variable coefficients are highly precise. We should be cautious though; standard OLS errors assume that there is no autocorrelation in the residuals and that the errors are homoskedastic. We discussed earlier that there is a high probability of heteroskedasticity in our residual terms, so it is likely that the standard error estimates are incorrect.</p>
+</section>
+<section id="hac-standard-errors">
+<h3>HAC Standard Errors<a class="headerlink" href="#hac-standard-errors" title="Link to this heading">#</a></h3>
+<p>Using HAC standard errors for our OLS estimators yields the same coefficient estimates as the OLS model with default standard errors. However, the HAC standard errors yield 1.865723 for the constant, .4611632 for RT Congestion, and .000157 for RT Load. As can be seen, these are rather significant increases from the OLS standard errors. These errors are higher, though with respect to the likelihood of heteroskedasticity in the residuals, they are most likely more accurate estimates of standard errors in comparison to standard OLS errors. This is because HAC errors correct for autocorrelated and heteroskedastic errors in ways that OLS standard errors cannot.</p>
+</section>
+<section id="arma-1-1-residual-moddel">
+<h3>ARMA(1,1) Residual Moddel<a class="headerlink" href="#arma-1-1-residual-moddel" title="Link to this heading">#</a></h3>
+<p>For our ARMA(1,1) model fitted to the residuals, we obtain a coefficient of -.0000845 for the constant, .2515 for the AR(1) process, -.0577 for the MA(1) process, and 132.7451 for the variance of the residuals. The constant term is very small, which means that the residuals are likely centered around 0 (even when considering the standard error). The AR(1) coefficient is .2515 with a standard error of .104662, which indicates that the reesiduals have a moderate amount of positive autocorrelation. The MA(1) coefficient is -.0577 with a standard error of .110352. The small coefficient coupled with the larger error indicate that the MA(1) process has less significance to the dynamics of the residuals. The model has a high variance of residuals of 132.7451 with a low standard error of .658457, meaning that the residuals have a lot of unexplained variance not captured by the ARMA(1,1) model.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -871,8 +842,7 @@ Warnings:
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assuming &#39;data&#39; is available and contains the necessary columns.</span>
-<span class="c1"># Define the regressors and dependent variable</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the regressors and dependent variable</span>
 <span class="n">regressors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MISO/PJMC RT CONG&#39;</span><span class="p">,</span> <span class="s1">&#39;MISO/PJMC RT LOAD&#39;</span><span class="p">,</span> <span class="s1">&#39;MISO/PJM Net Load&#39;</span><span class="p">]</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;MISO/PJMC RTLMP&#39;</span><span class="p">]</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">regressors</span><span class="p">]</span>
@@ -885,7 +855,6 @@ Warnings:
 <span class="c1"># Using ARMA(1,1) model on the residuals</span>
 <span class="n">residuals</span> <span class="o">=</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">resid</span>
 <span class="n">arma_resid</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">residuals</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">arma_resid</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
 
 <span class="c1"># Using HAC errors on the OLS model</span>
 <span class="n">ols_hac</span> <span class="o">=</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">get_robustcov_results</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s1">&#39;HAC&#39;</span><span class="p">,</span> <span class="n">maxlags</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -899,48 +868,49 @@ Warnings:
 <span class="p">}</span>
 
 <span class="n">arma_data</span> <span class="o">=</span> <span class="p">{</span>
-     <span class="s1">&#39;ARMA Residual Coefficients&#39;</span><span class="p">:</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>  <span class="c1"># Same coefficients, different errors</span>
-    <span class="s1">&#39;ARMA Residual Std. Errors&#39;</span><span class="p">:</span> <span class="n">arma_resid</span><span class="o">.</span><span class="n">bse</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)],</span>  <span class="c1"># First part of ARMA summary</span>
+     <span class="s1">&#39;ARMA Residual Coefficients&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">.0000844</span><span class="p">,</span><span class="mf">.2515</span><span class="p">,</span><span class="o">-</span><span class="mf">.0577</span><span class="p">,</span><span class="mf">132.7451</span><span class="p">],</span>  
+    <span class="s1">&#39;ARMA Residual Std. Errors&#39;</span><span class="p">:</span> <span class="n">arma_resid</span><span class="o">.</span><span class="n">bse</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)],</span>  
 <span class="p">}</span>
+
 
 <span class="c1"># Turning each into tables</span>
 <span class="n">ols_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ols_data</span><span class="p">)</span>
 <span class="n">arma_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">arma_data</span><span class="p">)</span>
 
-<span class="n">display</span><span class="p">(</span><span class="n">ols_table</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">arma_table</span><span class="p">)</span>
+<span class="c1">#display(ols_table)</span>
+<span class="c1">#display(arma_table)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="testing-for-autocorrelation">
+<h3>Testing For Autocorrelation<a class="headerlink" href="#testing-for-autocorrelation" title="Link to this heading">#</a></h3>
+<p>Based on the analysis of errors above, I am keen to use the OLS model with HAC errors, as they are able to account for autocorrelation and heteroskedasticity. Using this model, we will extract the residuals and perform some testing for autocorrelation. First we use the hypotheses of the <strong>Ljung-Box Test</strong> to test for autocorrelation:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+H_0: &amp; \ \text{The lags up to lag } m \text{ are all zero.} \\
+H_1: &amp; \ \text{The lags up to lag } m \text{ are not all zero and there is at least one significant autocorrelation.}
+\end{align*}\]</div>
+<p>By the table produced, we are able to see that the LB test statistic is high and the corresponding p-value is negligible for lags 1-10. We <strong>reject the null hypotheses</strong> and conclude that there is indeed <strong>serial autocorrelation in the residuals</strong>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Running an LJB Test on the OLS model with HAC errors</span>
+<span class="n">hac_resid</span> <span class="o">=</span> <span class="n">ols_hac</span><span class="o">.</span><span class="n">resid</span>
+
+<span class="n">ljb_test</span> <span class="o">=</span> <span class="n">acorr_ljungbox</span><span class="p">(</span><span class="n">hac_resid</span><span class="p">)</span>
+<span class="n">ljb_test</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                               SARIMAX Results                                
-==============================================================================
-Dep. Variable:                      y   No. Observations:                 1828
-Model:                 ARIMA(1, 0, 1)   Log Likelihood               -7061.866
-Date:                Mon, 07 Oct 2024   AIC                          14131.733
-Time:                        18:32:47   BIC                          14153.777
-Sample:                    05-30-2019   HQIC                         14139.864
-                         - 05-30-2024                                         
-Covariance Type:                  opg                                         
-==============================================================================
-                 coef    std err          z      P&gt;|z|      [0.025      0.975]
-------------------------------------------------------------------------------
-const        8.44e-05      0.404      0.000      1.000      -0.792       0.792
-ar.L1          0.2515      0.105      2.403      0.016       0.046       0.457
-ma.L1         -0.0577      0.110     -0.523      0.601      -0.274       0.159
-sigma2       132.7451      0.658    201.600      0.000     131.455     134.036
-===================================================================================
-Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):           1676124.20
-Prob(Q):                              1.00   Prob(JB):                         0.00
-Heteroskedasticity (H):               5.98   Skew:                             6.08
-Prob(H) (two-sided):                  0.00   Kurtosis:                       150.84
-===================================================================================
-
-Warnings:
-[1] Covariance matrix calculated using the outer product of gradients (complex-step).
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -959,90 +929,213 @@ Warnings:
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Variable</th>
-      <th>OLS Coefficients</th>
-      <th>OLS Std. Errors</th>
-      <th>HAC Std. Errors</th>
+      <th>lb_stat</th>
+      <th>lb_pvalue</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>const</td>
-      <td>0.804944</td>
-      <td>1.599350</td>
-      <td>1.865723</td>
-    </tr>
-    <tr>
       <th>1</th>
-      <td>MISO/PJMC RT CONG</td>
-      <td>-0.877222</td>
-      <td>0.029084</td>
-      <td>0.461632</td>
+      <td>70.464236</td>
+      <td>4.686866e-17</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>MISO/PJMC RT LOAD</td>
-      <td>0.000256</td>
-      <td>0.000053</td>
-      <td>0.000157</td>
+      <td>75.072171</td>
+      <td>4.992123e-17</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>MISO/PJM Net Load</td>
-      <td>-0.000006</td>
-      <td>0.000075</td>
-      <td>0.000066</td>
-    </tr>
-  </tbody>
-</table>
-</div></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ARMA Residual Coefficients</th>
-      <th>ARMA Residual Std. Errors</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>const</th>
-      <td>0.804944</td>
-      <td>0.403920</td>
+      <td>75.072216</td>
+      <td>3.496461e-16</td>
     </tr>
     <tr>
-      <th>ar.L1</th>
-      <td>-0.877222</td>
-      <td>0.104662</td>
+      <th>4</th>
+      <td>81.521176</td>
+      <td>8.292169e-17</td>
     </tr>
     <tr>
-      <th>ma.L1</th>
-      <td>0.000256</td>
-      <td>0.110352</td>
+      <th>5</th>
+      <td>86.118097</td>
+      <td>4.387251e-17</td>
     </tr>
     <tr>
-      <th>sigma2</th>
-      <td>-0.000006</td>
-      <td>0.658457</td>
+      <th>6</th>
+      <td>90.866842</td>
+      <td>2.001469e-17</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>98.136578</td>
+      <td>2.615594e-18</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>110.643175</td>
+      <td>2.808203e-20</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>113.892394</td>
+      <td>2.366460e-20</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>113.895764</td>
+      <td>8.721308e-20</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
+</section>
+<section id="writing-our-equation">
+<h3>Writing our equation<a class="headerlink" href="#writing-our-equation" title="Link to this heading">#</a></h3>
+<p>We can write out our equation for an OLS estimation using HAC-adjusted standard errors and an ARMA(1,1) model of residuals.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+Y_t = \beta_0 + \sum_{i=1}^3 \beta_i X_{it} + \epsilon_t \quad \text{for every} \quad t \in T
+\end{align*}\]</div>
+<p>with our ARMA(1,1) representation of <span class="math notranslate nohighlight">\(\epsilon_t\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\epsilon_t = .2515 \epsilon_{t-1} -.0577 e_{t-1}+e_t
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(e_t\)</span> is some white noise.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+Y_t = \beta_0 + \beta_1 \text{MISO/PJMC RT CONG}_t + \beta_2 \text{MISO/PJMC RT LOAD}_t + \beta_3 \text{MISO/PJMC Net Load}_{t} + \epsilon_t \\
+= .804944 -.877222\text{ MISO/PJMC RT CONG}_t + .000256\text{ MISO/PJMC RT LOAD}_t -.000006 \text{ MISO/PJMC Net Load}_{t} + .2515 \epsilon_{t-1} -.0577 e_{t-1}+e_t
+\end{align*}\]</div>
+</section>
+</section>
+<section id="causal-interpretation">
+<h2>5. Causal Interpretation<a class="headerlink" href="#causal-interpretation" title="Link to this heading">#</a></h2>
+<p>Electricity market dynamics are infamously hard to model, given that there are so many moving parts to electricity markets and that electricity is a special commodity in that it must be able to be transmitted (almost) instantaneously. That being said, it is clear that spikes in RT congestion prices in one market will drive up (or down) the RT LMP prices as well, yet it is doubtful that there is a strong causal relationship. Earlier in this notebook, we created a multivariate OLS model to estimate the effect of these variables together on RT LMP price spread between markets. The model statistics suggested a high degree of multicollinearity. Though some of these variables may have some sort of causal effect, it is likely that they are endogenous and jointly determined by some other exogenous process. For example, we know that RT prices will rise with RT load, but that does not necessarily mean that it actually has a significant causal effect on it with respect to other variables.</p>
+<p>Furthermore, it is important to consider other omitted variables that would be likely important to modeling the causal effect on the model. One important factor to note is weather. Weather has a proved (and rather intuitive) causal effect on load; as the temperature decreases, load increases as more people start consuming more energy to heat their homes. Additional to the overarching physical process of weather that determines all energy market activity, we can speculate that natural gas prices are correlated with both electricity prices and our regressor variables. Natural gas is a primary resource for both generating electricity and heating buildings, so it would be intuitive to think that it would have some degree of correlation of other variables in this model.</p>
+</section>
+<section id="using-the-minor-variables">
+<h2>6. Using the Minor Variables<a class="headerlink" href="#using-the-minor-variables" title="Link to this heading">#</a></h2>
+<section id="regression-with-minor-variables">
+<h3>Regression With Minor Variables<a class="headerlink" href="#regression-with-minor-variables" title="Link to this heading">#</a></h3>
+<p>The other minor variables omitted earlier in this notebook are for the difference between RT load and load forecasts for PJMC, and the same for MISO. We will start by running a regression on RT LMP Spread using these variables. Note that they were tested to be stationary earlier, so no differencing is required to make this data stationary. The table summary below shows the results of running the regression on these minor variables. We get small values of .0034 for PJM LOAD DIFF and .0003 for MISO LOAD DIFF, indicating that they have little significant effect on the RT LMP spread. Additionally, PJM LOAD DIFF has a p-value of .145 and MISO LOAD DIFF has one of .256, which means that we can reject the null hypothesis that the variables are statistically significant on a 95% confidence interval. Only the constant, with a coefficient of -2.9550, is statistically significant with a p-value of .041. The model also has an R-squared value of .002 and a F-statistic/p-value of 1.723/.179, implying weak predictive power in the model.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the regressors and dependent variable</span>
+<span class="n">regressors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PJM LOAD DIFF&#39;</span><span class="p">,</span> <span class="s1">&#39;MISO LOAD DIFF&#39;</span><span class="p">]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;MISO/PJMC RTLMP&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">regressors</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># OLS Estimation</span>
+<span class="n">ols_model</span> <span class="o">=</span> <span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">ols_results</span> <span class="o">=</span> <span class="n">ols_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ols_results</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:        MISO/PJMC RTLMP   R-squared:                       0.002
+Model:                            OLS   Adj. R-squared:                  0.001
+Method:                 Least Squares   F-statistic:                     1.723
+Date:                Mon, 07 Oct 2024   Prob (F-statistic):              0.179
+Time:                        22:58:41   Log-Likelihood:                -7473.7
+No. Observations:                1828   AIC:                         1.495e+04
+Df Residuals:                    1825   BIC:                         1.497e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P&gt;|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+const             -2.9550      1.443     -2.048      0.041      -5.785      -0.125
+PJM LOAD DIFF      0.0034      0.002      1.458      0.145      -0.001       0.008
+MISO LOAD DIFF     0.0003      0.000      1.136      0.256      -0.000       0.001
+==============================================================================
+Omnibus:                     4549.771   Durbin-Watson:                   1.712
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         61459859.746
+Skew:                          25.776   Prob(JB):                         0.00
+Kurtosis:                     899.803   Cond. No.                     4.88e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 4.88e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="regression-with-all-variables">
+<h3>Regression With All Variables<a class="headerlink" href="#regression-with-all-variables" title="Link to this heading">#</a></h3>
+<p>Now we create another OLS model that incorporates all variables in the dataset. When we add the primary regressors back in, we notice a dramatic increase in R-squared to .345 and of the F-statistic/p-value of 191.8/≈0. This indicates that this model has much more preditive power with respect to RT LMP Spread. We can note that each of the coefficients of the lesser variables are still very small. PJM LOAD DIFF has a coefficient of .0021 and a p-value of .276. MISO LOAD DIFF has a coefficient of .001, but its p-value decreased to &lt; .0001. This means that when the main explanatory variables are introduced, the statistical significance of MISO LOAD DIFF increases.</p>
+<p>In consideration to the omitted variable bias, this is not such a big problem. It appears slightly with PJM LOAD DIFF; its p-value increases when we introduce the other regressors, but it was already insignificant to begin with. The opposite is true for MISO LOAD DIFF, however. This variable became more statistically significant as the main variables are introduced. It is an odd phenomenon worth looking into more.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the regressors and dependent variable</span>
+<span class="n">regressors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MISO/PJMC RT CONG&#39;</span><span class="p">,</span><span class="s1">&#39;MISO/PJMC RT LOAD&#39;</span><span class="p">,</span><span class="s1">&#39;MISO/PJM Net Load&#39;</span><span class="p">,</span><span class="s1">&#39;PJM LOAD DIFF&#39;</span><span class="p">,</span> <span class="s1">&#39;MISO LOAD DIFF&#39;</span><span class="p">]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;MISO/PJMC RTLMP&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">regressors</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># OLS Estimation</span>
+<span class="n">ols_model</span> <span class="o">=</span> <span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">ols_results</span> <span class="o">=</span> <span class="n">ols_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ols_results</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:        MISO/PJMC RTLMP   R-squared:                       0.345
+Model:                            OLS   Adj. R-squared:                  0.343
+Method:                 Least Squares   F-statistic:                     191.8
+Date:                Mon, 07 Oct 2024   Prob (F-statistic):          2.15e-164
+Time:                        22:58:41   Log-Likelihood:                -7089.0
+No. Observations:                1828   AIC:                         1.419e+04
+Df Residuals:                    1822   BIC:                         1.422e+04
+Df Model:                           5                                         
+Covariance Type:            nonrobust                                         
+=====================================================================================
+                        coef    std err          t      P&gt;|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+const                -0.6629      2.070     -0.320      0.749      -4.723       3.398
+MISO/PJMC RT CONG    -0.8890      0.029    -30.502      0.000      -0.946      -0.832
+MISO/PJMC RT LOAD     0.0003   5.43e-05      5.091      0.000       0.000       0.000
+MISO/PJM Net Load  1.651e-05   7.46e-05      0.221      0.825      -0.000       0.000
+PJM LOAD DIFF         0.0021      0.002      1.089      0.276      -0.002       0.006
+MISO LOAD DIFF        0.0010      0.000      4.036      0.000       0.001       0.001
+==============================================================================
+Omnibus:                     2461.353   Durbin-Watson:                   1.612
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          2105566.649
+Skew:                           6.863   Prob(JB):                         0.00
+Kurtosis:                     168.698   Cond. No.                     1.60e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.6e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -1076,6 +1169,15 @@ Warnings:
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="hw1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">HW1</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -1092,18 +1194,9 @@ Warnings:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Task List</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hw2">HW2</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-root-testing">1. Unit Root Testing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adf-for-all-series">ADF For All Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adf-cadf-for-outcome-variable">ADF/CADF For Outcome Variable</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arima-model">2. ARIMA Model</a><ul class="nav section-nav flex-column">
@@ -1112,11 +1205,21 @@ Warnings:
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arima-forecast">3. ARIMA Forecast</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-residuals">4. Handling Residuals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-residuals">4. Handling Residuals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ols-with-default-standard-errors">OLS with Default Standard Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hac-standard-errors">HAC Standard Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arma-1-1-residual-moddel">ARMA(1,1) Residual Moddel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-autocorrelation">Testing For Autocorrelation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-our-equation">Writing our equation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-interpretation">5. Causal Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-minor-variables">6. Using the Minor Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-with-minor-variables">Regression With Minor Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-with-all-variables">Regression With All Variables</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>
