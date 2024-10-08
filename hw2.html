@@ -62,7 +62,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'hw2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="HW1" href="hw1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -172,10 +173,8 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="hw1.html">HW1</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Task List</a></li>
-
 </ul>
 
     </div>
@@ -344,10 +343,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arima-forecast">3. ARIMA Forecast</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-residuals">4. Handling Residuals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ols-estimation">OLS Estimation</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-residuals">4. Handling Residuals</a></li>
 </ul>
 </li>
 </ul>
@@ -397,9 +393,9 @@ comparison.</p></li>
 <h2>4.<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> First, estimate a model for the relationship between the stationary outcome variable and the stationary versions of the main explanatory variables using OLS</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Second, estimate the regression model while fitting an ARMA model to the residuals</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Third, either (1) add lags of Y and/or X’s using dynlm() until the residual autocorrelation is reduced, or (2) use HAC/Newey-West standard errors.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Compare estimates of the coefficients and standard errors on the two or three main explanatory variables from these three approaches</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Second, estimate the regression model while fitting an ARMA model to the residuals</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Third, either (1) add lags of Y and/or X’s using dynlm() until the residual autocorrelation is reduced, or (2) use HAC/Newey-West standard errors.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Compare estimates of the coefficients and standard errors on the two or three main explanatory variables from these three approaches</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> For your preferred model among the above, provide evidence for whether or not there is autocorrelation remaining in the residuals</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Write out the equation(s) for the model including any model equation for the residuals if applicable.</p></li>
 </ul>
@@ -462,7 +458,7 @@ to be important, but could their importance go away once you control for the big
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-<span class="c1"># To ignore warnings</span>
+<span class="c1"># Various Utilities</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 </pre></div>
 </div>
@@ -730,7 +726,7 @@ to be important, but could their importance go away once you control for the big
 Dep. Variable:        MISO/PJMC RTLMP   No. Observations:                 1462
 Model:                 ARIMA(1, 1, 1)   Log Likelihood               -6099.831
 Date:                Mon, 07 Oct 2024   AIC                          12205.662
-Time:                        17:19:51   BIC                          12221.522
+Time:                        18:32:47   BIC                          12221.522
 Sample:                    05-30-2019   HQIC                         12211.578
                          - 05-30-2023                                         
 Covariance Type:                  opg                                         
@@ -818,31 +814,112 @@ Warnings:
 </section>
 <section id="handling-residuals">
 <h2>4. Handling Residuals<a class="headerlink" href="#handling-residuals" title="Link to this heading">#</a></h2>
-<section id="ols-estimation">
-<h3>OLS Estimation<a class="headerlink" href="#ols-estimation" title="Link to this heading">#</a></h3>
-<p>We will use an OLS model where we regress MISO/PJMC RT Congestion Price Spread, MISO\PJMC RT Load Difference, and MISO\PJMC Net Load Difference on our target, MISO/PJMC RT LMP Spread.</p>
-<div class="cell docutils container">
+<p>Here we will use three different methods for handling residual errors: standard OLS error estimations, OLS with HAC standard errors, and ARMA residuals.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>OLS Coefficients</p></th>
+<th class="head"><p>OLS Std. Errors</p></th>
+<th class="head"><p>HAC Std. Errors</p></th>
+<th class="head"><p>ARMA Residual Coefficients</p></th>
+<th class="head"><p>ARMA Residual Std. Errors</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>const</p></td>
+<td><p>0.804944</p></td>
+<td><p>1.599350</p></td>
+<td><p>1.865723</p></td>
+<td><p>0.804944</p></td>
+<td><p>0.403920</p></td>
+</tr>
+<tr class="row-odd"><td><p>MISO/PJMC RT CONG</p></td>
+<td><p>-0.877222</p></td>
+<td><p>0.020984</p></td>
+<td><p>0.461632</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MISO/PJMC RT LOAD</p></td>
+<td><p>0.000256</p></td>
+<td><p>0.000053</p></td>
+<td><p>0.000157</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MISO/PJM Net Load</p></td>
+<td><p>-0.000006</p></td>
+<td><p>0.000075</p></td>
+<td><p>0.000066</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>| AR(1) Coefficient  |                  |                 |                | -0.877222                  | 0.104662                  |
+| MA(1) Coefficient  |                  |                 |                | 0.000256                   | 0.110352                  |
+| Sigma^2            |                  |                 |                | -0.000006                  | 0.658457                  |</p>
+<p>The table above encapsulates information for each comparison of model errors.</p>
+<ul class="simple">
+<li><p><strong>OLS with Default Error:</strong> With</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regressors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MISO/PJMC RT CONG&#39;</span><span class="p">,</span> <span class="s1">&#39;MISO/PJMC RT LOAD&#39;</span><span class="p">,</span> <span class="s1">&#39;MISO/PJM Net Load&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assuming &#39;data&#39; is available and contains the necessary columns.</span>
+<span class="c1"># Define the regressors and dependent variable</span>
+<span class="n">regressors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MISO/PJMC RT CONG&#39;</span><span class="p">,</span> <span class="s1">&#39;MISO/PJMC RT LOAD&#39;</span><span class="p">,</span> <span class="s1">&#39;MISO/PJM Net Load&#39;</span><span class="p">]</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;MISO/PJMC RTLMP&#39;</span><span class="p">]</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">regressors</span><span class="p">]</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
-<span class="n">ols_model</span> <span class="o">=</span> <span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">X</span><span class="p">)</span>
+<span class="c1"># OLS Estimation</span>
+<span class="n">ols_model</span> <span class="o">=</span> <span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
 <span class="n">ols_results</span> <span class="o">=</span> <span class="n">ols_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Using ARMA(1,1) model on the residuals</span>
 <span class="n">residuals</span> <span class="o">=</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">resid</span>
-<span class="n">arma_resid</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">residuals</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">arma_resid</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span> 
+<span class="n">arma_resid</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">residuals</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arma_resid</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="c1"># Using HAC errors on the OLS model</span>
+<span class="n">ols_hac</span> <span class="o">=</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">get_robustcov_results</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s1">&#39;HAC&#39;</span><span class="p">,</span> <span class="n">maxlags</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Extract coefficients from each model</span>
+<span class="n">ols_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Variable&#39;</span><span class="p">:</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+    <span class="s1">&#39;OLS Coefficients&#39;</span><span class="p">:</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="s1">&#39;OLS Std. Errors&#39;</span><span class="p">:</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">bse</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="s1">&#39;HAC Std. Errors&#39;</span><span class="p">:</span> <span class="n">ols_hac</span><span class="o">.</span><span class="n">bse</span>
+<span class="p">}</span>
+
+<span class="n">arma_data</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="s1">&#39;ARMA Residual Coefficients&#39;</span><span class="p">:</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>  <span class="c1"># Same coefficients, different errors</span>
+    <span class="s1">&#39;ARMA Residual Std. Errors&#39;</span><span class="p">:</span> <span class="n">arma_resid</span><span class="o">.</span><span class="n">bse</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)],</span>  <span class="c1"># First part of ARMA summary</span>
+<span class="p">}</span>
+
+<span class="c1"># Turning each into tables</span>
+<span class="n">ols_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ols_data</span><span class="p">)</span>
+<span class="n">arma_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">arma_data</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">ols_table</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">arma_table</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                               SARIMAX Results                                
 ==============================================================================
 Dep. Variable:                      y   No. Observations:                 1828
 Model:                 ARIMA(1, 0, 1)   Log Likelihood               -7061.866
 Date:                Mon, 07 Oct 2024   AIC                          14131.733
-Time:                        17:19:52   BIC                          14153.777
+Time:                        18:32:47   BIC                          14153.777
 Sample:                    05-30-2019   HQIC                         14139.864
                          - 05-30-2024                                         
 Covariance Type:                  opg                                         
@@ -864,9 +941,108 @@ Warnings:
 [1] Covariance matrix calculated using the outer product of gradients (complex-step).
 </pre></div>
 </div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Variable</th>
+      <th>OLS Coefficients</th>
+      <th>OLS Std. Errors</th>
+      <th>HAC Std. Errors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>const</td>
+      <td>0.804944</td>
+      <td>1.599350</td>
+      <td>1.865723</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>MISO/PJMC RT CONG</td>
+      <td>-0.877222</td>
+      <td>0.029084</td>
+      <td>0.461632</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>MISO/PJMC RT LOAD</td>
+      <td>0.000256</td>
+      <td>0.000053</td>
+      <td>0.000157</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>MISO/PJM Net Load</td>
+      <td>-0.000006</td>
+      <td>0.000075</td>
+      <td>0.000066</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ARMA Residual Coefficients</th>
+      <th>ARMA Residual Std. Errors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>const</th>
+      <td>0.804944</td>
+      <td>0.403920</td>
+    </tr>
+    <tr>
+      <th>ar.L1</th>
+      <td>-0.877222</td>
+      <td>0.104662</td>
+    </tr>
+    <tr>
+      <th>ma.L1</th>
+      <td>0.000256</td>
+      <td>0.110352</td>
+    </tr>
+    <tr>
+      <th>sigma2</th>
+      <td>-0.000006</td>
+      <td>0.658457</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-</div>
-</section>
 </section>
 </section>
 
@@ -900,15 +1076,6 @@ Warnings:
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="hw1.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">HW1</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
@@ -945,10 +1112,7 @@ Warnings:
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arima-forecast">3. ARIMA Forecast</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-residuals">4. Handling Residuals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ols-estimation">OLS Estimation</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-residuals">4. Handling Residuals</a></li>
 </ul>
 </li>
 </ul>
