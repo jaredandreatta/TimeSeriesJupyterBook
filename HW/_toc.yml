@@ -5,5 +5,5 @@ format: jb-book
 root: intro
 chapters:
 - file: hw1.ipynb
-- file: hw2.ipynb
+
 

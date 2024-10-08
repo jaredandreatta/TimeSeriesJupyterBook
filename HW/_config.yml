@@ -33,8 +33,7 @@ html:
   use_repository_button: true
   baseurl: ""
   title: "Time Series Econometrics"
-  extra_css:
-    - _build/html/_static/custom.css
+
 
 
 sphinx:
