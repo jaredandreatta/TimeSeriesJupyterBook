@@ -562,7 +562,7 @@ document.write(`
 Dep. Variable:                   gold   No. Observations:                 1984
 Model:                          ARIMA   Log Likelihood                6498.290
 Date:                Mon, 14 Oct 2024   AIC                         -12992.580
-Time:                        13:04:58   BIC                         -12981.394
+Time:                        13:11:45   BIC                         -12981.394
 Sample:                             0   HQIC                        -12988.471
                                - 1984                                         
 Covariance Type:                  opg                                         
@@ -652,7 +652,7 @@ Warnings:
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-2.425345660824052, 0.3662333428348368, {&#39;1%&#39;: -3.9633402937050963, &#39;5%&#39;: -3.4127052046182866, &#39;10%&#39;: -3.1283542258126102}, &lt;statsmodels.stats.diagnostic.ResultsStore object at 0x000002124822FED0&gt;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-2.425345660824052, 0.3662333428348368, {&#39;1%&#39;: -3.9633402937050963, &#39;5%&#39;: -3.4127052046182866, &#39;10%&#39;: -3.1283542258126102}, &lt;statsmodels.stats.diagnostic.ResultsStore object at 0x000001F25FB86A90&gt;)
 (-2.3077100913002098, 0.16949337035871576, 3, 1981, {&#39;1%&#39;: -3.4336552971929506, &#39;5%&#39;: -2.8630000946528655, &#39;10%&#39;: -2.5675472932714394}, -6569.131902350535)
 Average Monthly Growth Rate: 4.79%
 </pre></div>
@@ -723,7 +723,7 @@ Dep. Variable:                     dy   R-squared:                       0.004
 Model:                            OLS   Adj. R-squared:                  0.003
 Method:                 Least Squares   F-statistic:                     3.760
 Date:                Mon, 14 Oct 2024   Prob (F-statistic):             0.0235
-Time:                        13:04:58   Log-Likelihood:                 3340.5
+Time:                        13:11:45   Log-Likelihood:                 3340.5
 No. Observations:                1984   AIC:                            -6675.
 Df Residuals:                    1981   BIC:                            -6658.
 Df Model:                           2                                         
@@ -755,7 +755,7 @@ Dep. Variable:                     dy   R-squared:                       0.003
 Model:                            OLS   Adj. R-squared:                  0.002
 Method:                 Least Squares   F-statistic:                     5.379
 Date:                Mon, 14 Oct 2024   Prob (F-statistic):             0.0205
-Time:                        13:04:58   Log-Likelihood:                 3339.4
+Time:                        13:11:45   Log-Likelihood:                 3339.4
 No. Observations:                1984   AIC:                            -6675.
 Df Residuals:                    1982   BIC:                            -6664.
 Df Model:                           1                                         
@@ -860,7 +860,7 @@ H_a: \quad \gamma &lt; 0 \text{, or the data does not have a unit root}
 Dep. Variable:                  crypt   No. Observations:                 1984
 Model:                 ARIMA(1, 0, 1)   Log Likelihood                3334.045
 Date:                Mon, 14 Oct 2024   AIC                          -6662.090
-Time:                        13:04:58   BIC                          -6645.311
+Time:                        13:11:45   BIC                          -6645.311
 Sample:                             0   HQIC                         -6655.926
                                - 1984                                         
 Covariance Type:                  opg                                         
@@ -948,7 +948,7 @@ Dep. Variable:                  crypt   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                  0.012
 Method:                 Least Squares   F-statistic:                     9.161
 Date:                Mon, 14 Oct 2024   Prob (F-statistic):           5.09e-06
-Time:                        13:04:59   Log-Likelihood:                 3350.4
+Time:                        13:11:45   Log-Likelihood:                 3350.4
 No. Observations:                1984   AIC:                            -6693.
 Df Residuals:                    1980   BIC:                            -6670.
 Df Model:                           3                                         
@@ -977,7 +977,7 @@ Dep. Variable:                  crypt   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                  0.012
 Method:                 Least Squares   F-statistic:                     5.977
 Date:                Mon, 14 Oct 2024   Prob (F-statistic):           0.000471
-Time:                        13:04:59   Log-Likelihood:                 3350.4
+Time:                        13:11:45   Log-Likelihood:                 3350.4
 No. Observations:                1984   AIC:                            -6693.
 Df Residuals:                    1980   BIC:                            -6670.
 Df Model:                           3                                         
@@ -1032,7 +1032,7 @@ H_a: \beta_2 \neq 0 \text{ and/or } \beta_3 \neq 0 \text{ (i.e. either dx2 or dx
 <ol class="arabic simple" start="34">
 <li><p>The key assumptions for the dx2 coefficient estimate to be efficient (minimum variance) are:</p></li>
 </ol>
-<p><strong>In order for dx2 to be BLUE it must have linear parameters, the data must be obtained from a random sample, there is no perfect multicollinearity with other independent variables, dx2 is exogenous, the errors must be hom0skedastic, and there is no autocorrelation in the errors.</strong></p>
+<p><strong>In order for dx2 to be BLUE it must have linear parameters, the data must be obtained from a random sample, there is no perfect multicollinearity with other independent variables, dx2 is exogenous, the errors must be homoskedastic, and there is no autocorrelation in the errors.</strong></p>
 <ol class="arabic simple" start="35">
 <li><p>The HAC standard error for the dx2 coefficient is <strong>.0038</strong>, and the t-statistic for the Null Hypothesis that this coefficient is equal to ONE using this standard error is <strong>.015</strong>. Therefore I now <strong>reject</strong> the Null using HAC standard errors.</p></li>
 <li><p>If the assumptions you listed for efficiency fail, which part or parts (if any or all) of the assumptions are addressed by HAC standard errors?</p></li>
@@ -1073,7 +1073,7 @@ H_a: \beta_2 \neq 0 \text{ and/or } \beta_3 \neq 0 \text{ (i.e. either dx2 or dx
 Dep. Variable:                      y   No. Observations:                 1984
 Model:                 ARIMA(1, 0, 1)   Log Likelihood                3351.495
 Date:                Mon, 14 Oct 2024   AIC                          -6694.991
-Time:                        13:04:59   BIC                          -6672.619
+Time:                        13:11:46   BIC                          -6672.619
 Sample:                             0   HQIC                         -6686.773
                                - 1984                                         
 Covariance Type:                  opg                                         
