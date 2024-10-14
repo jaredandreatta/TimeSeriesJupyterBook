@@ -1,0 +1,1213 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>EBGN 594 Midterm 2024 &#8212; EBGN594 HW</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'midterm';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="HW2" href="hw2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/mines.jpg" class="logo__image only-light" alt="EBGN594 HW - Home"/>
+    <script>document.write(`<img src="_static/mines.jpg" class="logo__image only-dark" alt="EBGN594 HW - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hw1.html">HW1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hw2.html">HW2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">EBGN 594 Midterm 2024</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/midterm.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>EBGN 594 Midterm 2024</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ebgn-594-midterm-2024">
+<h1>EBGN 594 Midterm 2024<a class="headerlink" href="#ebgn-594-midterm-2024" title="Link to this heading">#</a></h1>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For reading data off the web</span>
+<span class="kn">import</span> <span class="nn">pandas_datareader.data</span> <span class="k">as</span> <span class="nn">web</span>
+<span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
+
+<span class="c1"># Numerical </span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Statistics</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.arima.model</span> <span class="kn">import</span> <span class="n">ARIMA</span>
+<span class="kn">from</span> <span class="nn">statsmodels.regression.linear_model</span> <span class="kn">import</span> <span class="n">OLS</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">jarque_bera</span><span class="p">,</span> <span class="n">skewtest</span><span class="p">,</span> <span class="n">kurtosistest</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.stattools</span> <span class="kn">import</span> <span class="n">adfuller</span> <span class="k">as</span> <span class="n">adf</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.diagnostic</span> <span class="kn">import</span> <span class="n">acorr_ljungbox</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># Plotting </span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">statsmodels.graphics.tsaplots</span> <span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
+
+<span class="c1"># Datetime</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Warnings filtering</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input tag_hide-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define start and end dates</span>
+<span class="n">startdate</span> <span class="o">=</span> <span class="s2">&quot;2016-10-01&quot;</span>
+<span class="n">enddate</span> <span class="o">=</span> <span class="s2">&quot;2024-09-29&quot;</span>
+
+<span class="c1"># Fetch data from FRED and Yahoo Finance</span>
+<span class="c1"># Coinbase Bitcoin (CBBTCUSD), Break-even inflation (T5YIE), Henry Hub natural gas (DHHNGSP)</span>
+<span class="n">bitcoin</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="s1">&#39;CBBTCUSD&#39;</span><span class="p">,</span> <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
+<span class="n">breakeven_inflation</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="s1">&#39;T5YIE&#39;</span><span class="p">,</span> <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
+<span class="n">nat_gas</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="s1">&#39;DHHNGSP&#39;</span><span class="p">,</span> <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
+
+<span class="c1"># Fetch gold futures data from Yahoo Finance</span>
+<span class="n">gold_futures</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;GC=F&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">startdate</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">enddate</span><span class="p">)</span>
+
+<span class="c1"># Data Transformation</span>
+<span class="c1"># Log transformation of bitcoin and natural gas prices, and extracting gold adjusted close prices</span>
+<span class="n">grd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">bitcoin</span><span class="p">[</span><span class="s1">&#39;CBBTCUSD&#39;</span><span class="p">]),</span>
+    <span class="n">breakeven_inflation</span><span class="p">[</span><span class="s1">&#39;T5YIE&#39;</span><span class="p">],</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">nat_gas</span><span class="p">[</span><span class="s1">&#39;DHHNGSP&#39;</span><span class="p">]),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">gold_futures</span><span class="p">[</span><span class="s1">&#39;Adj Close&#39;</span><span class="p">])</span>
+<span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Removing missing values</span>
+<span class="n">grd</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;crypt&#39;</span><span class="p">,</span> <span class="s1">&#39;bei&#39;</span><span class="p">,</span> <span class="s1">&#39;oil&#39;</span><span class="p">,</span> <span class="s1">&#39;gold&#39;</span><span class="p">]</span>
+<span class="n">grd</span> <span class="o">=</span> <span class="n">grd</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Define variables for analysis</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">grd</span><span class="p">[</span><span class="s1">&#39;crypt&#39;</span><span class="p">]</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">grd</span><span class="p">[</span><span class="s1">&#39;bei&#39;</span><span class="p">]</span>
+<span class="n">dx1</span> <span class="o">=</span> <span class="n">x1</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="n">x2</span> <span class="o">=</span> <span class="n">grd</span><span class="p">[</span><span class="s1">&#39;oil&#39;</span><span class="p">]</span>
+<span class="n">dx2</span> <span class="o">=</span> <span class="n">x2</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="n">x3</span> <span class="o">=</span> <span class="n">grd</span><span class="p">[</span><span class="s1">&#39;gold&#39;</span><span class="p">]</span>
+<span class="n">dx3</span> <span class="o">=</span> <span class="n">x3</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="n">grd</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%%**********************]  1 of 1 completed
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>crypt</th>
+      <th>bei</th>
+      <th>oil</th>
+      <th>gold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-03</th>
+      <td>6.418349</td>
+      <td>1.47</td>
+      <td>1.043804</td>
+      <td>7.177019</td>
+    </tr>
+    <tr>
+      <th>2016-10-04</th>
+      <td>6.414016</td>
+      <td>1.45</td>
+      <td>1.040277</td>
+      <td>7.143855</td>
+    </tr>
+    <tr>
+      <th>2016-10-05</th>
+      <td>6.418626</td>
+      <td>1.48</td>
+      <td>1.040277</td>
+      <td>7.142985</td>
+    </tr>
+    <tr>
+      <th>2016-10-06</th>
+      <td>6.416536</td>
+      <td>1.49</td>
+      <td>1.111858</td>
+      <td>7.130739</td>
+    </tr>
+    <tr>
+      <th>2016-10-07</th>
+      <td>6.426456</td>
+      <td>1.50</td>
+      <td>1.105257</td>
+      <td>7.130018</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</details>
+</div>
+<ol class="arabic simple">
+<li><p>Provide two reasons why we might work with the natural log of the cryptocurrency, energy, and gold price variables but not the inflation expectations variable.</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Using log returns allows us to model the continuous compounding growth of asset prices that fluctuate continuously in financial markets. In contrast, the break-even inflation rate represents an expected percentage rate, which does not exhibit continuous compounding behavior and is more cyclical in nature, making the log transformation less relevant.</strong></p></li>
+<li><p><strong>Logging variables helps in analyzing their percentage changes over time, which is useful for normalizing price data that often have large variances and non-stationary behavior. However, the break-even inflation rate is already expressed in percentage terms, so logging the data may not add interpretability and could distort the data.</strong></p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting ACF and PACF of log gold prices</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plot_acf</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plot_pacf</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/17ff303461bf5e7956cb5f9e0b780b6f85aa983c7a11e1c3858fb6e1d509d848.png" src="_images/17ff303461bf5e7956cb5f9e0b780b6f85aa983c7a11e1c3858fb6e1d509d848.png" />
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>The ACF pattern of decay is quick and exponential or slow and linear (still significant after many lags)? <strong>Slow and linear</strong>.</p></li>
+<li><p>The PACF coefficient on the first lag is very close to what number? <strong>1</strong> . The PACF becomes insignificant after how many lags? <strong>2</strong></p></li>
+<li><p>What do these observations suggest about stationarity? <strong>This suggests nonstationarity and that the data may require some sort of differencing</strong></p></li>
+</ol>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ARMA(0,0) of first order differences</span>
+<span class="n">dx3_arma</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">dx3</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dx3_arma</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:                   gold   No. Observations:                 1984
+Model:                          ARIMA   Log Likelihood                6498.290
+Date:                Mon, 14 Oct 2024   AIC                         -12992.580
+Time:                        13:04:58   BIC                         -12981.394
+Sample:                             0   HQIC                        -12988.471
+                               - 1984                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P&gt;|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0003      0.000      1.692      0.091   -5.52e-05       0.001
+sigma2      8.367e-05   1.52e-06     55.211      0.000    8.07e-05    8.66e-05
+===================================================================================
+Ljung-Box (L1) (Q):                   0.99   Jarque-Bera (JB):              1488.17
+Prob(Q):                              0.32   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.72   Skew:                            -0.26
+Prob(H) (two-sided):                  0.00   Kurtosis:                         7.21
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Regress dx3 (first differences of x3) on an intercept only (e.g., ARMA(0,0) with intercept), and use this to find that the average growth (or decline) rate of the price is about <strong>0.03%</strong>.</p></li>
+</ol>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Skewness</span>
+<span class="n">dx3_skew</span> <span class="o">=</span> <span class="n">skewtest</span><span class="p">(</span><span class="n">dx3</span><span class="p">)</span>
+<span class="c1"># Kurtosis</span>
+<span class="n">dx3_kurt</span> <span class="o">=</span> <span class="n">kurtosistest</span><span class="p">(</span><span class="n">dx3</span><span class="p">)</span>
+<span class="c1"># JB</span>
+<span class="n">dx3_jb</span> <span class="o">=</span> <span class="n">jarque_bera</span><span class="p">(</span><span class="n">dx3</span><span class="p">)</span>
+   
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;dx3 skewness: </span><span class="si">{</span><span class="n">dx3_skew</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1"> dx3 kurtosis: </span><span class="si">{</span><span class="n">dx3_kurt</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1"> dx3 JB: </span><span class="si">{</span><span class="n">dx3_jb</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dx3 skewness: SkewtestResult(statistic=-4.623964720445301, pvalue=3.7647392488080247e-06) 
+ dx3 kurtosis: KurtosistestResult(statistic=14.006266720815281, pvalue=1.427122339954551e-44) 
+ dx3 JB: SignificanceResult(statistic=1488.1687049945617, pvalue=0.0)
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>The t-value for the skewness test is <strong>-4.624</strong> and the p-value is <strong>3.764e-06</strong>. Therefore I <strong>reject</strong> (reject/fail to reject) the null hypothesis of symmetrical distribution.</p></li>
+<li><p>The t-value for the excess kurtosis test is <strong>14.006</strong> and the p-value is <strong>1.427e-44</strong>. Therefore I <strong>reject</strong> (reject/fail to reject) the null hypothesis of <strong>zero excess kurtosis</strong>.</p></li>
+<li><p>The value of the JB test statistic is <strong>1488.17</strong> and the p-value is <strong>0.0</strong>. Therefore I <strong>reject</strong> (reject/fail to reject) the null hypothesis of <strong>normal distribution</strong>.</p></li>
+<li><p>The formula for the JB test statistic is <strong><span class="math notranslate nohighlight">\(JB=\frac{\hat{S}^2(r)}{6/T} + \frac{(\hat{K}(r)-3)^2}{24/T}\)</span></strong>. This is distributed Chi-square with 2 degrees of freedom because <strong>the test assesses the sum of squares of two normal random variables, so k=2 for a <span class="math notranslate nohighlight">\(\Chi^k\)</span> distribution in this case</strong>.</p></li>
+<li><p>Describe why the Box test and the JB test statistics are both compared to a Chi-square distribution.
+<strong>Both of these tests are constructed by the sums of squared normal random variables, which is 2 for the case of the JB test, and some positive integer k for the Box test, and these random variables follow a Chi-squared distribution.</strong></p></li>
+<li><p>Briefly compare and contrast the null and alternative hypothesis of the Box test vs. the JB test.
+<strong>The null hypothesis of the JB test is that the data is normally dsitributed, with the alternative being that the data is not normally distributed. The null hypothesis of the Box test is that the lags up to some positive integer m are all 0, with the alternative being that not all lags are 0 and there is at least 1 significant autocorrelation. In other words, the JB test uses the moments of a distribution to test if it is normally distributed, and the Box test uses the autocorrelation function to detect serial autocorrelation in time-series data.</strong></p></li>
+<li><p>If your test tells you that the data is not Normally distributed, what theorem tells you that estimated regression coefficients using the same type of data will still be Normally distributed across samples? Give a short intuitive explanation of how the theorem works.
+<strong>The Central Limit Theorem ensures that these regression coefficients will converge to a normal distribution given a large enough sample size and small enough (finite) variance across all samples, even if the data being sampled is not normally distributed.</strong></p></li>
+</ol>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Case 4</span>
+<span class="n">y_adf4</span><span class="o">=</span><span class="n">adf</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">regression</span><span class="o">=</span><span class="s1">&#39;ct&#39;</span><span class="p">,</span><span class="n">autolag</span><span class="o">=</span><span class="s1">&#39;BIC&#39;</span><span class="p">,</span><span class="n">regresults</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_adf4</span><span class="p">)</span>
+
+<span class="c1"># Case 2 </span>
+<span class="n">y_adf2</span> <span class="o">=</span> <span class="n">adf</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">regression</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_adf2</span><span class="p">)</span>
+
+<span class="c1"># Growth rate</span>
+<span class="n">grd</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">monthly_avg</span> <span class="o">=</span> <span class="n">grd</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">grd</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">grd</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">monthly_growth_rates</span> <span class="o">=</span> <span class="n">monthly_avg</span><span class="p">[</span><span class="s1">&#39;crypt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">average_growth_rate</span> <span class="o">=</span> <span class="n">monthly_growth_rates</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average Monthly Growth Rate: </span><span class="si">{</span><span class="n">average_growth_rate</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-2.425345660824052, 0.3662333428348368, {&#39;1%&#39;: -3.9633402937050963, &#39;5%&#39;: -3.4127052046182866, &#39;10%&#39;: -3.1283542258126102}, &lt;statsmodels.stats.diagnostic.ResultsStore object at 0x000002124822FED0&gt;)
+(-2.3077100913002098, 0.16949337035871576, 3, 1981, {&#39;1%&#39;: -3.4336552971929506, &#39;5%&#39;: -2.8630000946528655, &#39;10%&#39;: -2.5675472932714394}, -6569.131902350535)
+Average Monthly Growth Rate: 4.79%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_hide-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setting up for 15 and 16</span>
+<span class="n">y_lag1</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>  
+<span class="n">t_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="n">data_q15</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;dy&#39;</span><span class="p">:</span> <span class="n">dy</span><span class="p">,</span>
+    <span class="s1">&#39;y_lag1&#39;</span><span class="p">:</span> <span class="n">y_lag1</span><span class="p">[</span><span class="n">dy</span><span class="o">.</span><span class="n">index</span><span class="p">],</span>  <span class="c1"># Align the lags with the diff</span>
+    <span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="n">t_series</span><span class="p">[</span><span class="n">dy</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>  <span class="c1"># Align time index with the diff, converted to pandas Series</span>
+<span class="p">})</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Regression model for 15-16</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">data_q15</span><span class="p">[[</span><span class="s1">&#39;y_lag1&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">]])</span>  
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_q15</span><span class="p">[</span><span class="s1">&#39;dy&#39;</span><span class="p">]</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="c1"># Question 15</span>
+<span class="n">joint_hypothesis_15</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">wald_test</span><span class="p">(</span><span class="s1">&#39;const = 0, y_lag1 = 0, t = 0&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">joint_hypothesis_15</span><span class="p">)</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="mi">3</span> 
+<span class="n">df2</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">df_resid</span>  
+<span class="n">critical_value_q15</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Critical value for Test 15:&quot;</span><span class="p">,</span> <span class="n">critical_value_q15</span><span class="p">)</span>
+
+<span class="c1"># Question 16</span>
+<span class="n">joint_hypothesis_16</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">wald_test</span><span class="p">(</span><span class="s1">&#39;y_lag1 = 0, t = 0&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">joint_hypothesis_16</span><span class="p">)</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="mi">2</span>  
+<span class="n">critical_value_q16</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Critical value for Test 16:&quot;</span><span class="p">,</span> <span class="n">critical_value_q16</span><span class="p">)</span>
+
+<span class="c1"># Question 18</span>
+<span class="n">X_q18</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">data_q15</span><span class="p">[[</span><span class="s1">&#39;y_lag1&#39;</span><span class="p">]])</span>  
+<span class="n">model_q18</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">data_q15</span><span class="p">[</span><span class="s1">&#39;dy&#39;</span><span class="p">],</span> <span class="n">X_q18</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model_q18</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<span class="n">test_q18_joint</span> <span class="o">=</span> <span class="n">model_q18</span><span class="o">.</span><span class="n">wald_test</span><span class="p">(</span><span class="s1">&#39;const = 0, y_lag1 = 0&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">test_q18_joint</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                     dy   R-squared:                       0.004
+Model:                            OLS   Adj. R-squared:                  0.003
+Method:                 Least Squares   F-statistic:                     3.760
+Date:                Mon, 14 Oct 2024   Prob (F-statistic):             0.0235
+Time:                        13:04:58   Log-Likelihood:                 3340.5
+No. Observations:                1984   AIC:                            -6675.
+Df Residuals:                    1981   BIC:                            -6658.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0368      0.013      2.740      0.006       0.010       0.063
+y_lag1        -0.0042      0.002     -2.425      0.015      -0.008      -0.001
+t           5.158e-06   3.53e-06      1.462      0.144   -1.76e-06    1.21e-05
+==============================================================================
+Omnibus:                      457.404   Durbin-Watson:                   2.046
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7515.295
+Skew:                          -0.629   Prob(JB):                         0.00
+Kurtosis:                      12.451   Cond. No.                     1.54e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.54e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+&lt;F test: F=array([[4.32418027]]), p=0.004782619833466311, df_denom=1.98e+03, df_num=3&gt;
+Critical value for Test 15: 2.6093944893990746
+&lt;F test: F=array([[3.75959128]]), p=0.023459629317125454, df_denom=1.98e+03, df_num=2&gt;
+Critical value for Test 16: 3.00026708743401
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                     dy   R-squared:                       0.003
+Model:                            OLS   Adj. R-squared:                  0.002
+Method:                 Least Squares   F-statistic:                     5.379
+Date:                Mon, 14 Oct 2024   Prob (F-statistic):             0.0205
+Time:                        13:04:58   Log-Likelihood:                 3339.4
+No. Observations:                1984   AIC:                            -6675.
+Df Residuals:                    1982   BIC:                            -6664.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0212      0.008      2.589      0.010       0.005       0.037
+y_lag1        -0.0020      0.001     -2.319      0.020      -0.004      -0.000
+==============================================================================
+Omnibus:                      466.886   Durbin-Watson:                   2.049
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7474.833
+Skew:                          -0.662   Prob(JB):                         0.00
+Kurtosis:                      12.416   Cond. No.                         78.6
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+&lt;F test: F=array([[5.41461371]]), p=0.00451714456658825, df_denom=1.98e+03, df_num=2&gt;
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<ol class="arabic simple" start="13">
+<li><p>Implement the test for “Case 4” (intercept and trend). Using the BIC, the optimal number of lags of first differences for the ADF test is <strong>0</strong>.</p></li>
+<li><p>The individual test statistic for a unit root is <strong>-2.4253</strong> and the critical value is <strong>-3.4127</strong>. Therefore I <strong>fail to reject</strong> (reject/fail to reject) the null hypothesis of <strong>the data having a unit root</strong>.</p></li>
+<li><p>The joint test statistic for the unit root, the trend, and the intercept is <strong>4.3284</strong> and the critical value is <strong>2.609</strong>.</p></li>
+<li><p>The joint test statistic for the unit root and the trend is <strong>5.7128</strong> and the critical value is <strong>3.000</strong>.</p></li>
+<li><p>Write the equation of the ADF test you implemented and state the null and alternative hypotheses in terms of the coefficients here:</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\Delta Y_t = \alpha + \beta_t + \gamma Y_{t-1} + \epsilon_t \\  
+H_0: \quad \gamma = 0 \text{, or the data has a unit root} \\  
+H_a: \quad \gamma &lt; 0 \text{, or the data does not have a unit root}
+\end{align*}\]</div>
+<ol class="arabic simple" start="18">
+<li><p>Implement the test for “Case 2” (intercept and but no trend). The test statistic for the unit root is <strong>-2.3077</strong> and the critical value is <strong>-2.8630</strong>. The joint test statistic for the unit root and the intercept is <strong>5.4146</strong> and the critical value is <strong>3.0003</strong>.</p></li>
+<li><p>Consider the results in this series of questions. You can conclude that there <strong>is</strong>  a unit root with <strong>trend</strong> (drift/trend/both/neither).</p></li>
+<li><p>Based on all of this evidence, the average growth (or decline) rate of the series is about <strong>4.79</strong> percent per month.</p></li>
+</ol>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># LB-test for 30 lags</span>
+<span class="n">ljb_dy</span> <span class="o">=</span> <span class="n">acorr_ljungbox</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">stat</span> <span class="o">=</span> <span class="n">ljb_dy</span><span class="p">[</span><span class="s1">&#39;lb_stat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">ljb_dy</span><span class="p">[</span><span class="s1">&#39;lb_pvalue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Statistic: </span><span class="si">{</span><span class="n">stat</span><span class="si">}</span><span class="s1">, p-val: </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Statistic: 35.406612982736526, p-val: 0.22814644637913295
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="21">
+<li><p>First let’s find out if dy is autocorrelated. Conduct a Ljung-Box test on dy, jointly testing 30 autocorrelations. The value of the test statistic is <strong>35.407</strong> and the p-value of the test is <strong>0.228</strong>. Regarding autocorrelation, we conclude <strong>we fail to reject the null hypothesis that the data is independently distributed, or alternatively, the data is not serially correlated for 30 lags.</strong>.</p></li>
+<li><p>Provide the recipe, i.e., list the sequence of operations for finding the optimal ARMA model for a series like dy in order to “whiten” the residuals.</p></li>
+</ol>
+<p><strong>1. Initial model selection - check for stationarity using metrics such as the ADF test, and use the ACF/PACF plots to determine optimal p/q parameters for an ARMA model.</strong></p>
+<p><strong>2. Fit multiple ARMA models - in this case, fit models from ARMA(0,0) to ARMA(12,12)</strong></p>
+<p><strong>3. Evaluate models - use AIC or BIC to determine goodness-of-fit and choose models with minimized ICs. Perform diagnostics (such as the LB test) on residuals to ensure there is no autocorrelation in the errors.</strong></p>
+<p><strong>4. Optimization - Choose model with best parameters and iteratively tune it.</strong></p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ARMA(1,1) model with no intercept</span>
+<span class="n">arma_p23</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">trend</span><span class="o">=</span><span class="s1">&#39;n&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arma_p23</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="c1"># Residual ACF</span>
+<span class="n">resids</span> <span class="o">=</span> <span class="n">arma_p23</span><span class="o">.</span><span class="n">resid</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plot_acf</span><span class="p">(</span><span class="n">resids</span><span class="p">,</span><span class="n">lags</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plot_pacf</span><span class="p">(</span><span class="n">resids</span><span class="p">,</span><span class="n">lags</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Forecast</span>
+<span class="n">forecast</span><span class="o">=</span><span class="n">arma_p23</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Forecasted val 6 days out: &#39;</span><span class="p">,</span> <span class="n">forecast</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:                  crypt   No. Observations:                 1984
+Model:                 ARIMA(1, 0, 1)   Log Likelihood                3334.045
+Date:                Mon, 14 Oct 2024   AIC                          -6662.090
+Time:                        13:04:58   BIC                          -6645.311
+Sample:                             0   HQIC                         -6655.926
+                               - 1984                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P&gt;|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+ar.L1          0.3164     11.891      0.027      0.979     -22.990      23.623
+ma.L1         -0.3177     11.885     -0.027      0.979     -23.611      22.976
+sigma2         0.0020   2.93e-05     69.231      0.000       0.002       0.002
+===================================================================================
+Ljung-Box (L1) (Q):                   0.98   Jarque-Bera (JB):              7347.99
+Prob(Q):                              0.32   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.53   Skew:                            -0.64
+Prob(H) (two-sided):                  0.00   Kurtosis:                        12.34
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+</pre></div>
+</div>
+<img alt="_images/267c06ca44f263183ed0102bc857be4de3a02d3adf970c890695baece53126b7.png" src="_images/267c06ca44f263183ed0102bc857be4de3a02d3adf970c890695baece53126b7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Forecasted val 6 days out:  -2.8101015440196434e-08
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="23">
+<li><p>Please estimate an ARMA(1,1) with no intercept for dy (regardless of whether this is “optimal”) and write the equation for your model in AR and MA lag polynomial form here, using the numerical estimates of the coefficients:</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(1-.3164L)dy_t=(1+.3177L)\epsilon_t
+\end{align*}\]</div>
+<ol class="arabic simple" start="24">
+<li><p>Looking at the ACF of the residuals of your ARMA(1,1), are there any seriously concerning autocorrelations (other than a few tiny ones)?</p></li>
+</ol>
+<p><strong>No. There are no significant spikes outside of the 95% confidence intervals, so there is no real concern with autocorrelation in the residuals.</strong></p>
+<ol class="arabic simple" start="25">
+<li><p>Using the ARMA(1,1), the forecasted return six days from the last observation is <strong>-2.8101015440196434e-08</strong>.</p></li>
+</ol>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Combine the differenced data into a single DataFrame and drop any rows with NaNs</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dy</span><span class="p">,</span> <span class="n">dx1</span><span class="p">,</span> <span class="n">dx2</span><span class="p">,</span> <span class="n">dx3</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;crypt&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;bei&#39;</span><span class="p">,</span> <span class="s1">&#39;oil&#39;</span><span class="p">,</span> <span class="s1">&#39;gold&#39;</span><span class="p">]]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="c1"># 29</span>
+<span class="n">t_dx2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">.0038</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mf">.012</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t-stat for dx2: &#39;</span><span class="p">,</span><span class="n">t_dx2</span><span class="p">)</span>
+
+<span class="c1"># 32 </span>
+<span class="n">X_restricted</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;bei&#39;</span><span class="p">])</span>
+<span class="n">restricted</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">X_restricted</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="n">f_test</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">compare_f_test</span><span class="p">(</span><span class="n">restricted</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;F-value: </span><span class="si">{</span><span class="n">f_test</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">, p-value: </span><span class="si">{</span><span class="n">f_test</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">, Degrees of freedom difference: </span><span class="si">{</span><span class="n">f_test</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># 35</span>
+<span class="n">ols_hac</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_robustcov_results</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s1">&#39;HAC&#39;</span><span class="p">,</span><span class="n">maxlags</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ols_hac</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="n">t_dx2_hac</span> <span class="o">=</span> <span class="p">(</span><span class="mf">.0038</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mf">.015</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t_stat of dx_2 with HAC: &#39;</span><span class="p">,</span> <span class="n">t_dx2_hac</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  crypt   R-squared:                       0.014
+Model:                            OLS   Adj. R-squared:                  0.012
+Method:                 Least Squares   F-statistic:                     9.161
+Date:                Mon, 14 Oct 2024   Prob (F-statistic):           5.09e-06
+Time:                        13:04:59   Log-Likelihood:                 3350.4
+No. Observations:                1984   AIC:                            -6693.
+Df Residuals:                    1980   BIC:                            -6670.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0022      0.001      2.163      0.031       0.000       0.004
+bei            0.0675      0.024      2.780      0.005       0.020       0.115
+oil            0.0038      0.012      0.315      0.753      -0.020       0.028
+gold           0.4627      0.110      4.200      0.000       0.247       0.679
+==============================================================================
+Omnibus:                      414.863   Durbin-Watson:                   2.063
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             6040.536
+Skew:                          -0.559   Prob(JB):                         0.00
+Kurtosis:                      11.475   Cond. No.                         110.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+t-stat for dx2:  -83.01666666666667
+F-value: 8.861730044856083, p-value: 0.0001474084281147922, Degrees of freedom difference: 2.0
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  crypt   R-squared:                       0.014
+Model:                            OLS   Adj. R-squared:                  0.012
+Method:                 Least Squares   F-statistic:                     5.977
+Date:                Mon, 14 Oct 2024   Prob (F-statistic):           0.000471
+Time:                        13:04:59   Log-Likelihood:                 3350.4
+No. Observations:                1984   AIC:                            -6693.
+Df Residuals:                    1980   BIC:                            -6670.
+Df Model:                           3                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0022      0.001      2.019      0.044    6.18e-05       0.004
+bei            0.0675      0.028      2.421      0.016       0.013       0.122
+oil            0.0038      0.015      0.254      0.799      -0.026       0.033
+gold           0.4627      0.124      3.730      0.000       0.219       0.706
+==============================================================================
+Omnibus:                      414.863   Durbin-Watson:                   2.063
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             6040.536
+Skew:                          -0.559   Prob(JB):                         0.00
+Kurtosis:                      11.475   Cond. No.                         110.
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 12 lags and without small sample correction
+t_stat of dx_2 with HAC:  -66.41333333333334
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="26">
+<li><p>The estimated regression equation is (please write or type out the equation):</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+dy = .0022 + .0675 dx_1 + .0038 dx_2 + .4627 dx_3 + e_t
+\end{align*}\]</div>
+<ol class="arabic simple" start="27">
+<li><p>Please provide a written interpretation of the numerical value of the estimated dx2 coefficient. How much of the percentage change in oil prices get passed through to the percentage change in the cryptocurrency price?
+<strong>Holding all else equal, a 1% increase in oil prices induces a .0038% change in Bitcoin price on average.</strong></p></li>
+<li><p>Using regular standard errors, the t-statistic for the Null Hypothesis that the dx2 coefficient is equal to ZERO is .315. Therefore I <strong>fail to reject</strong>  the Null.</p></li>
+<li><p>Suppose you thought changes in energy (oil) prices should get passed through one-for-one to changes in crypto. Using regular standard errors, the t-statistic for the Null Hypothesis that the dx2 coefficient is equal to ONE is <strong>83.017</strong>. Therefore I <strong>reject</strong> the Null.</p></li>
+<li><p>The key assumption for the dx2 coefficient estimate to be unbiased is:
+<strong>exogeneity, meaning that it is uncorrelated with the error term</strong></p></li>
+<li><p>Name one reason this assumption may fail in this example:</p></li>
+</ol>
+<p><strong>During recessionary periods, consumer income will decrease, leading to decreased demand in both Bitcoin and Oil. These prices could be influenced by the same or similar economic factors, like decreased consumer expenditure, which means they may be correlated about some unobserved process, which would violate the assumption of exogeneity.</strong></p>
+<ol class="arabic simple" start="32">
+<li><p>Using the regular “plain vanilla” covariance matrix, conduct an F-test for the joint significance of dx2 and dx3 in explaining dy. The calculated F-statistic is <strong>8.861730044856083</strong> and the p-value is <strong>0.0001474084281147922</strong>. Therefore I <strong>reject</strong> the Null.</p></li>
+<li><p>Formally state the null and alternative hypotheses of the F-test from the previous question.</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+H_0: \beta_2=\beta_3=0 \text{ (i.e. dx2 and dx3 have no effect on the change of Bitcoin prices)} \\ 
+H_a: \beta_2 \neq 0 \text{ and/or } \beta_3 \neq 0 \text{ (i.e. either dx2 or dx3 (or both) have significant effect on Bitcoin prices)}
+\end{align*}\]</div>
+<ol class="arabic simple" start="34">
+<li><p>The key assumptions for the dx2 coefficient estimate to be efficient (minimum variance) are:</p></li>
+</ol>
+<p><strong>In order for dx2 to be BLUE it must have linear parameters, the data must be obtained from a random sample, there is no perfect multicollinearity with other independent variables, dx2 is exogenous, the errors must be hom0skedastic, and there is no autocorrelation in the errors.</strong></p>
+<ol class="arabic simple" start="35">
+<li><p>The HAC standard error for the dx2 coefficient is <strong>.0038</strong>, and the t-statistic for the Null Hypothesis that this coefficient is equal to ONE using this standard error is <strong>.015</strong>. Therefore I now <strong>reject</strong> the Null using HAC standard errors.</p></li>
+<li><p>If the assumptions you listed for efficiency fail, which part or parts (if any or all) of the assumptions are addressed by HAC standard errors?</p></li>
+</ol>
+<p><strong>HAC errors help correct for heteroskedastic standard errors and autocorrelated standard errors</strong></p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># LB test on model resids</span>
+<span class="n">model_residuals</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">resid</span>
+<span class="n">model_ljb</span> <span class="o">=</span> <span class="n">acorr_ljungbox</span><span class="p">(</span><span class="n">model_residuals</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Statistic: &#39;</span><span class="p">,</span><span class="n">model_ljb</span><span class="p">[</span><span class="s1">&#39;lb_stat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;p-val: &#39;</span><span class="p">,</span> <span class="n">model_ljb</span><span class="p">[</span><span class="s1">&#39;lb_pvalue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Model w ARMA</span>
+<span class="n">arma_resids</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">model_residuals</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arma_resids</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="n">arma_model</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">exog</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">trend</span><span class="o">=</span><span class="s1">&#39;n&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="n">new_coeff_dx2</span> <span class="o">=</span> <span class="n">arma_model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;oil&#39;</span><span class="p">]</span>
+<span class="n">new_se_dx2</span> <span class="o">=</span> <span class="n">arma_model</span><span class="o">.</span><span class="n">bse</span><span class="p">[</span><span class="s1">&#39;oil&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New coefficient for dx2: </span><span class="si">{</span><span class="n">new_coeff_dx2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New standard error for dx2: </span><span class="si">{</span><span class="n">new_se_dx2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Statistic:  13.573222841300527 p-val:  0.1933630233766915
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:                      y   No. Observations:                 1984
+Model:                 ARIMA(1, 0, 1)   Log Likelihood                3351.495
+Date:                Mon, 14 Oct 2024   AIC                          -6694.991
+Time:                        13:04:59   BIC                          -6672.619
+Sample:                             0   HQIC                         -6686.773
+                               - 1984                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P&gt;|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const      -2.592e-06      0.001     -0.003      0.998      -0.002       0.002
+ar.L1         -0.0647      0.601     -0.108      0.914      -1.243       1.114
+ma.L1          0.0332      0.602      0.055      0.956      -1.147       1.213
+sigma2         0.0020   2.83e-05     70.598      0.000       0.002       0.002
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):              6081.64
+Prob(Q):                              0.96   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.52   Skew:                            -0.56
+Prob(H) (two-sided):                  0.00   Kurtosis:                        11.50
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New coefficient for dx2: 0.003817809412586077
+New standard error for dx2: 0.010256514078710364
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Note that I’m using the original model with plain standard errors for these next questions since it isn’t specified</strong></p>
+<ol class="arabic simple" start="37">
+<li><p>Conduct a Portmanteau/Box test on the residuals of the model, jointly testing 10 autocorrelations. The value of the test statistic is <strong>13.57322</strong> and the p-value of the test is <strong>.19336</strong>. Therefore I <strong>fail to reject</strong> (reject/fail to reject) the Null of zero autocorrelation.</p></li>
+<li><p>Reestimate the model of dy as a linear function of dx1, dx2, and dx3 but this time please include an ARMA(1,1) model for the residuals. The new coefficient and standard error on dx2 are <strong>New coefficient for dx2: 0.003817809412586077
+New standard error for dx2: 0.010256514078710364</strong>. Therefore I now <strong>fail to reject</strong>  the Null Hypothesis that the dx2 coefficient is equal to ZERO.</p></li>
+<li><p>What can you conclude about the causal vs. predictive/correlational relationship between cryptocurrency and energy price fluctuations, inflation expectations, and gold?</p></li>
+</ol>
+<p><strong>Oil in this analysis seems to have little correlation or statistical significance in predicting Bitcoin prices. For inflation, we have limited evidence that there is any strong correlational/causal relationship with Bitcoin prices, so we cannot say it is statistically significant to Bitcoin prices. Gold prices, however, have a more statistically significant relationship with Bitcoin. The prices are positively correlated, but in order for us to infer any sort of causal relationship between the two variables, more analysis is required to confirm that these prices are indeed exogenous and are not jointly determined by an outside process.</strong></p>
+<ol class="arabic simple" start="40">
+<li><p>Now please use a Bai &amp; Perron test for structural breaks in your regression equation of dy on dx1, dx2, and dx3 (i.e. you can use the strucchange package in R). The optimal number of breaks that minimizes the BIC is <strong>0</strong>. These breaks occur at dates <strong>N/A</strong>.</p></li>
+</ol>
+<p><strong>An R file will be included for 40 since there is no Bai-Perron test built into Python</strong></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="hw2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">HW2</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jared Andreatta
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

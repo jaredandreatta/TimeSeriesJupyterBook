@@ -6,4 +6,6 @@ root: intro
 chapters:
 - file: hw1.ipynb
 - file: hw2.ipynb
+- file: midterm.ipynb
+
 
