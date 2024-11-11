@@ -1,0 +1,2108 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>HW 3 &#8212; EBGN594 HW</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hw3';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="EBGN 594 Midterm 2024" href="midterm.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/mines.jpg" class="logo__image only-light" alt="EBGN594 HW - Home"/>
+    <script>document.write(`<img src="_static/mines.jpg" class="logo__image only-dark" alt="EBGN594 HW - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hw1.html">HW1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hw2.html">HW2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="midterm.html">EBGN 594 Midterm 2024</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">HW 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/hw3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>HW 3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adf-tests">ADF tests.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stl">STL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autocorrelation-analysis-and-sarima-model">Autocorrelation analysis and SARIMA model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-model">Regression model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-breaks">Structural breaks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-results">Regression results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#var-model">VAR Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-plots-analysis">Residual plots analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#granger-causality-test">Granger Causality test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irf-and-oirf">IRF and OIRF</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="hw-3">
+<h1>HW 3<a class="headerlink" href="#hw-3" title="Link to this heading">#</a></h1>
+<p>For this homework, we will be exploring select topics in multivariate time series analysis. The data used in this homework is the same as the previous. Today, we will be taking a look at RT load in MISO and we will be examining it alongside certain meteorological variables that may be highly relevant to load forecasting in the MISO market, including temperature (degrees F), snowfall (in), and wind speed(mph). First, we load in the data and create a subset dataframe including only the relevant variables.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Numerical/Statistical Libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span> 
+<span class="kn">from</span> <span class="nn">statsmodels.graphics.tsaplots</span> <span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.statespace.sarimax</span> <span class="kn">import</span> <span class="n">SARIMAX</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.stattools</span> <span class="kn">import</span> <span class="n">adfuller</span> <span class="k">as</span> <span class="n">adf</span>
+<span class="kn">from</span> <span class="nn">statsmodels.regression.linear_model</span> <span class="kn">import</span> <span class="n">OLS</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.diagnostic</span> <span class="kn">import</span> <span class="n">acorr_ljungbox</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.seasonal</span> <span class="kn">import</span> <span class="n">STL</span><span class="p">,</span> <span class="n">seasonal_decompose</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.vector_ar.var_model</span> <span class="kn">import</span> <span class="n">VAR</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.stattools</span> <span class="kn">import</span> <span class="n">grangercausalitytests</span>
+
+<span class="c1"># Plotting Libraries</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Various Utilities</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Jared\OneDrive\Mines\FALL2024\EBGN594\MISO_PJM_data\raw_data.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input tag_hide-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Date/Time&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date/Time&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;MISO RT LOAD (MW)&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;MISO RTLOAD&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Temperature (F)&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Snowfall (inch)&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;snowfall (inch)&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Wind Speed (mph)&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;wind_speed_100m (mp/h)&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date/Time&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MISO RT LOAD (MW)</th>
+      <th>Temperature (F)</th>
+      <th>Snowfall (inch)</th>
+      <th>Wind Speed (mph)</th>
+    </tr>
+    <tr>
+      <th>Date/Time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2019-05-30 01:00:00</th>
+      <td>69151.88</td>
+      <td>50.9</td>
+      <td>0.0</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2019-05-30 02:00:00</th>
+      <td>65624.75</td>
+      <td>54.0</td>
+      <td>0.0</td>
+      <td>6.3</td>
+    </tr>
+    <tr>
+      <th>2019-05-30 03:00:00</th>
+      <td>63339.86</td>
+      <td>52.9</td>
+      <td>0.0</td>
+      <td>3.9</td>
+    </tr>
+    <tr>
+      <th>2019-05-30 04:00:00</th>
+      <td>61863.34</td>
+      <td>50.9</td>
+      <td>0.0</td>
+      <td>5.5</td>
+    </tr>
+    <tr>
+      <th>2019-05-30 05:00:00</th>
+      <td>61501.48</td>
+      <td>48.8</td>
+      <td>0.0</td>
+      <td>8.2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</details>
+</div>
+<section id="id1">
+<h2>1.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="adf-tests">
+<h3>ADF tests.<a class="headerlink" href="#adf-tests" title="Link to this heading">#</a></h3>
+<p>Below is the table of results of each ADF test on each variable, including our “Y” variable, RT load in MISO. We will be detailing MISO RT Load with further examination, so let us first briefly note results about the independent variables. Each of the independent series all have test statistics of high magnitude, as well as negligible p-values. From this, we can unanimously reject the null hypothesis of the presence of a unit root, entailing that all of the independent series are most likely stationary. This is intuitive, as we would not expect noticeable deviations in meteorlogical dynamics in a time span as short as 5 years.</p>
+<p>With regards to our dependent variable, we can see that it has a test statistic of -10.06 and a p-value of 1.31e-17 at 55 lags, meaning that we can also reject the null hypothesis of a unit root, so we can claim that this series is also stationary. This is also intuitive, as we do not expect large deviations in load dynamics in such a short period of time, assuming that there are no massive deviations in other exogenous processes that may affect electricity consumption in Minneapolis (e.g. meteorological conditions, population dynamics, etc.).</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">adf_results_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Loop through each column in the dataset and compute the ADF test</span>
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">adf</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">],</span><span class="n">autolag</span><span class="o">=</span><span class="s1">&#39;BIC&#39;</span><span class="p">)</span>
+    <span class="n">adf_results_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">&#39;Series&#39;</span><span class="p">:</span> <span class="n">column</span><span class="p">,</span>
+        <span class="s1">&#39;Test Statistic&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s1">&#39;p-value&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="s1">&#39;Lags Used&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+        <span class="s1">&#39;Observations Used&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+        <span class="s1">&#39;1% Critical Value&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="s1">&#39;1%&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;5% Critical Value&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="s1">&#39;5%&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;10% Critical Value&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="s1">&#39;10%&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Max Information Criterion&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="p">})</span>
+
+<span class="n">adf_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">adf_results_list</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">adf_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Series</th>
+      <th>Test Statistic</th>
+      <th>p-value</th>
+      <th>Lags Used</th>
+      <th>Observations Used</th>
+      <th>1% Critical Value</th>
+      <th>5% Critical Value</th>
+      <th>10% Critical Value</th>
+      <th>Max Information Criterion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>MISO RT LOAD (MW)</td>
+      <td>-10.064248</td>
+      <td>1.308957e-17</td>
+      <td>55</td>
+      <td>43816</td>
+      <td>-3.430499</td>
+      <td>-2.861606</td>
+      <td>-2.566805</td>
+      <td>655205.466885</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Temperature (F)</td>
+      <td>-6.540229</td>
+      <td>9.386907e-09</td>
+      <td>50</td>
+      <td>43821</td>
+      <td>-3.430499</td>
+      <td>-2.861606</td>
+      <td>-2.566805</td>
+      <td>159789.282572</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Snowfall (inch)</td>
+      <td>-32.833404</td>
+      <td>0.000000e+00</td>
+      <td>25</td>
+      <td>43846</td>
+      <td>-3.430499</td>
+      <td>-2.861606</td>
+      <td>-2.566805</td>
+      <td>-214643.166831</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Wind Speed (mph)</td>
+      <td>-30.610417</td>
+      <td>0.000000e+00</td>
+      <td>25</td>
+      <td>43846</td>
+      <td>-3.430499</td>
+      <td>-2.861606</td>
+      <td>-2.566805</td>
+      <td>185838.062486</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="stl">
+<h3>STL<a class="headerlink" href="#stl" title="Link to this heading">#</a></h3>
+<p>Below is a chart of the Season-Trend decomposition of the RT Load series for daily seasonality. Daily seasonality here is a clear choice, as we expect load patterns to oscillate on a daily basis. First, we must resample the data as daily averages. This method from statsmodels imposes memory constraints that makes it impossible to analyze daily seasonality of hourly data. In this case, though, we should still observe the same seasonality trend, as this also observes daily seasonality. From the chart, it can clearly be seen that the seasonality component clearly exhibits a smooth, sinusoidal-like pattern that occurs on a daily basis, as expected. With visual observation alone, we can infer that there is a presence of seasonality in this series.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_daily</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">load_daily</span><span class="o">=</span><span class="n">df_daily</span><span class="p">[</span><span class="s1">&#39;MISO RT LOAD (MW)&#39;</span><span class="p">]</span>
+
+<span class="n">stl</span> <span class="o">=</span> <span class="n">STL</span><span class="p">(</span><span class="n">load_daily</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span><span class="n">seasonal</span><span class="o">=</span><span class="mi">365</span><span class="p">)</span>
+<span class="n">stl_result</span> <span class="o">=</span> <span class="n">stl</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">=</span><span class="n">stl_result</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/24cf391804b329309b0acd2b1bb410d33f7f0eb8fb8ff208844a2d322f1783c6.png" src="_images/24cf391804b329309b0acd2b1bb410d33f7f0eb8fb8ff208844a2d322f1783c6.png" />
+</div>
+</div>
+</section>
+<section id="autocorrelation-analysis-and-sarima-model">
+<h3>Autocorrelation analysis and SARIMA model<a class="headerlink" href="#autocorrelation-analysis-and-sarima-model" title="Link to this heading">#</a></h3>
+<p>Next, we take a look at the ACF and PACF plots to examine autocorrelation in the data. This will help us determine parameter choices for our SARIMA(p,d,q)x(P,D,Q,S) As can be seen, the ACF plot exhibits a decaying behavior, suggesting that the data may be nonstationary. However, by the ADF test, we determined with high confidence that the data is stationary. The reason for this decaying behavior could be attributed to seasonal non-stationarity, as the intuitive reasoning behind this is that the distribution of the data indeed changes in accordance to the season; load consumption during the summer is going to be higher on average than it will be in the winter. For this reason, we set d=0 and D=1 to reflect the need for nonstationary differencing.</p>
+<p>We can also see that the largest spikes in the corellograms occur at lag 1. For this reason, we can set the parameters P=Q=p=q=1.</p>
+<p>For the seasonality parameter, we choose S=7 for two reasons. The first is due to constraints on the algorithm, it is unable to take S=1 as a parameter. Secondly load patterns tend to also exhibit weekly and annually seasonality, making S=7 and S=365 feasible choices for the model. For the sake of computational complexity, we will choose S=7.</p>
+<p>This brings us to the model SARIMA(1,0,1)x(1,1,1,7). This is the model that will be used for question 2.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plot_acf</span><span class="p">(</span><span class="n">load_daily</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plot_pacf</span><span class="p">(</span><span class="n">load_daily</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/0d12741574670e90f618da3da72f241ad84731e50ba35a20d0741b7f51540ce8.png" src="_images/0d12741574670e90f618da3da72f241ad84731e50ba35a20d0741b7f51540ce8.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2>2.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="regression-model">
+<h3>Regression model<a class="headerlink" href="#regression-model" title="Link to this heading">#</a></h3>
+<p>For the regression model, I’ve chosen a dynamic regression model with SARIMA errors, where we regress on our independent variables (temperature, snowfall, windspeed) along with lags of the RT Load variable. A dynamic regression model is a more appropriate choice since the data clearly exhibits seasonal patterns. No differencing was performed, as we determined that each series is stationary. The equation of the model is as follows:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4541511e-b7c9-4a23-ac7a-d438874335e1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-4541511e-b7c9-4a23-ac7a-d438874335e1" title="Permalink to this equation">#</a></span>\[\begin{align}
+Y_t = \alpha + \beta_1 \cdot \text{Temperature}_t + \beta_2 \cdot \text{Snowfall}_t + \beta_3 \cdot \text{WindSpeed}_t + \phi_1 Y_{t-1} + \theta_1 \epsilon_{t-1} + \Phi_1 Y_{t-7} + \Theta_1 \epsilon_{t-7} + \epsilon_t
+\end{align}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> is the intercept</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_1 , \beta_2 , \beta_3\)</span> are coefficients for the contemporaneous values of Temperature, Snowfall, and Wind Speed, respectively</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi_1\)</span> is the non-seasonal AR(1) parameter</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta_1\)</span> is the non-seasonal MA(1) parameter</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi_1\)</span> is the seasonal AR(1) parameter at lag 7 (representing weekly seasonality)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Theta_1\)</span> is the seasonal MA(1) parameter at lag 7</p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon_t\)</span> is the error term at time <span class="math notranslate nohighlight">\(t\)</span></p></li>
+</ul>
+<p>Seasonality was addressed by using a SARIMA model as opposed to a non-seasonal ARIMA model that did not include seasonal ARMA terms (of weekly seasonality) or seasonal differencing. These addition of seasonality parameters were applied to address non-stationarity that arises from weakly seasonality.</p>
+<p>Non-seasonal ARMA terms, namely the AR(1) and MA(1) terms, were used to address autocorrelation in the residuals. The selection of these parameters was determined by the ACF/PACF plots above.</p>
+</section>
+<section id="structural-breaks">
+<h3>Structural breaks<a class="headerlink" href="#structural-breaks" title="Link to this heading">#</a></h3>
+<p><strong>NOTE:</strong> Python has no built-in package for structural break testing, so this part of the analysis was outsourced to a separate R file.</p>
+<p>Using the strucchange package in R, we are able to estimate the breakpoints in the linear model of the regressors on RT Load. The test yields a result of an optimal number of 4 breaks occurring on days 462, 736, 1199, 1475 from 5/30/2019. This is where the BIC criterion is minimized, making it optimal to the linear model. Below are the equations for the resulting models.</p>
+<p><strong>Regime 1: Before Break 1</strong></p>
+<div class="amsmath math notranslate nohighlight" id="equation-120b7dd1-d29e-4a4b-ae75-416bb742e81f">
+<span class="eqno">(2)<a class="headerlink" href="#equation-120b7dd1-d29e-4a4b-ae75-416bb742e81f" title="Permalink to this equation">#</a></span>\[\begin{align}
+Y = \beta_{0,1} + \beta_{1,1} \cdot \text{Temperature} + \beta_{2,1} \cdot \text{Snowfall} + \beta_{3,1} \cdot \text{Wind Speed} + \epsilon
+\end{align}\]</div>
+<p><strong>Regime 2: Between Break 1 and Break 2</strong></p>
+<div class="amsmath math notranslate nohighlight" id="equation-dab488df-2d1a-491f-b123-0651ed8bf791">
+<span class="eqno">(3)<a class="headerlink" href="#equation-dab488df-2d1a-491f-b123-0651ed8bf791" title="Permalink to this equation">#</a></span>\[\begin{align}
+Y = \beta_{0,2} + \beta_{1,2} \cdot \text{Temperature} + \beta_{2,2} \cdot \text{Snowfall} + \beta_{3,2} \cdot \text{Wind Speed} + \epsilon
+\end{align}\]</div>
+<p><strong>Regime 3: Between Break 2 and Break 3</strong></p>
+<div class="amsmath math notranslate nohighlight" id="equation-c7951268-86ed-4591-8413-97741fde59ca">
+<span class="eqno">(4)<a class="headerlink" href="#equation-c7951268-86ed-4591-8413-97741fde59ca" title="Permalink to this equation">#</a></span>\[\begin{align}
+Y = \beta_{0,3} + \beta_{1,3} \cdot \text{Temperature} + \beta_{2,3} \cdot \text{Snowfall} + \beta_{3,3} \cdot \text{Wind Speed} + \epsilon
+\end{align}\]</div>
+<p><strong>Regime 4: Between Break 3 and Break 4</strong></p>
+<div class="amsmath math notranslate nohighlight" id="equation-2292c6d6-5c4f-4591-9a2a-ba202311b5c6">
+<span class="eqno">(5)<a class="headerlink" href="#equation-2292c6d6-5c4f-4591-9a2a-ba202311b5c6" title="Permalink to this equation">#</a></span>\[\begin{align}
+Y = \beta_{0,4} + \beta_{1,4} \cdot \text{Temperature} + \beta_{2,4} \cdot \text{Snowfall} + \beta_{3,4} \cdot \text{Wind Speed} + \epsilon
+\end{align}\]</div>
+<p><strong>Regime 5: After Break 4</strong></p>
+<div class="amsmath math notranslate nohighlight" id="equation-e0390203-f606-4b20-a380-f06ce78b042e">
+<span class="eqno">(6)<a class="headerlink" href="#equation-e0390203-f606-4b20-a380-f06ce78b042e" title="Permalink to this equation">#</a></span>\[\begin{align}
+Y = \beta_{0,5} + \beta_{1,5} \cdot \text{Temperature} + \beta_{2,5} \cdot \text{Snowfall} + \beta_{3,5} \cdot \text{Wind Speed} + \epsilon
+\end{align}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta_{0,i}\)</span>: Intercept for regime <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_{1,i}\)</span>: Coefficient for Temperature in regime <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_{2,i}\)</span>: Coefficient for Snowfall in regime <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_{3,i}\)</span>: Coefficient for Wind Speed in regime <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span>: Error term</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Temperature (F)&#39;</span><span class="p">,</span> <span class="s1">&#39;Snowfall (inch)&#39;</span><span class="p">,</span> <span class="s1">&#39;Wind Speed (mph)&#39;</span><span class="p">]])</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="n">sarima_model</span> <span class="o">=</span> <span class="n">SARIMAX</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;MISO RT LOAD (MW)&#39;</span><span class="p">],</span>
+    <span class="n">exog</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+    <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>                 
+    <span class="n">seasonal_order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>   
+    <span class="n">enforce_stationarity</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Summary of the SARIMA model</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sarima_model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Temperature (F)&#39;</span><span class="p">,</span> <span class="s1">&#39;Snowfall (inch)&#39;</span><span class="p">,</span> <span class="s1">&#39;Wind Speed (mph)&#39;</span><span class="p">]])</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">sarima_model</span> <span class="o">=</span> <span class="n">SARIMAX</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">df</span><span class="p">[</span><span class="s1">&#39;MISO RT LOAD (MW)&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">exog</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>                 
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">seasonal_order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>   
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">enforce_stationarity</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># Summary of the SARIMA model</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="n">sarima_model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:704,</span> in <span class="ni">MLEModel.fit</span><span class="nt">(self, start_params, transformed, includes_fixed, cov_type, cov_kwds, method, maxiter, full_output, disp, callback, return_params, optim_score, optim_complex_step, optim_hessian, flags, low_memory, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span>         <span class="n">flags</span><span class="p">[</span><span class="s1">&#39;hessian_method&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">optim_hessian</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="n">fargs</span> <span class="o">=</span> <span class="p">(</span><span class="n">flags</span><span class="p">,)</span>
+<span class="ne">--&gt; </span><span class="mi">704</span>     <span class="n">mlefit</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">MLEModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">start_params</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span>                                        <span class="n">fargs</span><span class="o">=</span><span class="n">fargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>                                        <span class="n">maxiter</span><span class="o">=</span><span class="n">maxiter</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>                                        <span class="n">full_output</span><span class="o">=</span><span class="n">full_output</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span>                                        <span class="n">disp</span><span class="o">=</span><span class="n">disp</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">709</span>                                        <span class="n">skip_hessian</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">711</span> <span class="c1"># Just return the fitted parameters if requested</span>
+<span class="g g-Whitespace">    </span><span class="mi">712</span> <span class="k">if</span> <span class="n">return_params</span><span class="p">:</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\statsmodels\base\model.py:566,</span> in <span class="ni">LikelihoodModel.fit</span><span class="nt">(self, start_params, method, maxiter, full_output, disp, fargs, callback, retall, skip_hessian, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">563</span>     <span class="k">del</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;use_t&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">565</span> <span class="n">optimizer</span> <span class="o">=</span> <span class="n">Optimizer</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">566</span> <span class="n">xopt</span><span class="p">,</span> <span class="n">retvals</span><span class="p">,</span> <span class="n">optim_settings</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">start_params</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">567</span>                                                <span class="n">fargs</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">568</span>                                                <span class="n">hessian</span><span class="o">=</span><span class="n">hess</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">569</span>                                                <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">570</span>                                                <span class="n">disp</span><span class="o">=</span><span class="n">disp</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">571</span>                                                <span class="n">maxiter</span><span class="o">=</span><span class="n">maxiter</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">572</span>                                                <span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span>                                                <span class="n">retall</span><span class="o">=</span><span class="n">retall</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span>                                                <span class="n">full_output</span><span class="o">=</span><span class="n">full_output</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">575</span> <span class="c1"># Restore cov_type, cov_kwds and use_t</span>
+<span class="g g-Whitespace">    </span><span class="mi">576</span> <span class="n">optim_settings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\statsmodels\base\optimizer.py:242,</span> in <span class="ni">Optimizer._fit</span><span class="nt">(self, objective, gradient, start_params, fargs, kwargs, hessian, method, maxiter, full_output, disp, callback, retall)</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="n">fit_funcs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">extra_fit_funcs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="n">func</span> <span class="o">=</span> <span class="n">fit_funcs</span><span class="p">[</span><span class="n">method</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">242</span> <span class="n">xopt</span><span class="p">,</span> <span class="n">retvals</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">gradient</span><span class="p">,</span> <span class="n">start_params</span><span class="p">,</span> <span class="n">fargs</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">243</span>                      <span class="n">disp</span><span class="o">=</span><span class="n">disp</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="n">maxiter</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span>                      <span class="n">retall</span><span class="o">=</span><span class="n">retall</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="n">full_output</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span>                      <span class="n">hess</span><span class="o">=</span><span class="n">hessian</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span> <span class="n">optim_settings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;optimizer&#39;</span><span class="p">:</span> <span class="n">method</span><span class="p">,</span> <span class="s1">&#39;start_params&#39;</span><span class="p">:</span> <span class="n">start_params</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span>                   <span class="s1">&#39;maxiter&#39;</span><span class="p">:</span> <span class="n">maxiter</span><span class="p">,</span> <span class="s1">&#39;full_output&#39;</span><span class="p">:</span> <span class="n">full_output</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span>                   <span class="s1">&#39;disp&#39;</span><span class="p">:</span> <span class="n">disp</span><span class="p">,</span> <span class="s1">&#39;fargs&#39;</span><span class="p">:</span> <span class="n">fargs</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">:</span> <span class="n">callback</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span>                   <span class="s1">&#39;retall&#39;</span><span class="p">:</span> <span class="n">retall</span><span class="p">,</span> <span class="s2">&quot;extra_fit_funcs&quot;</span><span class="p">:</span> <span class="n">extra_fit_funcs</span><span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">251</span> <span class="n">optim_settings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\statsmodels\base\optimizer.py:659,</span> in <span class="ni">_fit_lbfgs</span><span class="nt">(f, score, start_params, fargs, kwargs, disp, maxiter, callback, retall, full_output, hess)</span>
+<span class="g g-Whitespace">    </span><span class="mi">656</span> <span class="k">elif</span> <span class="n">approx_grad</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">657</span>     <span class="n">func</span> <span class="o">=</span> <span class="n">f</span>
+<span class="ne">--&gt; </span><span class="mi">659</span> <span class="n">retvals</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">fmin_l_bfgs_b</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">start_params</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="n">maxiter</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">660</span>                                  <span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">fargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">661</span>                                  <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span> <span class="n">disp</span><span class="o">=</span><span class="n">disp</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">662</span>                                  <span class="o">**</span><span class="n">extra_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span> <span class="k">if</span> <span class="n">full_output</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">665</span>     <span class="n">xopt</span><span class="p">,</span> <span class="n">fopt</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">retvals</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\scipy\optimize\_lbfgsb_py.py:199,</span> in <span class="ni">fmin_l_bfgs_b</span><span class="nt">(func, x0, fprime, args, approx_grad, bounds, m, factr, pgtol, epsilon, iprint, maxfun, maxiter, disp, callback, maxls)</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span> <span class="n">callback</span> <span class="o">=</span> <span class="n">_wrap_callback</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> <span class="n">opts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;disp&#39;</span><span class="p">:</span> <span class="n">disp</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="s1">&#39;iprint&#39;</span><span class="p">:</span> <span class="n">iprint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span>         <span class="s1">&#39;maxcor&#39;</span><span class="p">:</span> <span class="n">m</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span>         <span class="s1">&#39;callback&#39;</span><span class="p">:</span> <span class="n">callback</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span>         <span class="s1">&#39;maxls&#39;</span><span class="p">:</span> <span class="n">maxls</span><span class="p">}</span>
+<span class="ne">--&gt; </span><span class="mi">199</span> <span class="n">res</span> <span class="o">=</span> <span class="n">_minimize_lbfgsb</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span><span class="n">jac</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span>                        <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;grad&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;jac&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>      <span class="s1">&#39;task&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span>      <span class="s1">&#39;funcalls&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;nfev&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>      <span class="s1">&#39;nit&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;nit&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>      <span class="s1">&#39;warnflag&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]}</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="n">f</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;fun&#39;</span><span class="p">]</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\scipy\optimize\_lbfgsb_py.py:365,</span> in <span class="ni">_minimize_lbfgsb</span><span class="nt">(fun, x0, args, jac, bounds, disp, maxcor, ftol, gtol, eps, maxfun, maxiter, iprint, callback, maxls, finite_diff_rel_step, **unknown_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span> <span class="n">task_str</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span> <span class="k">if</span> <span class="n">task_str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;FG&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="c1"># The minimization routine wants f and g at the current x.</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>     <span class="c1"># Note that interruptions due to maxfun are postponed</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span>     <span class="c1"># until the completion of the current minimization iteration.</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="c1"># Overwrite f and g:</span>
+<span class="ne">--&gt; </span><span class="mi">365</span>     <span class="n">f</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="n">func_and_grad</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="k">elif</span> <span class="n">task_str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;NEW_X&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span>     <span class="c1"># new iteration</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span>     <span class="n">n_iterations</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\scipy\optimize\_differentiable_functions.py:286,</span> in <span class="ni">ScalarFunction.fun_and_grad</span><span class="nt">(self, x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_update_x_impl</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_fun</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">286</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_grad</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">g</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\scipy\optimize\_differentiable_functions.py:256,</span> in <span class="ni">ScalarFunction._update_grad</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span> <span class="k">def</span> <span class="nf">_update_grad</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span>     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">g_updated</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">256</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_update_grad_impl</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span>         <span class="bp">self</span><span class="o">.</span><span class="n">g_updated</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\scipy\optimize\_differentiable_functions.py:173,</span> in <span class="ni">ScalarFunction.__init__.&lt;locals&gt;.update_grad</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_fun</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">172</span> <span class="bp">self</span><span class="o">.</span><span class="n">ngev</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">173</span> <span class="bp">self</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">approx_derivative</span><span class="p">(</span><span class="n">fun_wrapped</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">f0</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>                            <span class="o">**</span><span class="n">finite_diff_options</span><span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\scipy\optimize\_numdiff.py:505,</span> in <span class="ni">approx_derivative</span><span class="nt">(fun, x0, method, rel_step, abs_step, f0, bounds, sparsity, as_linear_operator, args, kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span>     <span class="n">use_one_sided</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="k">if</span> <span class="n">sparsity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">505</span>     <span class="k">return</span> <span class="n">_dense_difference</span><span class="p">(</span><span class="n">fun_wrapped</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>                              <span class="n">use_one_sided</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">issparse</span><span class="p">(</span><span class="n">sparsity</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">sparsity</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\scipy\optimize\_numdiff.py:576,</span> in <span class="ni">_dense_difference</span><span class="nt">(fun, x0, f0, h, use_one_sided, method)</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span>     <span class="n">x</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">h_vecs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">575</span>     <span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">x0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># Recompute dx as exactly representable number.</span>
+<span class="ne">--&gt; </span><span class="mi">576</span>     <span class="n">df</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">f0</span>
+<span class="g g-Whitespace">    </span><span class="mi">577</span> <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;3-point&#39;</span> <span class="ow">and</span> <span class="n">use_one_sided</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">578</span>     <span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">h_vecs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\scipy\optimize\_numdiff.py:456,</span> in <span class="ni">approx_derivative.&lt;locals&gt;.fun_wrapped</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span> <span class="k">def</span> <span class="nf">fun_wrapped</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">456</span>     <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">fun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">457</span>     <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span>         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;`fun` return value has &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">459</span>                            <span class="s2">&quot;more than 1 dimension.&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\scipy\optimize\_differentiable_functions.py:137,</span> in <span class="ni">ScalarFunction.__init__.&lt;locals&gt;.fun_wrapped</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="bp">self</span><span class="o">.</span><span class="n">nfev</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="c1"># Send a copy because the user may overwrite it.</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="c1"># Overwriting results in undefined behaviour because</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span> <span class="c1"># fun(self.x) will change self.x, with the two no longer linked.</span>
+<span class="ne">--&gt; </span><span class="mi">137</span> <span class="n">fx</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="c1"># Make sure the function returns a true scalar</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">fx</span><span class="p">):</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\statsmodels\base\model.py:534,</span> in <span class="ni">LikelihoodModel.fit.&lt;locals&gt;.f</span><span class="nt">(params, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">534</span>     <span class="k">return</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">loglike</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span> <span class="o">/</span> <span class="n">nobs</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:939,</span> in <span class="ni">MLEModel.loglike</span><span class="nt">(self, params, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">936</span> <span class="k">if</span> <span class="n">complex_step</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;inversion_method&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">INVERT_UNIVARIATE</span> <span class="o">|</span> <span class="n">SOLVE_LU</span>
+<span class="ne">--&gt; </span><span class="mi">939</span> <span class="n">loglike</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ssm</span><span class="o">.</span><span class="n">loglike</span><span class="p">(</span><span class="n">complex_step</span><span class="o">=</span><span class="n">complex_step</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">941</span> <span class="c1"># Koopman, Shephard, and Doornik recommend maximizing the average</span>
+<span class="g g-Whitespace">    </span><span class="mi">942</span> <span class="c1"># likelihood to avoid scale issues, but the averaging is done</span>
+<span class="g g-Whitespace">    </span><span class="mi">943</span> <span class="c1"># automatically in the base model `fit` method</span>
+<span class="g g-Whitespace">    </span><span class="mi">944</span> <span class="k">return</span> <span class="n">loglike</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\statsmodels\tsa\statespace\kalman_filter.py:1001,</span> in <span class="ni">KalmanFilter.loglike</span><span class="nt">(self, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">985</span><span class="w"> </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">986</span><span class="sd"> Calculate the loglikelihood associated with the statespace model.</span>
+<span class="g g-Whitespace">    </span><span class="mi">987</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">997</span><span class="sd">     The joint loglikelihood.</span>
+<span class="g g-Whitespace">    </span><span class="mi">998</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">999</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;conserve_memory&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1000</span>                   <span class="n">MEMORY_CONSERVE</span> <span class="o">^</span> <span class="n">MEMORY_NO_LIKELIHOOD</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1001</span> <span class="n">kfilter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1002</span> <span class="n">loglikelihood_burn</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;loglikelihood_burn&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1003</span>                                 <span class="bp">self</span><span class="o">.</span><span class="n">loglikelihood_burn</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1004</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;conserve_memory&#39;</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">MEMORY_NO_LIKELIHOOD</span><span class="p">):</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="regression-results">
+<h3>Regression results<a class="headerlink" href="#regression-results" title="Link to this heading">#</a></h3>
+<p>From the regression results, we can see that 2/3 of our exogenous variables are statistically significant. Snowfall is not statistically significant on the 95% CI. Both our seasonal and nonseasonal ARMA terms are statistically significant, meaning that both weakly cyclical effects and 1-period (1-day) lag effects are statistically significant to the behavior of the series. The constant, however, seems to be completely random and insignificant. This could be due to stationarity, overfitting the model, multicollinearity, or other models, so that is an issue that needs to be addressed.</p>
+<p>The model diagnostics indicate that the model performance is subpar. The LB test indicates that there still remains serial autocorrelation in the data. This can be further addressed by adding additional higher-order AR/MA terms or additional seasonal lags. Also, the JB test indicates that the model residuals are not normally distributed, which could arise from a weak model that is not able to capture the effects of outliers or nonlinear patterns.</p>
+</section>
+</section>
+<section id="id3">
+<h2>3.<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="var-model">
+<h3>VAR Model<a class="headerlink" href="#var-model" title="Link to this heading">#</a></h3>
+<p>For this part, we will be estimating a VAR model for our data. As discussed earlier, the data is clearly seasonal. We will control for the seasonality by using the seasonal decomposition method. We will take the residuals from this seasonal decompostion to use for the model, as these will lack the seasonal components of the data. This will allow the model fitting to focus on the non-seasonal autoregressive dependencies of the data. Using BIC, we determined that the optimal lag length is 27. So that brings us to the following equation:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cb3b9dec-e1c0-4439-8fed-5e8da9d3feee">
+<span class="eqno">(7)<a class="headerlink" href="#equation-cb3b9dec-e1c0-4439-8fed-5e8da9d3feee" title="Permalink to this equation">#</a></span>\[\begin{align}
+
+Y_t = \begin{bmatrix} \alpha_1 \\ \alpha_2 \\ \alpha_3 \\ \alpha_4 \end{bmatrix} + 
+\sum_{i=1}^{27}
+\begin{bmatrix} 
+\phi_{1,i} &amp; \theta_{1,i} &amp; \gamma_{1,i} &amp; \delta_{1,i} \\ 
+\phi_{2,i} &amp; \theta_{2,i} &amp; \gamma_{2,i} &amp; \delta_{2,i} \\ 
+\phi_{3,i} &amp; \theta_{3,i} &amp; \gamma_{3,i} &amp; \delta_{3,i} \\ 
+\phi_{4,i} &amp; \theta_{4,i} &amp; \gamma_{4,i} &amp; \delta_{4,i} 
+\end{bmatrix} Y_{t-i} 
++
+\begin{bmatrix} \epsilon_{1,t} \\ \epsilon_{2,t} \\ \epsilon_{3,t} \\ \epsilon_{4,t} \end{bmatrix}
+
+\end{align}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha_i\)</span>  in vector  <span class="math notranslate nohighlight">\(C\)</span>  represents the intercept for the corresponding equation.</p></li>
+<li><p>Each  <span class="math notranslate nohighlight">\(A_i\)</span>  matrix contains the coefficients:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\phi_{j,i}\)</span> : coefficient for the  <span class="math notranslate nohighlight">\(j\)</span> -th variable’s own lag  <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta_{j,i}\)</span> : coefficient for <strong>Temperature</strong> (X1) lag  <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma_{j,i}\)</span> : coefficient for <strong>Snowfall</strong> (X2) lag  <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta_{j,i}\)</span> : coefficient for <strong>WindSpeed</strong> (X3) lag  <span class="math notranslate nohighlight">\(i\)</span></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seasonally decompose each series and collect residuals </span>
+<span class="n">residuals</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">4</span><span class="p">]:</span>  
+    <span class="n">decomposition</span> <span class="o">=</span> <span class="n">seasonal_decompose</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">],</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;additive&#39;</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>  
+    <span class="n">residuals</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">decomposition</span><span class="o">.</span><span class="n">resid</span>
+
+<span class="n">residuals</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="c1"># Fit VAR model on seasonal decomposition residuals</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">VAR</span><span class="p">(</span><span class="n">residuals</span><span class="p">)</span>  
+<span class="n">lag_order</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">select_order</span><span class="p">(</span><span class="n">maxlags</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>  
+
+<span class="c1"># Select optimal lag length based on BIC</span>
+<span class="n">optimal_lag</span> <span class="o">=</span> <span class="n">lag_order</span><span class="o">.</span><span class="n">bic</span>
+
+<span class="c1"># Fitting VAR model </span>
+<span class="n">var_model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">optimal_lag</span><span class="p">)</span>
+
+<span class="c1"># Display the summary of the fitted model</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var_model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Summary of Regression Results   
+==================================
+Model:                         VAR
+Method:                        OLS
+Date:           Sun, 10, Nov, 2024
+Time:                     23:28:44
+--------------------------------------------------------------------
+No. of Equations:         4.00000    BIC:                    3.14725
+Nobs:                     43816.0    HQIC:                   3.03807
+Log likelihood:          -313342.    FPE:                    19.8426
+AIC:                      2.98783    Det(Omega_mle):         19.4826
+--------------------------------------------------------------------
+Results for equation MISO RT LOAD (MW)
+========================================================================================
+                           coefficient       std. error           t-stat            prob
+----------------------------------------------------------------------------------------
+const                        -0.048859         1.291072           -0.038           0.970
+L1.MISO RT LOAD (MW)          1.142470         0.004746          240.722           0.000
+L1.Temperature (F)          -12.059831         1.377749           -8.753           0.000
+L1.Snowfall (inch)           -9.588845        95.540952           -0.100           0.920
+L1.Wind Speed (mph)           2.715811         1.006744            2.698           0.007
+L2.MISO RT LOAD (MW)         -0.873324         0.007123         -122.607           0.000
+L2.Temperature (F)           -5.964705         1.487003           -4.011           0.000
+L2.Snowfall (inch)         -135.907168        95.589332           -1.422           0.155
+L2.Wind Speed (mph)           0.652013         1.014891            0.642           0.521
+L3.MISO RT LOAD (MW)          0.028472         0.008168            3.486           0.000
+L3.Temperature (F)            2.949579         1.552393            1.900           0.057
+L3.Snowfall (inch)          -14.550393       107.351047           -0.136           0.892
+L3.Wind Speed (mph)           1.223932         1.095620            1.117           0.264
+L4.MISO RT LOAD (MW)          0.096357         0.008143           11.834           0.000
+L4.Temperature (F)           -5.119592         1.607680           -3.184           0.001
+L4.Snowfall (inch)         -338.158870       118.594081           -2.851           0.004
+L4.Wind Speed (mph)           1.546804         1.183237            1.307           0.191
+L5.MISO RT LOAD (MW)         -0.271506         0.008155          -33.292           0.000
+L5.Temperature (F)           -2.488512         1.607858           -1.548           0.122
+L5.Snowfall (inch)         -227.794286       123.632446           -1.843           0.065
+L5.Wind Speed (mph)           0.646842         1.205215            0.537           0.591
+L6.MISO RT LOAD (MW)         -0.051988         0.008258           -6.296           0.000
+L6.Temperature (F)            0.428485         1.637867            0.262           0.794
+L6.Snowfall (inch)         -244.581389       132.979122           -1.839           0.066
+L6.Wind Speed (mph)           2.435608         1.261930            1.930           0.054
+L7.MISO RT LOAD (MW)         -0.082118         0.008261           -9.941           0.000
+L7.Temperature (F)           -2.343522         1.660396           -1.411           0.158
+L7.Snowfall (inch)         -394.045203       142.483641           -2.766           0.006
+L7.Wind Speed (mph)           2.400421         1.307538            1.836           0.066
+L8.MISO RT LOAD (MW)         -0.200858         0.008270          -24.288           0.000
+L8.Temperature (F)           -3.478026         1.674324           -2.077           0.038
+L8.Snowfall (inch)         -213.301422       151.300163           -1.410           0.159
+L8.Wind Speed (mph)           0.719423         1.346366            0.534           0.593
+L9.MISO RT LOAD (MW)         -0.061564         0.008326           -7.394           0.000
+L9.Temperature (F)           -0.651722         1.696489           -0.384           0.701
+L9.Snowfall (inch)         -456.709651       161.273123           -2.832           0.005
+L9.Wind Speed (mph)           2.500340         1.389770            1.799           0.072
+L10.MISO RT LOAD (MW)        -0.113519         0.008329          -13.630           0.000
+L10.Temperature (F)          -1.007998         1.713164           -0.588           0.556
+L10.Snowfall (inch)        -472.637614       169.420687           -2.790           0.005
+L10.Wind Speed (mph)          2.651996         1.429273            1.855           0.064
+L11.MISO RT LOAD (MW)        -0.121384         0.008346          -14.544           0.000
+L11.Temperature (F)          -4.541378         1.731906           -2.622           0.009
+L11.Snowfall (inch)        -350.131237       178.052892           -1.966           0.049
+L11.Wind Speed (mph)          1.085686         1.467379            0.740           0.459
+L12.MISO RT LOAD (MW)        -0.125818         0.008366          -15.039           0.000
+L12.Temperature (F)          -3.443288         1.753580           -1.964           0.050
+L12.Snowfall (inch)        -501.049857       186.031231           -2.693           0.007
+L12.Wind Speed (mph)          3.511468         1.501943            2.338           0.019
+L13.MISO RT LOAD (MW)        -0.084811         0.008384          -10.116           0.000
+L13.Temperature (F)          -4.829424         1.776169           -2.719           0.007
+L13.Snowfall (inch)        -603.756975       194.077502           -3.111           0.002
+L13.Wind Speed (mph)         -0.543242         1.535479           -0.354           0.723
+L14.MISO RT LOAD (MW)        -0.143662         0.008393          -17.116           0.000
+L14.Temperature (F)          -6.365274         1.796092           -3.544           0.000
+L14.Snowfall (inch)        -547.273388       201.542865           -2.715           0.007
+L14.Wind Speed (mph)          3.239777         1.566139            2.069           0.039
+L15.MISO RT LOAD (MW)        -0.141064         0.008418          -16.756           0.000
+L15.Temperature (F)          -9.230697         1.815079           -5.086           0.000
+L15.Snowfall (inch)        -635.974871       208.434531           -3.051           0.002
+L15.Wind Speed (mph)          4.216126         1.596299            2.641           0.008
+L16.MISO RT LOAD (MW)        -0.126504         0.008444          -14.981           0.000
+L16.Temperature (F)          -6.384061         1.833244           -3.482           0.000
+L16.Snowfall (inch)        -671.097499       214.814250           -3.124           0.002
+L16.Wind Speed (mph)          3.235009         1.621930            1.995           0.046
+L17.MISO RT LOAD (MW)        -0.102140         0.008464          -12.067           0.000
+L17.Temperature (F)          -6.025429         1.852475           -3.253           0.001
+L17.Snowfall (inch)        -626.757787       220.729925           -2.839           0.005
+L17.Wind Speed (mph)          3.861401         1.646324            2.345           0.019
+L18.MISO RT LOAD (MW)        -0.129828         0.008474          -15.321           0.000
+L18.Temperature (F)          -9.278818         1.868774           -4.965           0.000
+L18.Snowfall (inch)        -635.077398       226.072788           -2.809           0.005
+L18.Wind Speed (mph)          6.367961         1.670886            3.811           0.000
+L19.MISO RT LOAD (MW)        -0.105687         0.008494          -12.442           0.000
+L19.Temperature (F)          -8.401881         1.885053           -4.457           0.000
+L19.Snowfall (inch)        -588.116659       230.783783           -2.548           0.011
+L19.Wind Speed (mph)          3.514569         1.691732            2.077           0.038
+L20.MISO RT LOAD (MW)        -0.126581         0.008506          -14.881           0.000
+L20.Temperature (F)          -5.787292         1.899631           -3.047           0.002
+L20.Snowfall (inch)        -747.052496       234.810125           -3.182           0.001
+L20.Wind Speed (mph)          3.578300         1.709687            2.093           0.036
+L21.MISO RT LOAD (MW)        -0.118763         0.008520          -13.940           0.000
+L21.Temperature (F)          -7.324080         1.912362           -3.830           0.000
+L21.Snowfall (inch)        -685.873963       238.202945           -2.879           0.004
+L21.Wind Speed (mph)          3.876196         1.727638            2.244           0.025
+L22.MISO RT LOAD (MW)        -0.163526         0.008524          -19.184           0.000
+L22.Temperature (F)          -6.415873         1.923755           -3.335           0.001
+L22.Snowfall (inch)        -726.733445       241.073987           -3.015           0.003
+L22.Wind Speed (mph)          4.377293         1.740678            2.515           0.012
+L23.MISO RT LOAD (MW)         0.064858         0.008494            7.636           0.000
+L23.Temperature (F)          -7.836731         1.931428           -4.057           0.000
+L23.Snowfall (inch)        -718.335389       243.574571           -2.949           0.003
+L23.Wind Speed (mph)          3.853001         1.752837            2.198           0.028
+L24.MISO RT LOAD (MW)         0.368121         0.008496           43.331           0.000
+L24.Temperature (F)         -10.729442         1.934254           -5.547           0.000
+L24.Snowfall (inch)        -463.189323       244.514753           -1.894           0.058
+L24.Wind Speed (mph)          2.154891         1.759094            1.225           0.221
+L25.MISO RT LOAD (MW)        -0.708155         0.008485          -83.457           0.000
+L25.Temperature (F)          -7.956530         1.930439           -4.122           0.000
+L25.Snowfall (inch)        -770.319886       245.620651           -3.136           0.002
+L25.Wind Speed (mph)          3.925368         1.757616            2.233           0.026
+L26.MISO RT LOAD (MW)         0.373765         0.008489           44.027           0.000
+L26.Temperature (F)         -11.522746         1.929824           -5.971           0.000
+L26.Snowfall (inch)        -476.755826       245.640448           -1.941           0.052
+L26.Wind Speed (mph)          1.809392         1.757801            1.029           0.303
+L27.MISO RT LOAD (MW)        -0.056974         0.008492           -6.709           0.000
+L27.Temperature (F)          -1.636773         1.935913           -0.845           0.398
+L27.Snowfall (inch)        -581.151586       244.556434           -2.376           0.017
+L27.Wind Speed (mph)         -0.490017         1.758732           -0.279           0.781
+L28.MISO RT LOAD (MW)        -0.225521         0.008489          -26.566           0.000
+L28.Temperature (F)          -7.810611         1.933345           -4.040           0.000
+L28.Snowfall (inch)        -417.442202       243.651030           -1.713           0.087
+L28.Wind Speed (mph)          4.363979         1.751884            2.491           0.013
+L29.MISO RT LOAD (MW)         0.102523         0.008522           12.030           0.000
+L29.Temperature (F)          -5.587652         1.925806           -2.901           0.004
+L29.Snowfall (inch)        -424.176261       241.177485           -1.759           0.079
+L29.Wind Speed (mph)          0.797473         1.739056            0.459           0.647
+L30.MISO RT LOAD (MW)        -0.078573         0.008518           -9.224           0.000
+L30.Temperature (F)          -5.735347         1.914381           -2.996           0.003
+L30.Snowfall (inch)        -388.891979       238.316430           -1.632           0.103
+L30.Wind Speed (mph)          3.730349         1.725393            2.162           0.031
+L31.MISO RT LOAD (MW)        -0.051010         0.008505           -5.998           0.000
+L31.Temperature (F)          -7.429765         1.902105           -3.906           0.000
+L31.Snowfall (inch)        -404.097164       234.957516           -1.720           0.085
+L31.Wind Speed (mph)          1.093171         1.706141            0.641           0.522
+L32.MISO RT LOAD (MW)         0.028175         0.008493            3.317           0.001
+L32.Temperature (F)          -8.943972         1.888430           -4.736           0.000
+L32.Snowfall (inch)        -358.386440       230.955008           -1.552           0.121
+L32.Wind Speed (mph)          4.794976         1.687119            2.842           0.004
+L33.MISO RT LOAD (MW)        -0.057938         0.008472           -6.839           0.000
+L33.Temperature (F)          -5.473019         1.872242           -2.923           0.003
+L33.Snowfall (inch)        -416.339551       226.230429           -1.840           0.066
+L33.Wind Speed (mph)          1.843068         1.666682            1.106           0.269
+L34.MISO RT LOAD (MW)        -0.029302         0.008463           -3.463           0.001
+L34.Temperature (F)          -7.086660         1.855772           -3.819           0.000
+L34.Snowfall (inch)        -257.021980       220.935934           -1.163           0.245
+L34.Wind Speed (mph)          4.701373         1.641505            2.864           0.004
+L35.MISO RT LOAD (MW)         0.009436         0.008443            1.118           0.264
+L35.Temperature (F)          -6.333435         1.837614           -3.447           0.001
+L35.Snowfall (inch)        -204.476410       214.996340           -0.951           0.342
+L35.Wind Speed (mph)          5.657244         1.616646            3.499           0.000
+L36.MISO RT LOAD (MW)        -0.043037         0.008417           -5.113           0.000
+L36.Temperature (F)          -9.533273         1.820476           -5.237           0.000
+L36.Snowfall (inch)        -316.443625       208.631056           -1.517           0.129
+L36.Wind Speed (mph)          2.347342         1.590203            1.476           0.140
+L37.MISO RT LOAD (MW)         0.009205         0.008391            1.097           0.273
+L37.Temperature (F)          -9.376474         1.802782           -5.201           0.000
+L37.Snowfall (inch)        -189.643719       201.762685           -0.940           0.347
+L37.Wind Speed (mph)          4.852318         1.558620            3.113           0.002
+L38.MISO RT LOAD (MW)        -0.048865         0.008382           -5.830           0.000
+L38.Temperature (F)         -10.454133         1.783964           -5.860           0.000
+L38.Snowfall (inch)        -218.714771       194.285448           -1.126           0.260
+L38.Wind Speed (mph)          5.183381         1.526801            3.395           0.001
+L39.MISO RT LOAD (MW)         0.024993         0.008362            2.989           0.003
+L39.Temperature (F)          -8.908524         1.763326           -5.052           0.000
+L39.Snowfall (inch)        -141.252952       186.233941           -0.758           0.448
+L39.Wind Speed (mph)          3.649624         1.491966            2.446           0.014
+L40.MISO RT LOAD (MW)        -0.020639         0.008344           -2.474           0.013
+L40.Temperature (F)         -10.276627         1.741621           -5.901           0.000
+L40.Snowfall (inch)        -138.940156       178.235622           -0.780           0.436
+L40.Wind Speed (mph)          5.399732         1.457152            3.706           0.000
+L41.MISO RT LOAD (MW)        -0.041060         0.008326           -4.931           0.000
+L41.Temperature (F)          -9.331536         1.723231           -5.415           0.000
+L41.Snowfall (inch)        -133.987312       169.580918           -0.790           0.429
+L41.Wind Speed (mph)          4.606306         1.419331            3.245           0.001
+L42.MISO RT LOAD (MW)        -0.003360         0.008324           -0.404           0.686
+L42.Temperature (F)          -6.614516         1.706465           -3.876           0.000
+L42.Snowfall (inch)          79.774083       161.450930            0.494           0.621
+L42.Wind Speed (mph)          3.647810         1.379890            2.644           0.008
+L43.MISO RT LOAD (MW)        -0.000208         0.008269           -0.025           0.980
+L43.Temperature (F)          -8.522696         1.683825           -5.062           0.000
+L43.Snowfall (inch)          26.569003       151.440353            0.175           0.861
+L43.Wind Speed (mph)          4.287556         1.337192            3.206           0.001
+L44.MISO RT LOAD (MW)        -0.016560         0.008260           -2.005           0.045
+L44.Temperature (F)          -6.203502         1.669297           -3.716           0.000
+L44.Snowfall (inch)         -82.925180       142.616454           -0.581           0.561
+L44.Wind Speed (mph)          1.818123         1.298569            1.400           0.161
+L45.MISO RT LOAD (MW)         0.016941         0.008257            2.052           0.040
+L45.Temperature (F)          -3.360347         1.645752           -2.042           0.041
+L45.Snowfall (inch)          47.218288       133.096940            0.355           0.723
+L45.Wind Speed (mph)          3.255705         1.253845            2.597           0.009
+L46.MISO RT LOAD (MW)        -0.006740         0.008156           -0.826           0.409
+L46.Temperature (F)          -2.692302         1.614652           -1.667           0.095
+L46.Snowfall (inch)         -83.626016       123.740742           -0.676           0.499
+L46.Wind Speed (mph)          2.573384         1.197589            2.149           0.032
+L47.MISO RT LOAD (MW)        -0.138422         0.008143          -16.999           0.000
+L47.Temperature (F)          -3.219292         1.614306           -1.994           0.046
+L47.Snowfall (inch)         149.626961       118.691529            1.261           0.207
+L47.Wind Speed (mph)          4.021854         1.175799            3.421           0.001
+L48.MISO RT LOAD (MW)         0.256634         0.008169           31.415           0.000
+L48.Temperature (F)          -5.589224         1.555992           -3.592           0.000
+L48.Snowfall (inch)         -65.535353       107.443836           -0.610           0.542
+L48.Wind Speed (mph)          2.096959         1.089965            1.924           0.054
+L49.MISO RT LOAD (MW)        -0.275975         0.007123          -38.745           0.000
+L49.Temperature (F)          -3.944356         1.489762           -2.648           0.008
+L49.Snowfall (inch)          22.731964        95.636817            0.238           0.812
+L49.Wind Speed (mph)          1.169275         1.010848            1.157           0.247
+L50.MISO RT LOAD (MW)         0.138477         0.004727           29.292           0.000
+L50.Temperature (F)          -3.274691         1.387083           -2.361           0.018
+L50.Snowfall (inch)         -97.502723        95.604552           -1.020           0.308
+L50.Wind Speed (mph)          0.721159         1.001482            0.720           0.471
+========================================================================================
+
+Results for equation Temperature (F)
+========================================================================================
+                           coefficient       std. error           t-stat            prob
+----------------------------------------------------------------------------------------
+const                        -0.000135         0.004490           -0.030           0.976
+L1.MISO RT LOAD (MW)         -0.000043         0.000017           -2.631           0.009
+L1.Temperature (F)            0.409114         0.004791           85.390           0.000
+L1.Snowfall (inch)            0.168173         0.332245            0.506           0.613
+L1.Wind Speed (mph)           0.006276         0.003501            1.793           0.073
+L2.MISO RT LOAD (MW)          0.000067         0.000025            2.704           0.007
+L2.Temperature (F)           -0.325820         0.005171          -63.008           0.000
+L2.Snowfall (inch)            0.258288         0.332413            0.777           0.437
+L2.Wind Speed (mph)           0.005238         0.003529            1.484           0.138
+L3.MISO RT LOAD (MW)         -0.000005         0.000028           -0.186           0.853
+L3.Temperature (F)           -0.304169         0.005398          -56.344           0.000
+L3.Snowfall (inch)            0.650188         0.373314            1.742           0.082
+L3.Wind Speed (mph)           0.001198         0.003810            0.314           0.753
+L4.MISO RT LOAD (MW)         -0.000029         0.000028           -1.008           0.314
+L4.Temperature (F)           -0.069779         0.005591          -12.481           0.000
+L4.Snowfall (inch)            0.881684         0.412412            2.138           0.033
+L4.Wind Speed (mph)           0.011446         0.004115            2.782           0.005
+L5.MISO RT LOAD (MW)          0.000086         0.000028            3.031           0.002
+L5.Temperature (F)           -0.231864         0.005591          -41.468           0.000
+L5.Snowfall (inch)            1.089160         0.429933            2.533           0.011
+L5.Wind Speed (mph)           0.007718         0.004191            1.842           0.066
+L6.MISO RT LOAD (MW)         -0.000064         0.000029           -2.229           0.026
+L6.Temperature (F)           -0.212088         0.005696          -37.237           0.000
+L6.Snowfall (inch)            0.992202         0.462436            2.146           0.032
+L6.Wind Speed (mph)           0.015868         0.004388            3.616           0.000
+L7.MISO RT LOAD (MW)          0.000046         0.000029            1.618           0.106
+L7.Temperature (F)           -0.170681         0.005774          -29.560           0.000
+L7.Snowfall (inch)            1.324450         0.495488            2.673           0.008
+L7.Wind Speed (mph)           0.016087         0.004547            3.538           0.000
+L8.MISO RT LOAD (MW)         -0.000044         0.000029           -1.513           0.130
+L8.Temperature (F)           -0.208366         0.005822          -35.786           0.000
+L8.Snowfall (inch)            1.358829         0.526148            2.583           0.010
+L8.Wind Speed (mph)           0.014510         0.004682            3.099           0.002
+L9.MISO RT LOAD (MW)          0.000054         0.000029            1.865           0.062
+L9.Temperature (F)           -0.190201         0.005900          -32.240           0.000
+L9.Snowfall (inch)            1.381207         0.560829            2.463           0.014
+L9.Wind Speed (mph)           0.020781         0.004833            4.300           0.000
+L10.MISO RT LOAD (MW)        -0.000035         0.000029           -1.217           0.224
+L10.Temperature (F)          -0.197761         0.005958          -33.195           0.000
+L10.Snowfall (inch)           1.472842         0.589162            2.500           0.012
+L10.Wind Speed (mph)          0.022050         0.004970            4.436           0.000
+L11.MISO RT LOAD (MW)         0.000012         0.000029            0.396           0.692
+L11.Temperature (F)          -0.211158         0.006023          -35.060           0.000
+L11.Snowfall (inch)           0.973943         0.619181            1.573           0.116
+L11.Wind Speed (mph)          0.026261         0.005103            5.146           0.000
+L12.MISO RT LOAD (MW)        -0.000018         0.000029           -0.633           0.527
+L12.Temperature (F)          -0.211836         0.006098          -34.738           0.000
+L12.Snowfall (inch)           1.495717         0.646926            2.312           0.021
+L12.Wind Speed (mph)          0.020267         0.005223            3.880           0.000
+L13.MISO RT LOAD (MW)         0.000034         0.000029            1.170           0.242
+L13.Temperature (F)          -0.206062         0.006177          -33.361           0.000
+L13.Snowfall (inch)           0.909563         0.674907            1.348           0.178
+L13.Wind Speed (mph)          0.026183         0.005340            4.904           0.000
+L14.MISO RT LOAD (MW)        -0.000022         0.000029           -0.758           0.448
+L14.Temperature (F)          -0.202394         0.006246          -32.404           0.000
+L14.Snowfall (inch)           1.156177         0.700867            1.650           0.099
+L14.Wind Speed (mph)          0.015083         0.005446            2.769           0.006
+L15.MISO RT LOAD (MW)         0.000022         0.000029            0.767           0.443
+L15.Temperature (F)          -0.195818         0.006312          -31.023           0.000
+L15.Snowfall (inch)           1.507739         0.724833            2.080           0.038
+L15.Wind Speed (mph)          0.023871         0.005551            4.300           0.000
+L16.MISO RT LOAD (MW)        -0.000021         0.000029           -0.729           0.466
+L16.Temperature (F)          -0.205211         0.006375          -32.189           0.000
+L16.Snowfall (inch)           1.265747         0.747019            1.694           0.090
+L16.Wind Speed (mph)          0.014349         0.005640            2.544           0.011
+L17.MISO RT LOAD (MW)        -0.000012         0.000029           -0.417           0.677
+L17.Temperature (F)          -0.193015         0.006442          -29.962           0.000
+L17.Snowfall (inch)           1.556155         0.767591            2.027           0.043
+L17.Wind Speed (mph)          0.013497         0.005725            2.357           0.018
+L18.MISO RT LOAD (MW)         0.000061         0.000029            2.075           0.038
+L18.Temperature (F)          -0.196306         0.006499          -30.207           0.000
+L18.Snowfall (inch)           1.080032         0.786170            1.374           0.170
+L18.Wind Speed (mph)          0.017620         0.005811            3.032           0.002
+L19.MISO RT LOAD (MW)        -0.000016         0.000030           -0.543           0.587
+L19.Temperature (F)          -0.186618         0.006555          -28.468           0.000
+L19.Snowfall (inch)           1.194507         0.802553            1.488           0.137
+L19.Wind Speed (mph)          0.006902         0.005883            1.173           0.241
+L20.MISO RT LOAD (MW)        -0.000019         0.000030           -0.637           0.524
+L20.Temperature (F)          -0.180014         0.006606          -27.250           0.000
+L20.Snowfall (inch)           0.759374         0.816555            0.930           0.352
+L20.Wind Speed (mph)          0.014799         0.005945            2.489           0.013
+L21.MISO RT LOAD (MW)         0.000072         0.000030            2.440           0.015
+L21.Temperature (F)          -0.180068         0.006650          -27.077           0.000
+L21.Snowfall (inch)           0.444014         0.828353            0.536           0.592
+L21.Wind Speed (mph)          0.003083         0.006008            0.513           0.608
+L22.MISO RT LOAD (MW)        -0.000097         0.000030           -3.261           0.001
+L22.Temperature (F)          -0.156698         0.006690          -23.423           0.000
+L22.Snowfall (inch)           0.630961         0.838337            0.753           0.452
+L22.Wind Speed (mph)          0.013240         0.006053            2.187           0.029
+L23.MISO RT LOAD (MW)         0.000033         0.000030            1.131           0.258
+L23.Temperature (F)          -0.114988         0.006717          -17.120           0.000
+L23.Snowfall (inch)           0.144148         0.847033            0.170           0.865
+L23.Wind Speed (mph)         -0.010276         0.006096           -1.686           0.092
+L24.MISO RT LOAD (MW)         0.000005         0.000030            0.158           0.875
+L24.Temperature (F)          -0.024046         0.006726           -3.575           0.000
+L24.Snowfall (inch)           0.094903         0.850303            0.112           0.911
+L24.Wind Speed (mph)          0.005245         0.006117            0.857           0.391
+L25.MISO RT LOAD (MW)         0.000051         0.000030            1.731           0.083
+L25.Temperature (F)          -0.155145         0.006713          -23.111           0.000
+L25.Snowfall (inch)          -0.128328         0.854148           -0.150           0.881
+L25.Wind Speed (mph)          0.004865         0.006112            0.796           0.426
+L26.MISO RT LOAD (MW)        -0.000044         0.000030           -1.484           0.138
+L26.Temperature (F)          -0.097138         0.006711          -14.474           0.000
+L26.Snowfall (inch)           0.191603         0.854217            0.224           0.823
+L26.Wind Speed (mph)         -0.003670         0.006113           -0.600           0.548
+L27.MISO RT LOAD (MW)         0.000036         0.000030            1.210           0.226
+L27.Temperature (F)          -0.096254         0.006732          -14.298           0.000
+L27.Snowfall (inch)          -0.172164         0.850448           -0.202           0.840
+L27.Wind Speed (mph)          0.002464         0.006116            0.403           0.687
+L28.MISO RT LOAD (MW)         0.000027         0.000030            0.901           0.367
+L28.Temperature (F)          -0.110303         0.006723          -16.406           0.000
+L28.Snowfall (inch)          -0.045186         0.847299           -0.053           0.957
+L28.Wind Speed (mph)         -0.003314         0.006092           -0.544           0.587
+L29.MISO RT LOAD (MW)        -0.000026         0.000030           -0.872           0.383
+L29.Temperature (F)          -0.105549         0.006697          -15.761           0.000
+L29.Snowfall (inch)          -0.252882         0.838697           -0.302           0.763
+L29.Wind Speed (mph)         -0.004862         0.006048           -0.804           0.421
+L30.MISO RT LOAD (MW)         0.000056         0.000030            1.899           0.058
+L30.Temperature (F)          -0.100317         0.006657          -15.069           0.000
+L30.Snowfall (inch)           0.021875         0.828748            0.026           0.979
+L30.Wind Speed (mph)         -0.002643         0.006000           -0.440           0.660
+L31.MISO RT LOAD (MW)        -0.000025         0.000030           -0.840           0.401
+L31.Temperature (F)          -0.095993         0.006615          -14.512           0.000
+L31.Snowfall (inch)          -0.947890         0.817067           -1.160           0.246
+L31.Wind Speed (mph)         -0.010146         0.005933           -1.710           0.087
+L32.MISO RT LOAD (MW)         0.000017         0.000030            0.559           0.576
+L32.Temperature (F)          -0.098529         0.006567          -15.004           0.000
+L32.Snowfall (inch)          -0.165963         0.803148           -0.207           0.836
+L32.Wind Speed (mph)         -0.011559         0.005867           -1.970           0.049
+L33.MISO RT LOAD (MW)         0.000015         0.000029            0.508           0.611
+L33.Temperature (F)          -0.088947         0.006511          -13.662           0.000
+L33.Snowfall (inch)          -0.170517         0.786719           -0.217           0.828
+L33.Wind Speed (mph)         -0.014071         0.005796           -2.428           0.015
+L34.MISO RT LOAD (MW)        -0.000057         0.000029           -1.950           0.051
+L34.Temperature (F)          -0.095283         0.006453          -14.765           0.000
+L34.Snowfall (inch)          -0.006364         0.768307           -0.008           0.993
+L34.Wind Speed (mph)         -0.007521         0.005708           -1.318           0.188
+L35.MISO RT LOAD (MW)         0.000048         0.000029            1.644           0.100
+L35.Temperature (F)          -0.092582         0.006390          -14.488           0.000
+L35.Snowfall (inch)          -0.820242         0.747652           -1.097           0.273
+L35.Wind Speed (mph)         -0.007038         0.005622           -1.252           0.211
+L36.MISO RT LOAD (MW)        -0.000020         0.000029           -0.675           0.500
+L36.Temperature (F)          -0.088813         0.006331          -14.029           0.000
+L36.Snowfall (inch)          -0.092255         0.725517           -0.127           0.899
+L36.Wind Speed (mph)         -0.014512         0.005530           -2.624           0.009
+L37.MISO RT LOAD (MW)        -0.000031         0.000029           -1.060           0.289
+L37.Temperature (F)          -0.095730         0.006269          -15.270           0.000
+L37.Snowfall (inch)          -0.265999         0.701632           -0.379           0.705
+L37.Wind Speed (mph)         -0.005591         0.005420           -1.032           0.302
+L38.MISO RT LOAD (MW)         0.000021         0.000029            0.736           0.461
+L38.Temperature (F)          -0.084526         0.006204          -13.625           0.000
+L38.Snowfall (inch)          -0.727798         0.675630           -1.077           0.281
+L38.Wind Speed (mph)         -0.011081         0.005309           -2.087           0.037
+L39.MISO RT LOAD (MW)        -0.000022         0.000029           -0.759           0.448
+L39.Temperature (F)          -0.081858         0.006132          -13.349           0.000
+L39.Snowfall (inch)          -0.560385         0.647630           -0.865           0.387
+L39.Wind Speed (mph)         -0.016968         0.005188           -3.270           0.001
+L40.MISO RT LOAD (MW)        -0.000013         0.000029           -0.439           0.661
+L40.Temperature (F)          -0.087158         0.006057          -14.391           0.000
+L40.Snowfall (inch)          -0.175288         0.619816           -0.283           0.777
+L40.Wind Speed (mph)         -0.014943         0.005067           -2.949           0.003
+L41.MISO RT LOAD (MW)         0.000034         0.000029            1.189           0.235
+L41.Temperature (F)          -0.087768         0.005993          -14.646           0.000
+L41.Snowfall (inch)          -0.407223         0.589719           -0.691           0.490
+L41.Wind Speed (mph)         -0.010175         0.004936           -2.061           0.039
+L42.MISO RT LOAD (MW)        -0.000035         0.000029           -1.193           0.233
+L42.Temperature (F)          -0.077635         0.005934          -13.083           0.000
+L42.Snowfall (inch)          -0.949697         0.561447           -1.692           0.091
+L42.Wind Speed (mph)         -0.015777         0.004799           -3.288           0.001
+L43.MISO RT LOAD (MW)         0.000023         0.000029            0.788           0.430
+L43.Temperature (F)          -0.077445         0.005856          -13.226           0.000
+L43.Snowfall (inch)          -0.200288         0.526635           -0.380           0.704
+L43.Wind Speed (mph)         -0.011087         0.004650           -2.384           0.017
+L44.MISO RT LOAD (MW)         0.000055         0.000029            1.921           0.055
+L44.Temperature (F)          -0.081494         0.005805          -14.039           0.000
+L44.Snowfall (inch)           0.379107         0.495950            0.764           0.445
+L44.Wind Speed (mph)         -0.014550         0.004516           -3.222           0.001
+L45.MISO RT LOAD (MW)        -0.000016         0.000029           -0.543           0.587
+L45.Temperature (F)          -0.065574         0.005723          -11.458           0.000
+L45.Snowfall (inch)          -0.583333         0.462846           -1.260           0.208
+L45.Wind Speed (mph)         -0.003579         0.004360           -0.821           0.412
+L46.MISO RT LOAD (MW)        -0.000087         0.000028           -3.065           0.002
+L46.Temperature (F)          -0.072173         0.005615          -12.854           0.000
+L46.Snowfall (inch)           0.181876         0.430310            0.423           0.673
+L46.Wind Speed (mph)         -0.007149         0.004165           -1.716           0.086
+L47.MISO RT LOAD (MW)         0.000100         0.000028            3.523           0.000
+L47.Temperature (F)          -0.022931         0.005614           -4.085           0.000
+L47.Snowfall (inch)          -0.122266         0.412751           -0.296           0.767
+L47.Wind Speed (mph)         -0.014026         0.004089           -3.430           0.001
+L48.MISO RT LOAD (MW)        -0.000070         0.000028           -2.457           0.014
+L48.Temperature (F)           0.055303         0.005411           10.221           0.000
+L48.Snowfall (inch)           0.072189         0.373637            0.193           0.847
+L48.Wind Speed (mph)         -0.006763         0.003790           -1.784           0.074
+L49.MISO RT LOAD (MW)         0.000032         0.000025            1.300           0.194
+L49.Temperature (F)          -0.055537         0.005181          -10.720           0.000
+L49.Snowfall (inch)           0.112186         0.332578            0.337           0.736
+L49.Wind Speed (mph)          0.001275         0.003515            0.363           0.717
+L50.MISO RT LOAD (MW)         0.000012         0.000016            0.743           0.458
+L50.Temperature (F)          -0.014643         0.004824           -3.036           0.002
+L50.Snowfall (inch)          -0.377752         0.332466           -1.136           0.256
+L50.Wind Speed (mph)         -0.007221         0.003483           -2.074           0.038
+========================================================================================
+
+Results for equation Snowfall (inch)
+========================================================================================
+                           coefficient       std. error           t-stat            prob
+----------------------------------------------------------------------------------------
+const                         0.000000         0.000065            0.003           0.998
+L1.MISO RT LOAD (MW)          0.000000         0.000000            0.997           0.319
+L1.Temperature (F)            0.000082         0.000069            1.192           0.233
+L1.Snowfall (inch)            0.038454         0.004786            8.035           0.000
+L1.Wind Speed (mph)          -0.000017         0.000050           -0.329           0.742
+L2.MISO RT LOAD (MW)         -0.000000         0.000000           -0.305           0.760
+L2.Temperature (F)            0.000104         0.000074            1.393           0.164
+L2.Snowfall (inch)           -0.513400         0.004788         -107.222           0.000
+L2.Wind Speed (mph)           0.000057         0.000051            1.124           0.261
+L3.MISO RT LOAD (MW)          0.000000         0.000000            0.067           0.947
+L3.Temperature (F)            0.000065         0.000078            0.842           0.400
+L3.Snowfall (inch)           -0.530312         0.005377          -98.620           0.000
+L3.Wind Speed (mph)           0.000054         0.000055            0.981           0.326
+L4.MISO RT LOAD (MW)         -0.000000         0.000000           -0.092           0.927
+L4.Temperature (F)            0.000168         0.000081            2.082           0.037
+L4.Snowfall (inch)           -0.371762         0.005941          -62.581           0.000
+L4.Wind Speed (mph)           0.000017         0.000059            0.288           0.773
+L5.MISO RT LOAD (MW)          0.000000         0.000000            0.911           0.362
+L5.Temperature (F)            0.000115         0.000081            1.427           0.154
+L5.Snowfall (inch)           -0.519307         0.006193          -83.855           0.000
+L5.Wind Speed (mph)           0.000114         0.000060            1.887           0.059
+L6.MISO RT LOAD (MW)         -0.000000         0.000000           -0.157           0.875
+L6.Temperature (F)            0.000242         0.000082            2.953           0.003
+L6.Snowfall (inch)           -0.545704         0.006661          -81.924           0.000
+L6.Wind Speed (mph)           0.000089         0.000063            1.401           0.161
+L7.MISO RT LOAD (MW)         -0.000000         0.000000           -0.218           0.827
+L7.Temperature (F)            0.000160         0.000083            1.923           0.054
+L7.Snowfall (inch)           -0.547874         0.007137          -76.763           0.000
+L7.Wind Speed (mph)          -0.000019         0.000065           -0.284           0.776
+L8.MISO RT LOAD (MW)          0.000000         0.000000            0.462           0.644
+L8.Temperature (F)            0.000178         0.000084            2.125           0.034
+L8.Snowfall (inch)           -0.602298         0.007579          -79.471           0.000
+L8.Wind Speed (mph)           0.000004         0.000067            0.060           0.952
+L9.MISO RT LOAD (MW)          0.000000         0.000000            0.327           0.744
+L9.Temperature (F)            0.000264         0.000085            3.106           0.002
+L9.Snowfall (inch)           -0.572201         0.008078          -70.831           0.000
+L9.Wind Speed (mph)           0.000121         0.000070            1.742           0.081
+L10.MISO RT LOAD (MW)        -0.000000         0.000000           -1.087           0.277
+L10.Temperature (F)           0.000168         0.000086            1.958           0.050
+L10.Snowfall (inch)          -0.604794         0.008486          -71.266           0.000
+L10.Wind Speed (mph)          0.000059         0.000072            0.829           0.407
+L11.MISO RT LOAD (MW)         0.000001         0.000000            2.029           0.042
+L11.Temperature (F)           0.000208         0.000087            2.395           0.017
+L11.Snowfall (inch)          -0.606984         0.008919          -68.056           0.000
+L11.Wind Speed (mph)          0.000110         0.000074            1.493           0.135
+L12.MISO RT LOAD (MW)        -0.000001         0.000000           -1.485           0.138
+L12.Temperature (F)           0.000358         0.000088            4.072           0.000
+L12.Snowfall (inch)          -0.623397         0.009319          -66.899           0.000
+L12.Wind Speed (mph)          0.000057         0.000075            0.751           0.452
+L13.MISO RT LOAD (MW)         0.000000         0.000000            0.906           0.365
+L13.Temperature (F)           0.000195         0.000089            2.190           0.029
+L13.Snowfall (inch)          -0.628956         0.009722          -64.697           0.000
+L13.Wind Speed (mph)          0.000052         0.000077            0.672           0.502
+L14.MISO RT LOAD (MW)         0.000000         0.000000            0.561           0.575
+L14.Temperature (F)           0.000143         0.000090            1.587           0.113
+L14.Snowfall (inch)          -0.626086         0.010096          -62.016           0.000
+L14.Wind Speed (mph)          0.000104         0.000078            1.332           0.183
+L15.MISO RT LOAD (MW)        -0.000000         0.000000           -0.739           0.460
+L15.Temperature (F)           0.000338         0.000091            3.713           0.000
+L15.Snowfall (inch)          -0.624190         0.010441          -59.784           0.000
+L15.Wind Speed (mph)          0.000024         0.000080            0.302           0.762
+L16.MISO RT LOAD (MW)         0.000000         0.000000            0.602           0.547
+L16.Temperature (F)           0.000160         0.000092            1.742           0.081
+L16.Snowfall (inch)          -0.629241         0.010760          -58.478           0.000
+L16.Wind Speed (mph)          0.000041         0.000081            0.505           0.613
+L17.MISO RT LOAD (MW)         0.000000         0.000000            0.236           0.813
+L17.Temperature (F)           0.000354         0.000093            3.811           0.000
+L17.Snowfall (inch)          -0.628992         0.011057          -56.888           0.000
+L17.Wind Speed (mph)         -0.000003         0.000082           -0.041           0.967
+L18.MISO RT LOAD (MW)        -0.000000         0.000000           -0.508           0.612
+L18.Temperature (F)           0.000179         0.000094            1.913           0.056
+L18.Snowfall (inch)          -0.618780         0.011324          -54.642           0.000
+L18.Wind Speed (mph)         -0.000034         0.000084           -0.411           0.681
+L19.MISO RT LOAD (MW)         0.000000         0.000000            0.620           0.535
+L19.Temperature (F)           0.000287         0.000094            3.044           0.002
+L19.Snowfall (inch)          -0.604089         0.011560          -52.256           0.000
+L19.Wind Speed (mph)         -0.000002         0.000085           -0.021           0.984
+L20.MISO RT LOAD (MW)        -0.000000         0.000000           -0.225           0.822
+L20.Temperature (F)           0.000321         0.000095            3.376           0.001
+L20.Snowfall (inch)          -0.613515         0.011762          -52.161           0.000
+L20.Wind Speed (mph)         -0.000036         0.000086           -0.425           0.671
+L21.MISO RT LOAD (MW)        -0.000000         0.000000           -0.244           0.808
+L21.Temperature (F)           0.000262         0.000096            2.734           0.006
+L21.Snowfall (inch)          -0.591178         0.011932          -49.546           0.000
+L21.Wind Speed (mph)         -0.000112         0.000087           -1.298           0.194
+L22.MISO RT LOAD (MW)         0.000000         0.000000            0.730           0.465
+L22.Temperature (F)           0.000434         0.000096            4.500           0.000
+L22.Snowfall (inch)          -0.589285         0.012076          -48.799           0.000
+L22.Wind Speed (mph)         -0.000020         0.000087           -0.226           0.822
+L23.MISO RT LOAD (MW)         0.000000         0.000000            0.450           0.653
+L23.Temperature (F)           0.000214         0.000097            2.214           0.027
+L23.Snowfall (inch)          -0.544739         0.012201          -44.647           0.000
+L23.Wind Speed (mph)         -0.000040         0.000088           -0.459           0.646
+L24.MISO RT LOAD (MW)        -0.000001         0.000000           -1.432           0.152
+L24.Temperature (F)           0.000263         0.000097            2.713           0.007
+L24.Snowfall (inch)          -0.537083         0.012248          -43.851           0.000
+L24.Wind Speed (mph)         -0.000047         0.000088           -0.529           0.597
+L25.MISO RT LOAD (MW)         0.000001         0.000000            1.427           0.153
+L25.Temperature (F)           0.000414         0.000097            4.280           0.000
+L25.Snowfall (inch)          -0.571890         0.012303          -46.482           0.000
+L25.Wind Speed (mph)         -0.000044         0.000088           -0.502           0.616
+L26.MISO RT LOAD (MW)        -0.000000         0.000000           -0.733           0.463
+L26.Temperature (F)           0.000214         0.000097            2.216           0.027
+L26.Snowfall (inch)          -0.479963         0.012304          -39.007           0.000
+L26.Wind Speed (mph)         -0.000042         0.000088           -0.482           0.630
+L27.MISO RT LOAD (MW)         0.000000         0.000000            0.471           0.638
+L27.Temperature (F)           0.000288         0.000097            2.968           0.003
+L27.Snowfall (inch)          -0.497772         0.012250          -40.634           0.000
+L27.Wind Speed (mph)         -0.000116         0.000088           -1.316           0.188
+L28.MISO RT LOAD (MW)        -0.000000         0.000000           -0.198           0.843
+L28.Temperature (F)           0.000295         0.000097            3.046           0.002
+L28.Snowfall (inch)          -0.466257         0.012205          -38.203           0.000
+L28.Wind Speed (mph)         -0.000084         0.000088           -0.952           0.341
+L29.MISO RT LOAD (MW)         0.000000         0.000000            0.652           0.514
+L29.Temperature (F)           0.000220         0.000096            2.286           0.022
+L29.Snowfall (inch)          -0.447811         0.012081          -37.068           0.000
+L29.Wind Speed (mph)         -0.000073         0.000087           -0.841           0.401
+L30.MISO RT LOAD (MW)        -0.000000         0.000000           -0.242           0.808
+L30.Temperature (F)           0.000255         0.000096            2.659           0.008
+L30.Snowfall (inch)          -0.451414         0.011938          -37.815           0.000
+L30.Wind Speed (mph)         -0.000082         0.000086           -0.946           0.344
+L31.MISO RT LOAD (MW)         0.000000         0.000000            0.099           0.921
+L31.Temperature (F)           0.000214         0.000095            2.247           0.025
+L31.Snowfall (inch)          -0.403284         0.011769          -34.266           0.000
+L31.Wind Speed (mph)         -0.000131         0.000085           -1.531           0.126
+L32.MISO RT LOAD (MW)         0.000000         0.000000            0.935           0.350
+L32.Temperature (F)           0.000209         0.000095            2.209           0.027
+L32.Snowfall (inch)          -0.385917         0.011569          -33.358           0.000
+L32.Wind Speed (mph)         -0.000082         0.000085           -0.973           0.331
+L33.MISO RT LOAD (MW)        -0.000000         0.000000           -0.783           0.434
+L33.Temperature (F)           0.000202         0.000094            2.149           0.032
+L33.Snowfall (inch)          -0.373248         0.011332          -32.937           0.000
+L33.Wind Speed (mph)         -0.000044         0.000083           -0.525           0.599
+L34.MISO RT LOAD (MW)         0.000001         0.000000            1.296           0.195
+L34.Temperature (F)           0.000290         0.000093            3.122           0.002
+L34.Snowfall (inch)          -0.340378         0.011067          -30.756           0.000
+L34.Wind Speed (mph)         -0.000147         0.000082           -1.793           0.073
+L35.MISO RT LOAD (MW)        -0.000000         0.000000           -0.856           0.392
+L35.Temperature (F)           0.000197         0.000092            2.136           0.033
+L35.Snowfall (inch)          -0.311196         0.010769          -28.896           0.000
+L35.Wind Speed (mph)         -0.000038         0.000081           -0.463           0.643
+L36.MISO RT LOAD (MW)         0.000000         0.000000            0.968           0.333
+L36.Temperature (F)           0.000156         0.000091            1.706           0.088
+L36.Snowfall (inch)          -0.293165         0.010451          -28.052           0.000
+L36.Wind Speed (mph)         -0.000091         0.000080           -1.148           0.251
+L37.MISO RT LOAD (MW)         0.000000         0.000000            0.192           0.848
+L37.Temperature (F)           0.000333         0.000090            3.688           0.000
+L37.Snowfall (inch)          -0.274358         0.010107          -27.147           0.000
+L37.Wind Speed (mph)         -0.000113         0.000078           -1.444           0.149
+L38.MISO RT LOAD (MW)        -0.000001         0.000000           -1.340           0.180
+L38.Temperature (F)           0.000171         0.000089            1.913           0.056
+L38.Snowfall (inch)          -0.238575         0.009732          -24.515           0.000
+L38.Wind Speed (mph)         -0.000096         0.000076           -1.254           0.210
+L39.MISO RT LOAD (MW)         0.000001         0.000000            2.654           0.008
+L39.Temperature (F)           0.000174         0.000088            1.971           0.049
+L39.Snowfall (inch)          -0.229888         0.009329          -24.643           0.000
+L39.Wind Speed (mph)         -0.000095         0.000075           -1.277           0.201
+L40.MISO RT LOAD (MW)        -0.000001         0.000000           -1.772           0.076
+L40.Temperature (F)           0.000195         0.000087            2.232           0.026
+L40.Snowfall (inch)          -0.200212         0.008928          -22.425           0.000
+L40.Wind Speed (mph)         -0.000089         0.000073           -1.223           0.221
+L41.MISO RT LOAD (MW)         0.000000         0.000000            0.911           0.362
+L41.Temperature (F)           0.000157         0.000086            1.815           0.069
+L41.Snowfall (inch)          -0.187203         0.008495          -22.038           0.000
+L41.Wind Speed (mph)         -0.000067         0.000071           -0.936           0.349
+L42.MISO RT LOAD (MW)         0.000000         0.000000            1.014           0.311
+L42.Temperature (F)           0.000116         0.000085            1.358           0.175
+L42.Snowfall (inch)          -0.152426         0.008087          -18.848           0.000
+L42.Wind Speed (mph)         -0.000147         0.000069           -2.126           0.033
+L43.MISO RT LOAD (MW)        -0.000000         0.000000           -0.457           0.648
+L43.Temperature (F)           0.000033         0.000084            0.390           0.697
+L43.Snowfall (inch)          -0.137217         0.007586          -18.089           0.000
+L43.Wind Speed (mph)         -0.000070         0.000067           -1.051           0.293
+L44.MISO RT LOAD (MW)         0.000000         0.000000            0.551           0.581
+L44.Temperature (F)           0.000120         0.000084            1.430           0.153
+L44.Snowfall (inch)          -0.113259         0.007144          -15.854           0.000
+L44.Wind Speed (mph)         -0.000124         0.000065           -1.907           0.057
+L45.MISO RT LOAD (MW)         0.000000         0.000000            0.828           0.408
+L45.Temperature (F)          -0.000023         0.000082           -0.276           0.782
+L45.Snowfall (inch)          -0.090936         0.006667          -13.640           0.000
+L45.Wind Speed (mph)         -0.000158         0.000063           -2.521           0.012
+L46.MISO RT LOAD (MW)        -0.000000         0.000000           -0.867           0.386
+L46.Temperature (F)           0.000146         0.000081            1.810           0.070
+L46.Snowfall (inch)          -0.076693         0.006198          -12.373           0.000
+L46.Wind Speed (mph)         -0.000065         0.000060           -1.078           0.281
+L47.MISO RT LOAD (MW)         0.000000         0.000000            0.652           0.514
+L47.Temperature (F)           0.000091         0.000081            1.125           0.261
+L47.Snowfall (inch)          -0.065352         0.005945          -10.992           0.000
+L47.Wind Speed (mph)         -0.000123         0.000059           -2.092           0.036
+L48.MISO RT LOAD (MW)         0.000001         0.000000            1.576           0.115
+L48.Temperature (F)          -0.000052         0.000078           -0.662           0.508
+L48.Snowfall (inch)          -0.048444         0.005382           -9.001           0.000
+L48.Wind Speed (mph)         -0.000110         0.000055           -2.023           0.043
+L49.MISO RT LOAD (MW)        -0.000000         0.000000           -1.342           0.180
+L49.Temperature (F)           0.000195         0.000075            2.616           0.009
+L49.Snowfall (inch)          -0.030641         0.004791           -6.396           0.000
+L49.Wind Speed (mph)         -0.000035         0.000051           -0.689           0.491
+L50.MISO RT LOAD (MW)         0.000000         0.000000            1.694           0.090
+L50.Temperature (F)          -0.000046         0.000069           -0.667           0.504
+L50.Snowfall (inch)          -0.037403         0.004789           -7.810           0.000
+L50.Wind Speed (mph)         -0.000120         0.000050           -2.394           0.017
+========================================================================================
+
+Results for equation Wind Speed (mph)
+========================================================================================
+                           coefficient       std. error           t-stat            prob
+----------------------------------------------------------------------------------------
+const                        -0.000080         0.006141           -0.013           0.990
+L1.MISO RT LOAD (MW)          0.000035         0.000023            1.540           0.124
+L1.Temperature (F)           -0.023150         0.006553           -3.533           0.000
+L1.Snowfall (inch)            2.447280         0.454457            5.385           0.000
+L1.Wind Speed (mph)           0.131453         0.004789           27.450           0.000
+L2.MISO RT LOAD (MW)         -0.000025         0.000034           -0.737           0.461
+L2.Temperature (F)            0.032314         0.007073            4.569           0.000
+L2.Snowfall (inch)            0.280038         0.454687            0.616           0.538
+L2.Wind Speed (mph)          -0.409854         0.004828          -84.900           0.000
+L3.MISO RT LOAD (MW)          0.000024         0.000039            0.627           0.531
+L3.Temperature (F)            0.038509         0.007384            5.215           0.000
+L3.Snowfall (inch)            2.534492         0.510633            4.963           0.000
+L3.Wind Speed (mph)          -0.446316         0.005212          -85.641           0.000
+L4.MISO RT LOAD (MW)          0.000018         0.000039            0.462           0.644
+L4.Temperature (F)            0.026059         0.007647            3.408           0.001
+L4.Snowfall (inch)            2.455422         0.564113            4.353           0.000
+L4.Wind Speed (mph)          -0.238192         0.005628          -42.321           0.000
+L5.MISO RT LOAD (MW)         -0.000008         0.000039           -0.195           0.845
+L5.Temperature (F)            0.062222         0.007648            8.136           0.000
+L5.Snowfall (inch)            2.192264         0.588079            3.728           0.000
+L5.Wind Speed (mph)          -0.377433         0.005733          -65.837           0.000
+L6.MISO RT LOAD (MW)          0.000004         0.000039            0.100           0.920
+L6.Temperature (F)            0.044573         0.007791            5.721           0.000
+L6.Snowfall (inch)            2.886763         0.632538            4.564           0.000
+L6.Wind Speed (mph)          -0.351378         0.006003          -58.538           0.000
+L7.MISO RT LOAD (MW)          0.000073         0.000039            1.854           0.064
+L7.Temperature (F)            0.060640         0.007898            7.678           0.000
+L7.Snowfall (inch)            2.769708         0.677748            4.087           0.000
+L7.Wind Speed (mph)          -0.331302         0.006220          -53.268           0.000
+L8.MISO RT LOAD (MW)         -0.000062         0.000039           -1.571           0.116
+L8.Temperature (F)            0.066141         0.007964            8.305           0.000
+L8.Snowfall (inch)            2.895583         0.719685            4.023           0.000
+L8.Wind Speed (mph)          -0.357376         0.006404          -55.803           0.000
+L9.MISO RT LOAD (MW)          0.000074         0.000040            1.856           0.063
+L9.Temperature (F)            0.064524         0.008070            7.996           0.000
+L9.Snowfall (inch)            3.624284         0.767123            4.725           0.000
+L9.Wind Speed (mph)          -0.351828         0.006611          -53.221           0.000
+L10.MISO RT LOAD (MW)         0.000038         0.000040            0.971           0.332
+L10.Temperature (F)           0.077652         0.008149            9.529           0.000
+L10.Snowfall (inch)           3.337280         0.805878            4.141           0.000
+L10.Wind Speed (mph)         -0.351748         0.006799          -51.738           0.000
+L11.MISO RT LOAD (MW)        -0.000069         0.000040           -1.751           0.080
+L11.Temperature (F)           0.066463         0.008238            8.068           0.000
+L11.Snowfall (inch)           3.969975         0.846939            4.687           0.000
+L11.Wind Speed (mph)         -0.344795         0.006980          -49.399           0.000
+L12.MISO RT LOAD (MW)         0.000061         0.000040            1.537           0.124
+L12.Temperature (F)           0.089035         0.008341           10.674           0.000
+L12.Snowfall (inch)           3.719102         0.884889            4.203           0.000
+L12.Wind Speed (mph)         -0.345616         0.007144          -48.377           0.000
+L13.MISO RT LOAD (MW)        -0.000014         0.000040           -0.357           0.721
+L13.Temperature (F)           0.090790         0.008449           10.746           0.000
+L13.Snowfall (inch)           4.066531         0.923163            4.405           0.000
+L13.Wind Speed (mph)         -0.345801         0.007304          -47.346           0.000
+L14.MISO RT LOAD (MW)         0.000041         0.000040            1.021           0.307
+L14.Temperature (F)           0.081881         0.008543            9.584           0.000
+L14.Snowfall (inch)           4.123116         0.958673            4.301           0.000
+L14.Wind Speed (mph)         -0.349081         0.007450          -46.859           0.000
+L15.MISO RT LOAD (MW)        -0.000003         0.000040           -0.075           0.940
+L15.Temperature (F)           0.090571         0.008634           10.490           0.000
+L15.Snowfall (inch)           3.298914         0.991454            3.327           0.001
+L15.Wind Speed (mph)         -0.334926         0.007593          -44.109           0.000
+L16.MISO RT LOAD (MW)         0.000017         0.000040            0.425           0.671
+L16.Temperature (F)           0.093881         0.008720           10.766           0.000
+L16.Snowfall (inch)           3.200369         1.021800            3.132           0.002
+L16.Wind Speed (mph)         -0.341175         0.007715          -44.222           0.000
+L17.MISO RT LOAD (MW)         0.000033         0.000040            0.826           0.409
+L17.Temperature (F)           0.074527         0.008812            8.458           0.000
+L17.Snowfall (inch)           4.938683         1.049939            4.704           0.000
+L17.Wind Speed (mph)         -0.348003         0.007831          -44.439           0.000
+L18.MISO RT LOAD (MW)         0.000007         0.000040            0.161           0.872
+L18.Temperature (F)           0.080633         0.008889            9.071           0.000
+L18.Snowfall (inch)           2.730239         1.075354            2.539           0.011
+L18.Wind Speed (mph)         -0.340876         0.007948          -42.889           0.000
+L19.MISO RT LOAD (MW)         0.000035         0.000040            0.865           0.387
+L19.Temperature (F)           0.082986         0.008967            9.255           0.000
+L19.Snowfall (inch)           4.361008         1.097762            3.973           0.000
+L19.Wind Speed (mph)         -0.334186         0.008047          -41.529           0.000
+L20.MISO RT LOAD (MW)         0.000011         0.000040            0.276           0.783
+L20.Temperature (F)           0.092083         0.009036           10.191           0.000
+L20.Snowfall (inch)           3.948533         1.116914            3.535           0.000
+L20.Wind Speed (mph)         -0.339514         0.008132          -41.748           0.000
+L21.MISO RT LOAD (MW)         0.000012         0.000041            0.286           0.775
+L21.Temperature (F)           0.069446         0.009096            7.634           0.000
+L21.Snowfall (inch)           3.260421         1.133053            2.878           0.004
+L21.Wind Speed (mph)         -0.326096         0.008218          -39.682           0.000
+L22.MISO RT LOAD (MW)         0.000072         0.000041            1.772           0.076
+L22.Temperature (F)           0.087324         0.009151            9.543           0.000
+L22.Snowfall (inch)           4.457103         1.146709            3.887           0.000
+L22.Wind Speed (mph)         -0.322674         0.008280          -38.971           0.000
+L23.MISO RT LOAD (MW)        -0.000073         0.000040           -1.818           0.069
+L23.Temperature (F)           0.075542         0.009187            8.223           0.000
+L23.Snowfall (inch)           3.400627         1.158604            2.935           0.003
+L23.Wind Speed (mph)         -0.298708         0.008338          -35.826           0.000
+L24.MISO RT LOAD (MW)         0.000158         0.000040            3.910           0.000
+L24.Temperature (F)           0.056897         0.009201            6.184           0.000
+L24.Snowfall (inch)           3.844427         1.163076            3.305           0.001
+L24.Wind Speed (mph)         -0.260668         0.008367          -31.153           0.000
+L25.MISO RT LOAD (MW)        -0.000112         0.000040           -2.783           0.005
+L25.Temperature (F)           0.039639         0.009182            4.317           0.000
+L25.Snowfall (inch)           3.676265         1.168336            3.147           0.002
+L25.Wind Speed (mph)         -0.287191         0.008360          -34.351           0.000
+L26.MISO RT LOAD (MW)         0.000062         0.000040            1.524           0.128
+L26.Temperature (F)           0.076093         0.009180            8.289           0.000
+L26.Snowfall (inch)           3.396368         1.168430            2.907           0.004
+L26.Wind Speed (mph)         -0.266973         0.008361          -31.930           0.000
+L27.MISO RT LOAD (MW)         0.000038         0.000040            0.934           0.350
+L27.Temperature (F)           0.058634         0.009208            6.367           0.000
+L27.Snowfall (inch)           3.918812         1.163274            3.369           0.001
+L27.Wind Speed (mph)         -0.259014         0.008366          -30.961           0.000
+L28.MISO RT LOAD (MW)        -0.000046         0.000040           -1.149           0.251
+L28.Temperature (F)           0.047141         0.009196            5.126           0.000
+L28.Snowfall (inch)           3.239607         1.158967            2.795           0.005
+L28.Wind Speed (mph)         -0.251184         0.008333          -30.143           0.000
+L29.MISO RT LOAD (MW)         0.000035         0.000041            0.865           0.387
+L29.Temperature (F)           0.051733         0.009160            5.647           0.000
+L29.Snowfall (inch)           4.017643         1.147202            3.502           0.000
+L29.Wind Speed (mph)         -0.247312         0.008272          -29.897           0.000
+L30.MISO RT LOAD (MW)         0.000010         0.000041            0.241           0.809
+L30.Temperature (F)           0.051659         0.009106            5.673           0.000
+L30.Snowfall (inch)           3.271569         1.133593            2.886           0.004
+L30.Wind Speed (mph)         -0.233843         0.008207          -28.493           0.000
+L31.MISO RT LOAD (MW)        -0.000048         0.000040           -1.176           0.240
+L31.Temperature (F)           0.042599         0.009048            4.708           0.000
+L31.Snowfall (inch)           3.487099         1.117615            3.120           0.002
+L31.Wind Speed (mph)         -0.227613         0.008116          -28.047           0.000
+L32.MISO RT LOAD (MW)         0.000104         0.000040            2.563           0.010
+L32.Temperature (F)           0.032133         0.008983            3.577           0.000
+L32.Snowfall (inch)           3.370204         1.098577            3.068           0.002
+L32.Wind Speed (mph)         -0.222453         0.008025          -27.720           0.000
+L33.MISO RT LOAD (MW)        -0.000075         0.000040           -1.866           0.062
+L33.Temperature (F)           0.034638         0.008906            3.889           0.000
+L33.Snowfall (inch)           2.996805         1.076103            2.785           0.005
+L33.Wind Speed (mph)         -0.203037         0.007928          -25.611           0.000
+L34.MISO RT LOAD (MW)         0.000040         0.000040            0.987           0.323
+L34.Temperature (F)           0.028891         0.008827            3.273           0.001
+L34.Snowfall (inch)           2.241191         1.050919            2.133           0.033
+L34.Wind Speed (mph)         -0.198000         0.007808          -25.358           0.000
+L35.MISO RT LOAD (MW)        -0.000025         0.000040           -0.615           0.538
+L35.Temperature (F)           0.030281         0.008741            3.464           0.001
+L35.Snowfall (inch)           3.069333         1.022667            3.001           0.003
+L35.Wind Speed (mph)         -0.177634         0.007690          -23.100           0.000
+L36.MISO RT LOAD (MW)         0.000016         0.000040            0.410           0.682
+L36.Temperature (F)           0.046578         0.008659            5.379           0.000
+L36.Snowfall (inch)           2.654071         0.992389            2.674           0.007
+L36.Wind Speed (mph)         -0.165264         0.007564          -21.849           0.000
+L37.MISO RT LOAD (MW)         0.000017         0.000040            0.438           0.661
+L37.Temperature (F)           0.019758         0.008575            2.304           0.021
+L37.Snowfall (inch)           2.028677         0.959718            2.114           0.035
+L37.Wind Speed (mph)         -0.163539         0.007414          -22.059           0.000
+L38.MISO RT LOAD (MW)        -0.000035         0.000040           -0.868           0.386
+L38.Temperature (F)           0.038346         0.008486            4.519           0.000
+L38.Snowfall (inch)           1.773792         0.924152            1.919           0.055
+L38.Wind Speed (mph)         -0.138138         0.007262          -19.021           0.000
+L39.MISO RT LOAD (MW)         0.000037         0.000040            0.932           0.351
+L39.Temperature (F)           0.029507         0.008388            3.518           0.000
+L39.Snowfall (inch)           1.938304         0.885853            2.188           0.029
+L39.Wind Speed (mph)         -0.136326         0.007097          -19.210           0.000
+L40.MISO RT LOAD (MW)         0.000005         0.000040            0.136           0.892
+L40.Temperature (F)           0.002760         0.008284            0.333           0.739
+L40.Snowfall (inch)           1.602656         0.847808            1.890           0.059
+L40.Wind Speed (mph)         -0.126782         0.006931          -18.291           0.000
+L41.MISO RT LOAD (MW)        -0.000028         0.000040           -0.703           0.482
+L41.Temperature (F)           0.030123         0.008197            3.675           0.000
+L41.Snowfall (inch)           1.876579         0.806640            2.326           0.020
+L41.Wind Speed (mph)         -0.119501         0.006751          -17.700           0.000
+L42.MISO RT LOAD (MW)         0.000044         0.000040            1.103           0.270
+L42.Temperature (F)           0.015736         0.008117            1.939           0.053
+L42.Snowfall (inch)           0.862522         0.767969            1.123           0.261
+L42.Wind Speed (mph)         -0.105194         0.006564          -16.027           0.000
+L43.MISO RT LOAD (MW)         0.000003         0.000039            0.064           0.949
+L43.Temperature (F)           0.007746         0.008009            0.967           0.333
+L43.Snowfall (inch)           1.723891         0.720352            2.393           0.017
+L43.Wind Speed (mph)         -0.089134         0.006361          -14.014           0.000
+L44.MISO RT LOAD (MW)        -0.000036         0.000039           -0.906           0.365
+L44.Temperature (F)           0.018573         0.007940            2.339           0.019
+L44.Snowfall (inch)           0.551100         0.678379            0.812           0.417
+L44.Wind Speed (mph)         -0.091237         0.006177          -14.771           0.000
+L45.MISO RT LOAD (MW)        -0.000007         0.000039           -0.180           0.857
+L45.Temperature (F)           0.015881         0.007828            2.029           0.042
+L45.Snowfall (inch)           0.767996         0.633098            1.213           0.225
+L45.Wind Speed (mph)         -0.067287         0.005964          -11.282           0.000
+L46.MISO RT LOAD (MW)         0.000021         0.000039            0.552           0.581
+L46.Temperature (F)           0.026363         0.007680            3.433           0.001
+L46.Snowfall (inch)           0.382631         0.588594            0.650           0.516
+L46.Wind Speed (mph)         -0.070091         0.005697          -12.304           0.000
+L47.MISO RT LOAD (MW)        -0.000004         0.000039           -0.112           0.911
+L47.Temperature (F)           0.003113         0.007679            0.405           0.685
+L47.Snowfall (inch)           0.360539         0.564576            0.639           0.523
+L47.Wind Speed (mph)         -0.050443         0.005593           -9.019           0.000
+L48.MISO RT LOAD (MW)        -0.000026         0.000039           -0.660           0.510
+L48.Temperature (F)           0.008781         0.007401            1.186           0.235
+L48.Snowfall (inch)           0.432588         0.511075            0.846           0.397
+L48.Wind Speed (mph)         -0.009331         0.005185           -1.800           0.072
+L49.MISO RT LOAD (MW)         0.000060         0.000034            1.765           0.078
+L49.Temperature (F)          -0.008982         0.007086           -1.268           0.205
+L49.Snowfall (inch)           0.009559         0.454913            0.021           0.983
+L49.Wind Speed (mph)         -0.034557         0.004808           -7.187           0.000
+L50.MISO RT LOAD (MW)        -0.000036         0.000022           -1.617           0.106
+L50.Temperature (F)           0.020690         0.006598            3.136           0.002
+L50.Snowfall (inch)           0.280292         0.454759            0.616           0.538
+L50.Wind Speed (mph)         -0.021304         0.004764           -4.472           0.000
+========================================================================================
+
+Correlation matrix of residuals
+                     MISO RT LOAD (MW)  Temperature (F)  Snowfall (inch)  Wind Speed (mph)
+MISO RT LOAD (MW)             1.000000        -0.040009         0.004578          0.022306
+Temperature (F)              -0.040009         1.000000        -0.005624         -0.003632
+Snowfall (inch)               0.004578        -0.005624         1.000000          0.022391
+Wind Speed (mph)              0.022306        -0.003632         0.022391          1.000000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="residual-plots-analysis">
+<h3>Residual plots analysis<a class="headerlink" href="#residual-plots-analysis" title="Link to this heading">#</a></h3>
+<p>The plot in the top left corner is the residual time series for MISO RT Load. The residual series seems to fluctuate around zero and seems to be a stationary series. This is perhaps a good sign, as it seems to have removed seasonal patterns and trends from the series. There do seem to be some extreme outliers, which could be due to extreme events of exogenous processes.</p>
+<p>The top right is a histogram of the residuals. The distribution seems to be centered around 0, which is a desired result. However, it is clearly leptokurtic to the naked eye, entailing that this model is sensitive to extreme outliers. The model may not be able to explain and account for the risky nature of load forecasting.</p>
+<p>The ACF and PACF plots have some small spikes around the lag range that the model uses (24-30). The spikes don’t seem to deviate far from 0, however, so it would seem that there is little serial autocorrelation in the residuals.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RT Load residuals</span>
+<span class="n">rt_load_residuals</span> <span class="o">=</span> <span class="n">var_model</span><span class="o">.</span><span class="n">resid</span><span class="p">[</span><span class="s1">&#39;MISO RT LOAD (MW)&#39;</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># Residual time series plot</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rt_load_residuals</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Residuals for MISO RT Load (MW) Equation&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Residuals&quot;</span><span class="p">)</span>
+
+<span class="c1"># Residual histogram</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">rt_load_residuals</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Histogram of Residuals&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Residual Value&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+
+<span class="c1"># ACF plot</span>
+<span class="n">sm</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">tsa</span><span class="o">.</span><span class="n">plot_acf</span><span class="p">(</span><span class="n">rt_load_residuals</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;ACF of Residuals&quot;</span><span class="p">)</span>
+
+<span class="c1"># PACF plot</span>
+<span class="n">sm</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">tsa</span><span class="o">.</span><span class="n">plot_pacf</span><span class="p">(</span><span class="n">rt_load_residuals</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;PACF of Residuals&quot;</span><span class="p">)</span>
+
+<span class="c1"># Adjust layout</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/7115cabc7b3706fd96a0248398ca8de361eafedbcb8b0e346821ccaf328274d5.png" src="_images/7115cabc7b3706fd96a0248398ca8de361eafedbcb8b0e346821ccaf328274d5.png" />
+</div>
+</div>
+</section>
+<section id="granger-causality-test">
+<h3>Granger Causality test<a class="headerlink" href="#granger-causality-test" title="Link to this heading">#</a></h3>
+<p>The Granger Causality test will be applied to temperature to test for the significance of the causal effect of temperature. The output shows p-values ≈0 for the F-tests at lags 1-30. This entails that temperature has significant causal effect for lags 1-30.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_for_gc</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;MISO RT LOAD (MW)&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature (F)&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Drop any NaN values (if any exist)</span>
+<span class="n">data_for_gc</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">granger_test_results</span> <span class="o">=</span> <span class="n">grangercausalitytests</span><span class="p">(</span><span class="n">data_for_gc</span><span class="p">,</span> <span class="n">maxlag</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">granger_test_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="irf-and-oirf">
+<h3>IRF and OIRF<a class="headerlink" href="#irf-and-oirf" title="Link to this heading">#</a></h3>
+<p>Below are the plots of the 2-period reduced form IRF and the 2-period orthogonalized IRF. We consider the effects of a shock on the temperature variable onto the MISO RT Load variable, as that is the primary exogenous impulse response that we are examining. As we can see, the reduced form IRF is smaller in magnitude than the orthogonalized IRF. This is because the orthogonalized IRF isolates the effects of the shocks of temperature by assuming the shocks of temperature affect RT load and not vice versa. This difference makes the orthogonalized IRF preferrable option for this analysis. Temperature is an exogenous process that immediately affects load on a grid. It is not an endogenous variable that is contemperaneously affected by load. Using the reduced form IRF effectively reduces the effect of temperature on RT load, which would cause us to underestimate the effect in our analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit a VAR model with the two selected variables</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">VAR</span><span class="p">(</span><span class="n">data_for_gc</span><span class="p">)</span>
+
+<span class="c1"># Select the optimal lag length with BIC</span>
+<span class="n">lag_order</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">select_order</span><span class="p">(</span><span class="n">maxlags</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">optimal_lag</span> <span class="o">=</span> <span class="n">lag_order</span><span class="o">.</span><span class="n">bic</span>  
+<span class="n">var_model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">optimal_lag</span><span class="p">)</span>
+
+<span class="c1"># Calculate the impulse response functions for 10 steps ahead</span>
+<span class="n">irf_reduced</span> <span class="o">=</span> <span class="n">var_model</span><span class="o">.</span><span class="n">irf</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Reduced-form (non-orthogonalized) IRF</span>
+<span class="n">irf_orthogonal</span> <span class="o">=</span> <span class="n">var_model</span><span class="o">.</span><span class="n">irf</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Orthogonalized (structural) IRF</span>
+
+<span class="c1"># Reduced IRF</span>
+<span class="n">irf_reduced</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">orth</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Orthogonalized (structural) IRF</span>
+<span class="n">irf_orthogonal</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">orth</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a4a267f1d4055f365f64dd3a87bac454c8b9dd1fe7151c3c12e0b2eaffd028c1.png" src="_images/a4a267f1d4055f365f64dd3a87bac454c8b9dd1fe7151c3c12e0b2eaffd028c1.png" />
+<img alt="_images/810788e000528362d6de7090bf24aeab94ed40a6252970ff93241a4e694c6519.png" src="_images/810788e000528362d6de7090bf24aeab94ed40a6252970ff93241a4e694c6519.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="midterm.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">EBGN 594 Midterm 2024</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adf-tests">ADF tests.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stl">STL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autocorrelation-analysis-and-sarima-model">Autocorrelation analysis and SARIMA model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-model">Regression model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-breaks">Structural breaks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-results">Regression results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#var-model">VAR Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-plots-analysis">Residual plots analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#granger-causality-test">Granger Causality test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irf-and-oirf">IRF and OIRF</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jared Andreatta
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
