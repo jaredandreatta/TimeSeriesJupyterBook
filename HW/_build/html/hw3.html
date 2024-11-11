@@ -700,8 +700,8 @@ document.write(`
 <section id="regression-model">
 <h3>Regression model<a class="headerlink" href="#regression-model" title="Link to this heading">#</a></h3>
 <p>For the regression model, I’ve chosen a dynamic regression model with SARIMA errors, where we regress on our independent variables (temperature, snowfall, windspeed) along with lags of the RT Load variable. A dynamic regression model is a more appropriate choice since the data clearly exhibits seasonal patterns. No differencing was performed, as we determined that each series is stationary. The equation of the model is as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4541511e-b7c9-4a23-ac7a-d438874335e1">
-<span class="eqno">(1)<a class="headerlink" href="#equation-4541511e-b7c9-4a23-ac7a-d438874335e1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a0c30239-4a48-44e7-a6f8-c5099a5e63bd">
+<span class="eqno">(1)<a class="headerlink" href="#equation-a0c30239-4a48-44e7-a6f8-c5099a5e63bd" title="Permalink to this equation">#</a></span>\[\begin{align}
 Y_t = \alpha + \beta_1 \cdot \text{Temperature}_t + \beta_2 \cdot \text{Snowfall}_t + \beta_3 \cdot \text{WindSpeed}_t + \phi_1 Y_{t-1} + \theta_1 \epsilon_{t-1} + \Phi_1 Y_{t-7} + \Theta_1 \epsilon_{t-7} + \epsilon_t
 \end{align}\]</div>
 <p>where:</p>
@@ -722,28 +722,28 @@ Y_t = \alpha + \beta_1 \cdot \text{Temperature}_t + \beta_2 \cdot \text{Snowfall
 <p><strong>NOTE:</strong> Python has no built-in package for structural break testing, so this part of the analysis was outsourced to a separate R file.</p>
 <p>Using the strucchange package in R, we are able to estimate the breakpoints in the linear model of the regressors on RT Load. The test yields a result of an optimal number of 4 breaks occurring on days 462, 736, 1199, 1475 from 5/30/2019. This is where the BIC criterion is minimized, making it optimal to the linear model. Below are the equations for the resulting models.</p>
 <p><strong>Regime 1: Before Break 1</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-120b7dd1-d29e-4a4b-ae75-416bb742e81f">
-<span class="eqno">(2)<a class="headerlink" href="#equation-120b7dd1-d29e-4a4b-ae75-416bb742e81f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-879bd7b9-d3d6-4cf5-ae68-8dd1b6d16649">
+<span class="eqno">(2)<a class="headerlink" href="#equation-879bd7b9-d3d6-4cf5-ae68-8dd1b6d16649" title="Permalink to this equation">#</a></span>\[\begin{align}
 Y = \beta_{0,1} + \beta_{1,1} \cdot \text{Temperature} + \beta_{2,1} \cdot \text{Snowfall} + \beta_{3,1} \cdot \text{Wind Speed} + \epsilon
 \end{align}\]</div>
 <p><strong>Regime 2: Between Break 1 and Break 2</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-dab488df-2d1a-491f-b123-0651ed8bf791">
-<span class="eqno">(3)<a class="headerlink" href="#equation-dab488df-2d1a-491f-b123-0651ed8bf791" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c9b470e3-db3e-4680-9a0d-8ad538626aa1">
+<span class="eqno">(3)<a class="headerlink" href="#equation-c9b470e3-db3e-4680-9a0d-8ad538626aa1" title="Permalink to this equation">#</a></span>\[\begin{align}
 Y = \beta_{0,2} + \beta_{1,2} \cdot \text{Temperature} + \beta_{2,2} \cdot \text{Snowfall} + \beta_{3,2} \cdot \text{Wind Speed} + \epsilon
 \end{align}\]</div>
 <p><strong>Regime 3: Between Break 2 and Break 3</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-c7951268-86ed-4591-8413-97741fde59ca">
-<span class="eqno">(4)<a class="headerlink" href="#equation-c7951268-86ed-4591-8413-97741fde59ca" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f70dab75-a6f3-4553-8534-411eb2ee9c57">
+<span class="eqno">(4)<a class="headerlink" href="#equation-f70dab75-a6f3-4553-8534-411eb2ee9c57" title="Permalink to this equation">#</a></span>\[\begin{align}
 Y = \beta_{0,3} + \beta_{1,3} \cdot \text{Temperature} + \beta_{2,3} \cdot \text{Snowfall} + \beta_{3,3} \cdot \text{Wind Speed} + \epsilon
 \end{align}\]</div>
 <p><strong>Regime 4: Between Break 3 and Break 4</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-2292c6d6-5c4f-4591-9a2a-ba202311b5c6">
-<span class="eqno">(5)<a class="headerlink" href="#equation-2292c6d6-5c4f-4591-9a2a-ba202311b5c6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ac7a0c5f-6824-47e1-915e-f93e2461b394">
+<span class="eqno">(5)<a class="headerlink" href="#equation-ac7a0c5f-6824-47e1-915e-f93e2461b394" title="Permalink to this equation">#</a></span>\[\begin{align}
 Y = \beta_{0,4} + \beta_{1,4} \cdot \text{Temperature} + \beta_{2,4} \cdot \text{Snowfall} + \beta_{3,4} \cdot \text{Wind Speed} + \epsilon
 \end{align}\]</div>
 <p><strong>Regime 5: After Break 4</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-e0390203-f606-4b20-a380-f06ce78b042e">
-<span class="eqno">(6)<a class="headerlink" href="#equation-e0390203-f606-4b20-a380-f06ce78b042e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c41722cf-7f95-4673-b1a0-9497a0ed4f53">
+<span class="eqno">(6)<a class="headerlink" href="#equation-c41722cf-7f95-4673-b1a0-9497a0ed4f53" title="Permalink to this equation">#</a></span>\[\begin{align}
 Y = \beta_{0,5} + \beta_{1,5} \cdot \text{Temperature} + \beta_{2,5} \cdot \text{Snowfall} + \beta_{3,5} \cdot \text{Wind Speed} + \epsilon
 \end{align}\]</div>
 <p>where:</p>
@@ -964,8 +964,8 @@ Y = \beta_{0,5} + \beta_{1,5} \cdot \text{Temperature} + \beta_{2,5} \cdot \text
 <section id="var-model">
 <h3>VAR Model<a class="headerlink" href="#var-model" title="Link to this heading">#</a></h3>
 <p>For this part, we will be estimating a VAR model for our data. As discussed earlier, the data is clearly seasonal. We will control for the seasonality by using the seasonal decomposition method. We will take the residuals from this seasonal decompostion to use for the model, as these will lack the seasonal components of the data. This will allow the model fitting to focus on the non-seasonal autoregressive dependencies of the data. Using BIC, we determined that the optimal lag length is 27. So that brings us to the following equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cb3b9dec-e1c0-4439-8fed-5e8da9d3feee">
-<span class="eqno">(7)<a class="headerlink" href="#equation-cb3b9dec-e1c0-4439-8fed-5e8da9d3feee" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1f99bae2-8348-4726-8ea3-9c330cd6b5ab">
+<span class="eqno">(7)<a class="headerlink" href="#equation-1f99bae2-8348-4726-8ea3-9c330cd6b5ab" title="Permalink to this equation">#</a></span>\[\begin{align}
 
 Y_t = \begin{bmatrix} \alpha_1 \\ \alpha_2 \\ \alpha_3 \\ \alpha_4 \end{bmatrix} + 
 \sum_{i=1}^{27}
@@ -991,13 +991,14 @@ Y_t = \begin{bmatrix} \alpha_1 \\ \alpha_2 \\ \alpha_3 \\ \alpha_4 \end{bmatrix}
 </ul>
 </li>
 </ul>
-<div class="cell tag_hide-input docutils container">
+<p><strong>Please note that output is hidden due to the length of the regression summary output</strong></p>
+<div class="cell tag_hide-input tag_hide-output docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
 <span class="collapsed">Show code cell source</span>
 <span class="expanded">Hide code cell source</span>
 </summary>
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seasonally decompose each series and collect residuals </span>
 <span class="n">residuals</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">4</span><span class="p">]:</span>  
@@ -1023,6 +1024,11 @@ Y_t = \begin{bmatrix} \alpha_1 \\ \alpha_2 \\ \alpha_3 \\ \alpha_4 \end{bmatrix}
 </div>
 </div>
 </details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Summary of Regression Results   
 ==================================
@@ -1873,6 +1879,7 @@ Wind Speed (mph)              0.022306        -0.003632         0.022391        
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="residual-plots-analysis">
@@ -1927,7 +1934,12 @@ Wind Speed (mph)              0.022306        -0.003632         0.022391        
 <section id="granger-causality-test">
 <h3>Granger Causality test<a class="headerlink" href="#granger-causality-test" title="Link to this heading">#</a></h3>
 <p>The Granger Causality test will be applied to temperature to test for the significance of the causal effect of temperature. The output shows p-values ≈0 for the F-tests at lags 1-30. This entails that temperature has significant causal effect for lags 1-30.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_for_gc</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;MISO RT LOAD (MW)&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature (F)&#39;</span><span class="p">]]</span>
 
@@ -1938,12 +1950,18 @@ Wind Speed (mph)              0.022306        -0.003632         0.022391        
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="irf-and-oirf">
 <h3>IRF and OIRF<a class="headerlink" href="#irf-and-oirf" title="Link to this heading">#</a></h3>
 <p>Below are the plots of the 2-period reduced form IRF and the 2-period orthogonalized IRF. We consider the effects of a shock on the temperature variable onto the MISO RT Load variable, as that is the primary exogenous impulse response that we are examining. As we can see, the reduced form IRF is smaller in magnitude than the orthogonalized IRF. This is because the orthogonalized IRF isolates the effects of the shocks of temperature by assuming the shocks of temperature affect RT load and not vice versa. This difference makes the orthogonalized IRF preferrable option for this analysis. Temperature is an exogenous process that immediately affects load on a grid. It is not an endogenous variable that is contemperaneously affected by load. Using the reduced form IRF effectively reduces the effect of temperature on RT load, which would cause us to underestimate the effect in our analysis.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit a VAR model with the two selected variables</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">VAR</span><span class="p">(</span><span class="n">data_for_gc</span><span class="p">)</span>
@@ -1968,6 +1986,7 @@ Wind Speed (mph)              0.022306        -0.003632         0.022391        
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/a4a267f1d4055f365f64dd3a87bac454c8b9dd1fe7151c3c12e0b2eaffd028c1.png" src="_images/a4a267f1d4055f365f64dd3a87bac454c8b9dd1fe7151c3c12e0b2eaffd028c1.png" />
 <img alt="_images/810788e000528362d6de7090bf24aeab94ed40a6252970ff93241a4e694c6519.png" src="_images/810788e000528362d6de7090bf24aeab94ed40a6252970ff93241a4e694c6519.png" />
