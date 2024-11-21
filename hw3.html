@@ -700,8 +700,8 @@ document.write(`
 <section id="regression-model">
 <h3>Regression model<a class="headerlink" href="#regression-model" title="Link to this heading">#</a></h3>
 <p>For the regression model, I’ve chosen a dynamic regression model with SARIMA errors, where we regress on our independent variables (temperature, snowfall, windspeed) along with lags of the RT Load variable. A dynamic regression model is a more appropriate choice since the data clearly exhibits seasonal patterns. No differencing was performed, as we determined that each series is stationary. The equation of the model is as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9405e9bb-deb9-4539-b847-5dd324288e52">
-<span class="eqno">(1)<a class="headerlink" href="#equation-9405e9bb-deb9-4539-b847-5dd324288e52" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3d4b6296-5d40-4767-9926-4d793c69e9cc">
+<span class="eqno">(1)<a class="headerlink" href="#equation-3d4b6296-5d40-4767-9926-4d793c69e9cc" title="Permalink to this equation">#</a></span>\[\begin{align}
 Y_t = \alpha + \beta_1 \cdot \text{Temperature}_t + \beta_2 \cdot \text{Snowfall}_t + \beta_3 \cdot \text{WindSpeed}_t + \phi_1 Y_{t-1} + \theta_1 \epsilon_{t-1} + \Phi_1 Y_{t-7} + \Theta_1 \epsilon_{t-7} + \epsilon_t
 \end{align}\]</div>
 <p>where:</p>
@@ -722,28 +722,28 @@ Y_t = \alpha + \beta_1 \cdot \text{Temperature}_t + \beta_2 \cdot \text{Snowfall
 <p><strong>NOTE:</strong> Python has no built-in package for structural break testing, so this part of the analysis was outsourced to a separate R file.</p>
 <p>Using the strucchange package in R, we are able to estimate the breakpoints in the linear model of the regressors on RT Load. The test yields a result of an optimal number of 4 breaks occurring on days 462, 736, 1199, 1475 from 5/30/2019. This is where the BIC criterion is minimized, making it optimal to the linear model. Below are the equations for the resulting models.</p>
 <p><strong>Regime 1: Before Break 1</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-fdc49e2c-273c-42d6-b122-db1a4877f496">
-<span class="eqno">(2)<a class="headerlink" href="#equation-fdc49e2c-273c-42d6-b122-db1a4877f496" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c46e7f68-08b7-4d1a-b2bf-b187c3d6fa2b">
+<span class="eqno">(2)<a class="headerlink" href="#equation-c46e7f68-08b7-4d1a-b2bf-b187c3d6fa2b" title="Permalink to this equation">#</a></span>\[\begin{align}
 Y = \beta_{0,1} + \beta_{1,1} \cdot \text{Temperature} + \beta_{2,1} \cdot \text{Snowfall} + \beta_{3,1} \cdot \text{Wind Speed} + \epsilon
 \end{align}\]</div>
 <p><strong>Regime 2: Between Break 1 and Break 2</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-0b929b98-ea38-4cce-8ae1-22902d2dad92">
-<span class="eqno">(3)<a class="headerlink" href="#equation-0b929b98-ea38-4cce-8ae1-22902d2dad92" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-11d196f3-8baa-46ac-bdd3-5159de0ae775">
+<span class="eqno">(3)<a class="headerlink" href="#equation-11d196f3-8baa-46ac-bdd3-5159de0ae775" title="Permalink to this equation">#</a></span>\[\begin{align}
 Y = \beta_{0,2} + \beta_{1,2} \cdot \text{Temperature} + \beta_{2,2} \cdot \text{Snowfall} + \beta_{3,2} \cdot \text{Wind Speed} + \epsilon
 \end{align}\]</div>
 <p><strong>Regime 3: Between Break 2 and Break 3</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-e4f46fd3-93cc-4c66-a023-7fa8947e21de">
-<span class="eqno">(4)<a class="headerlink" href="#equation-e4f46fd3-93cc-4c66-a023-7fa8947e21de" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-46dccda8-6d1f-4277-9294-6d736784a2b0">
+<span class="eqno">(4)<a class="headerlink" href="#equation-46dccda8-6d1f-4277-9294-6d736784a2b0" title="Permalink to this equation">#</a></span>\[\begin{align}
 Y = \beta_{0,3} + \beta_{1,3} \cdot \text{Temperature} + \beta_{2,3} \cdot \text{Snowfall} + \beta_{3,3} \cdot \text{Wind Speed} + \epsilon
 \end{align}\]</div>
 <p><strong>Regime 4: Between Break 3 and Break 4</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-09855ece-4379-47c1-ac82-1177f79def80">
-<span class="eqno">(5)<a class="headerlink" href="#equation-09855ece-4379-47c1-ac82-1177f79def80" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-785c11a3-4d54-410c-8d0f-5c3ef094160c">
+<span class="eqno">(5)<a class="headerlink" href="#equation-785c11a3-4d54-410c-8d0f-5c3ef094160c" title="Permalink to this equation">#</a></span>\[\begin{align}
 Y = \beta_{0,4} + \beta_{1,4} \cdot \text{Temperature} + \beta_{2,4} \cdot \text{Snowfall} + \beta_{3,4} \cdot \text{Wind Speed} + \epsilon
 \end{align}\]</div>
 <p><strong>Regime 5: After Break 4</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-92ad8119-862a-4a9c-9882-30d715c8622f">
-<span class="eqno">(6)<a class="headerlink" href="#equation-92ad8119-862a-4a9c-9882-30d715c8622f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6bb288f0-ec71-467b-a499-52ad67387116">
+<span class="eqno">(6)<a class="headerlink" href="#equation-6bb288f0-ec71-467b-a499-52ad67387116" title="Permalink to this equation">#</a></span>\[\begin{align}
 Y = \beta_{0,5} + \beta_{1,5} \cdot \text{Temperature} + \beta_{2,5} \cdot \text{Snowfall} + \beta_{3,5} \cdot \text{Wind Speed} + \epsilon
 \end{align}\]</div>
 <p>where:</p>
@@ -791,8 +791,8 @@ Y = \beta_{0,5} + \beta_{1,5} \cdot \text{Temperature} + \beta_{2,5} \cdot \text
 <section id="var-model">
 <h3>VAR Model<a class="headerlink" href="#var-model" title="Link to this heading">#</a></h3>
 <p>For this part, we will be estimating a VAR model for our data. As discussed earlier, the data is clearly seasonal. We will control for the seasonality by using the seasonal decomposition method. We will take the residuals from this seasonal decompostion to use for the model, as these will lack the seasonal components of the data. This will allow the model fitting to focus on the non-seasonal autoregressive dependencies of the data. Using BIC, we determined that the optimal lag length is 27. So that brings us to the following equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52faf240-faab-46b9-957f-2558aaab322e">
-<span class="eqno">(7)<a class="headerlink" href="#equation-52faf240-faab-46b9-957f-2558aaab322e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-047393da-5b0a-43de-b932-436c89b0cad1">
+<span class="eqno">(7)<a class="headerlink" href="#equation-047393da-5b0a-43de-b932-436c89b0cad1" title="Permalink to this equation">#</a></span>\[\begin{align}
 
 Y_t = \begin{bmatrix} \alpha_1 \\ \alpha_2 \\ \alpha_3 \\ \alpha_4 \end{bmatrix} + 
 \sum_{i=1}^{27}
