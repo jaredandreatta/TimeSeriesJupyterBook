@@ -1,0 +1,1 @@
+I made this Jupyter Book as a learning resource for students of EBGN594 at Mines wanting to learn a little bit of Python for time series analysis. The website can be found at [this link](https://jaredandreatta.github.io/TimeSeriesJupyterBook/intro.html).
